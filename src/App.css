@@ -39,7 +39,7 @@
     position: absolute;
     left: 50%;
     margin-left: -18px;
-    bottom: 40px;
+    bottom: 0px;
   }
   .arrows path {
     stroke: rgb(0, 178, 164);
@@ -170,7 +170,7 @@
     position: absolute;
     left: 50%;
     margin-left: -18px;
-    bottom: 40px;
+    bottom: 0px;
   }
   .arrows path {
     stroke: rgb(0, 178, 164);
@@ -308,7 +308,7 @@
     position: absolute;
     left: 50%;
     margin-left: -19px;
-    bottom: 40px;
+    bottom: 0px;
   }
   .arrows path {
     stroke: rgb(0, 178, 164);
