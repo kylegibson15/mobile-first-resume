@@ -1,0 +1,349 @@
+@media only screen and (max-width: 500px) {
+  .logo-container {
+    background-color: #333;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 178, 164);
+  }
+  .title{
+    position: absolute;
+    width: 100%;
+    align-self: flex-start;
+    height: 15vh;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .title > h1, .title > h6 {
+    padding: 0;
+    padding-left: .2em;
+    margin: .2em;
+    letter-spacing: .4em;
+  }
+  .nav-line {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    width: 3px;
+    height: 70vh;
+    background-color: rgb(0, 178, 164);
+  }
+  .arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -18px;
+    bottom: 40px;
+  }
+  .arrows path {
+    stroke: rgb(0, 178, 164);
+    fill: transparent;
+    stroke-width: 1.5px;
+  }
+  .bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+  }
+  @-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  .logo {
+    max-height: 46vh;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+  .logo-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #ball {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(255, 142, 0);
+    background-image: radial-gradient(circle 9.5em at 0em 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 5.1em at .3em .3em, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
+    position: relative;
+  }
+  .projects-container {
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 1024px) {
+  .logo-container {
+    background-color: #333;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    position: absolute;
+    width: 100%;
+    align-self: flex-start;
+    height: 15vh;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(0, 178, 164)
+  }
+  .title > h1{
+    font-size: 4em;
+  }
+  .title > h6 {
+    font-size: 1em;
+  }
+  .title > h1, .title > h6 {
+    padding: 0;
+    margin: .2em;
+    letter-spacing: .5em;
+  }
+  .nav-line {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    width: 3px;
+    height: 70vh;
+    background-color: rgb(0, 178, 164);
+  }
+  .arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -18px;
+    bottom: 40px;
+  }
+  .arrows path {
+    stroke: rgb(0, 178, 164);
+    fill: transparent;
+    stroke-width: 1.5px;
+  }
+  .bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+  }
+  @-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  .logo {
+    max-height: 35vh;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+  .logo-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #ball {
+    width: 14em;
+    height: 14em;
+    border-radius: 150px;
+    background-color: rgb(255, 142, 0);
+    background-image: radial-gradient(circle 13.5em at 0em 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 6.1em at .4em .4em, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
+    position: relative;
+  }
+  .projects-container {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .logo-container {
+    background-color: #333;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    position: absolute;
+    width: 100%;
+    align-self: flex-start;
+    height: 15vh;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(0, 178, 164)
+  }
+  .title > h1{
+    font-size: 4em;
+  }
+  .title > h6 {
+    font-size: 1em;
+  }
+  .title > h1, .title > h6 {
+    padding: 0;
+    margin: .2em;
+    letter-spacing: .5em;
+  }
+  .l-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5px;
+    height: 10vh;
+    transition: 3s;
+  }
+  .l-container:hover {
+    width: 3px;
+    height: 72vh;
+    margin-top: 3em;
+    background-color: rgb(0, 178, 164);
+    transition: 2s;
+  }
+  .arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -19px;
+    bottom: 40px;
+  }
+  .arrows path {
+    stroke: rgb(0, 178, 164);
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  .logo {
+    max-height: 45vh;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    transition: 2s;
+  }
+  .logo:hover {
+    max-height: 50vh;
+    transition: 2s;
+  }
+  .logo-background {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #ball {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    background-color: rgb(255, 142, 0);
+    background-image: radial-gradient(circle 14.8em at 0em 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 6.1em at .4em .4em, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
+    position: relative;
+  }
+  .projects-container {
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+  }
+}
