@@ -147,8 +147,39 @@
     letter-spacing: .1em;
     font-size: .9em;
   }
-  .projects-container {
+  .skills-container{
     background-color: rgb(255, 142, 0);
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .skill-head{
+    font-size: 2em;
+    letter-spacing: .5em;
+  }
+  .logos-under{
+    display: flex;
+    justify-content: space-around;
+  }
+  .languages{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .2em;
+  }
+  .lang-logo{
+    max-height: .9em;
+  }
+  .tech-logo{
+    max-height: 1.5em;
+  }
+  .projects-container {
+    background-color: rgb(0, 178, 164);
     height: 100vh;
     width: 100vw;
   }
@@ -310,8 +341,39 @@
     letter-spacing: .2em;
     line-height: 1.5em;
   }
-  .projects-container {
+  .skills-container{
     background-color: rgb(255, 142, 0);
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .skill-head{
+    font-size: 4em;
+    letter-spacing: .5em;
+  }
+  .logos-under{
+    display: flex;
+    justify-content: space-around;
+  }
+  .languages{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .2em;
+  }
+  .lang-logo{
+    max-height: .9em;
+  }
+  .tech-logo{
+    max-height: 1.2em;
+  }
+  .projects-container {
+    background-color: rgb(0, 178, 164);
     height: 100vh;
     width: 100vw;
   }
@@ -436,8 +498,39 @@
     line-height: 1.5em;
     text-shadow: black;
   }
-  .projects-container {
+  .skills-container{
     background-color: rgb(255, 142, 0);
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .skill-head{
+    font-size: 4em;
+    letter-spacing: .5em;
+  }
+  .logos-under{
+    display: flex;
+    justify-content: space-around;
+  }
+  .languages{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .2em;
+  }
+  .lang-logo{
+    max-height: .2em;
+  }
+  .tech-logo{
+    max-height: .2em;
+  }
+  .projects-container {
+    background-color: rgb(0, 178, 164);
     height: 100vh;
     width: 100vw;
   }
