@@ -10,16 +10,14 @@ export default class Logo extends Component {
         <h6>Software Engineer</h6>
       </div>
 
-      <div className="nav-line"></div>
-
-      <div className="l-container">
+      <div className={`l-container ${this.props.lineClass}`}>
         <div id="ball" className="logo-background">
-          <img className="logo" alt="logo" src={logo}/>
+          <img className={`logo ${this.props.logoClass}`} alt="logo" src={logo}/>
         </div>
       </div>
 
       <div>
-        <svg class="arrows bounce">
+        <svg class={`arrows ${this.props.bounceClass}`}>
           <path d="M0 20 L20 42 L40 20"></path>
           <path d="M0 30 L20 52 L40 30"></path>
         </svg>

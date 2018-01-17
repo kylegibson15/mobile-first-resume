@@ -1,3 +1,6 @@
+.App {
+  overflow-x: hidden;
+}
 @media only screen and (max-width: 500px) {
   .logo-container {
     background-color: #333;
@@ -32,6 +35,21 @@
     width: 3px;
     height: 70vh;
     background-color: rgb(0, 178, 164);
+  }
+  .l-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5px;
+    height: 10vh;
+    transition: 3s;
+  }
+  .hover {
+    width: 3px;
+    height: 72vh;
+    margin-top: 3em;
+    background-color: rgb(0, 178, 164);
+    transition: 2s;
   }
   .arrows {
     width: 60px;
@@ -100,9 +118,14 @@
     }
   }
   .logo {
-    max-height: 46vh;
+    max-height: 36vh;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
+    transition: 2s
+  }
+  .logo-hover {
+    max-height: 46vh;
+    transition: 2s;
   }
   .logo-background {
     display: flex;
@@ -163,20 +186,40 @@
   }
   .logos-under{
     display: flex;
-    justify-content: space-around;
+    overflow-x: scroll;
+    width: 100vw;
+    margin-left: .6em;
+    margin-right: .6em;
   }
   .languages{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: .2em;
+    margin: .4em;
   }
   .lang-logo{
-    max-height: .9em;
+    max-height: 2.8em;
+    margin: .1em;
+    border: 1px solid black;
+    background-color: rgba(0,0,0, .3);
   }
-  .tech-logo{
-    max-height: 1.5em;
+  .resume-contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .5px solid black;
+    border-radius: 5px;
+    padding: .5em;
+    box-shadow: inset 0 0 15px black;
+    margin-top: .3em;
+  }
+  .download-logo{
+    max-height: 1em;
+  }
+  .resume{
+    color: black;
+    text-decoration: none;
   }
   .projects-container {
     background-color: rgb(0, 178, 164);
@@ -224,6 +267,21 @@
     width: 3px;
     height: 70vh;
     background-color: rgb(0, 178, 164);
+  }
+  .l-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5px;
+    height: 10vh;
+    transition: 3s;
+  }
+  .hover {
+    width: 3px;
+    height: 72vh;
+    margin-top: 3em;
+    background-color: rgb(0, 178, 164);
+    transition: 2s;
   }
   .arrows {
     width: 60px;
@@ -292,9 +350,14 @@
     }
   }
   .logo {
-    max-height: 35vh;
+    max-height: 25vh;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
+    transition: 2s;
+  }
+  .logo-hover {
+    max-height: 35vh;
+    transition: 2s;
   }
   .logo-background {
     display: flex;
@@ -352,25 +415,54 @@
     align-items: center;
   }
   .skill-head{
-    font-size: 4em;
+    font-size: 3em;
     letter-spacing: .5em;
+  }
+  .tools-under{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    width: 100vw;
+    margin-left: .6em;
+    margin-right: .6em;
   }
   .logos-under{
     display: flex;
-    justify-content: space-around;
+    overflow-x: scroll;
+    width: 100vw;
+    margin-left: .6em;
+    margin-right: .6em;
   }
   .languages{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: .2em;
+    margin: .4em;
   }
   .lang-logo{
-    max-height: .9em;
+    max-height: 3em;
+    margin: .1em;
+    border: 1px solid black;
+    background-color: rgba(0,0,0, .3);
   }
-  .tech-logo{
-    max-height: 1.2em;
+  .resume-contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .5px solid black;
+    border-radius: 5px;
+    padding: .5em;
+    box-shadow: inset 0 0 15px black;
+    margin-top: .3em;
+  }
+  .download-logo{
+    max-height: 1em;
+  }
+  .resume{
+    color: black;
+    text-decoration: none;
   }
   .projects-container {
     background-color: rgb(0, 178, 164);
@@ -419,7 +511,7 @@
     height: 10vh;
     transition: 3s;
   }
-  .l-container:hover {
+  .hover {
     width: 3px;
     height: 72vh;
     margin-top: 3em;
@@ -439,13 +531,66 @@
     fill: transparent;
     stroke-width: 3px;
   }
+  .bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+  }
+  @-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
   .logo {
     max-height: 45vh;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
     transition: 2s;
   }
-  .logo:hover {
+  .logo-hover {
     max-height: 50vh;
     transition: 2s;
   }
@@ -509,25 +654,55 @@
     align-items: center;
   }
   .skill-head{
-    font-size: 4em;
+    font-size: 3em;
     letter-spacing: .5em;
+  }
+  .tools-under{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    width: 100vw;
+    margin-left: .6em;
+    margin-right: .6em;
   }
   .logos-under{
     display: flex;
-    justify-content: space-around;
+    overflow-x: scroll;
+    width: 100vw;
+    margin-left: .6em;
+    margin-right: .6em;
   }
   .languages{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: .2em;
+    margin: .4em;
   }
   .lang-logo{
-    max-height: .2em;
+    max-height: 1.8em;
+    margin: .1em;
+    border: 1px solid black;
+    background-color: rgba(0,0,0, .3);
   }
-  .tech-logo{
-    max-height: .2em;
+  .resume-contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .5px solid black;
+    border-radius: 5px;
+    padding: .5em;
+    box-shadow: inset 0 0 15px black;
+    margin-top: .5em;
+    margin-bottom: 1em;
+  }
+  .download-logo{
+    max-height: 1em;
+  }
+  .resume{
+    color: black;
+    text-decoration: none;
   }
   .projects-container {
     background-color: rgb(0, 178, 164);

@@ -26,71 +26,66 @@ import tdd from '../assets/images/tdd.png';
 import responsive_design from '../assets/images/responsive-design.png';
 import pair_programmming from '../assets/images/pair-programming.png';
 import resume from '../assets/images/GibsonKyle_Resume_g64.pdf';
+import download from '../assets/images/download.png';
 
 export default class Skills extends Component {
 
   render() {
     return (<div className="skills-container">
       <div className="skill-head">
-        <div className="logos-under">
-          <img className="lang-logo" src={heroku}/>
-          <img className="lang-logo" src={git}/>
-          <img className="lang-logo" src={firebase}/>
-          <img className="lang-logo" src={express}/>
-          <img className="lang-logo" src={node}/>
-          <img className="lang-logo" src={sql}/>
-          <img className="lang-logo" src={bootstrap}/>
-          <img className="lang-logo" src={jquery}/>
-        </div>
 
         <div className="languages">LANGUAGES</div>
 
         <div className="logos-under">
-          <img className="lang-logo" src={mocha_chai}/>
-          <img className="lang-logo" src={knex}/>
-          <img className="lang-logo" src={react}/>
-          <img className="lang-logo" src={redux}/>
-          <img className="lang-logo" src={javascript}/>
-          <img className="lang-logo" src={python}/>
-          <img className="lang-logo" src={handlebars}/>
-          <img className="lang-logo" src={html_css}/>
-          <img className="lang-logo" src={webpack}/>
+          <img className="lang-logo" alt="react" src={react}/>
+          <img className="lang-logo" alt="redux" src={redux}/>
+          <img className="lang-logo" alt="javascript" src={javascript}/>
+          <img className="lang-logo" alt="python" src={python}/>
+          <img className="lang-logo" alt="handlebars" src={handlebars}/>
+          <img className="lang-logo" alt="html css" src={html_css}/>
+          <img className="lang-logo" alt="webpack" src={webpack}/>
+          <img className="lang-logo" alt="heroku" src={heroku}/>
+          <img className="lang-logo" alt="git" src={git}/>
+          <img className="lang-logo" alt="firebase" src={firebase}/>
+          <img className="lang-logo" alt="express" src={express}/>
+          <img className="lang-logo" alt="node" src={node}/>
+          <img className="lang-logo" alt="sql" src={sql}/>
+          <img className="lang-logo" alt="bootstrap" src={bootstrap}/>
+          <img className="lang-logo" alt="jquery" src={jquery}/>
+          <img className="lang-logo" alt="mocha_chai" src={mocha_chai}/>
+          <img className="lang-logo knex" alt="knex" src={knex}/>
         </div>
       </div>
 
       <div className="skill-head tools">
-        <div className="logos-under">
-          <img className="lang-logo" src={raspberry_pi}/>
-          <img className="lang-logo" src={pivotal}/>
-        </div>
 
         <div className="languages">TOOLS</div>
 
-        <div className="logos-under">
-          <img className="lang-logo" src={slack}/>
-          <img className="lang-logo" src={github}/>
-          <img className="lang-logo" src={chrome}/>
-        </div>
-      </div>
-
-      <div className="skill-head techniques">
-        <div className="logos-under">
-
-        </div>
-
-        <div className="languages">TECHNIQUES</div>
-
-        <div className="logos-under">
-          <img className="tech-logo" src={responsive_design}/>
-          <img className="tech-logo" src={pair_programmming}/>
-          <img className="tech-logo" src={agile}/>
-          <img className="tech-logo" src={tdd}/>
+        <div className="logos-under tools-under">
+          <img className="lang-logo" alt="slack" src={slack}/>
+          <img className="lang-logo" alt="github" src={github}/>
+          <img className="lang-logo" alt="chrome" src={chrome}/>
+          <img className="lang-logo" alt="raspberry pi" src={raspberry_pi}/>
+          <img className="lang-logo" alt="pivotal tracker" src={pivotal}/>
         </div>
       </div>
 
       <div className="skill-head">
+
+        <div className="languages">TECHNIQUES</div>
+
+        <div className="logos-under tools-under techniques">
+          <img className="lang-logo" alt="responsive design" src={responsive_design}/>
+          <img className="lang-logo" alt="pair programming" src={pair_programmming}/>
+          <img className="lang-logo" alt="agile" src={agile}/>
+          <img className="lang-logo" alt="tdd" src={tdd}/>
+        </div>
+      </div>
+
+      <div className="skill-head resume-contain">
         <a className="resume" href={resume} download="resume">
           RESUME
+          <img className="download-logo" src={download} alt="download"/>
         </a>
       </div>
     </div>)
