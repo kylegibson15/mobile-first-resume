@@ -17,7 +17,7 @@ export default class Logo extends Component {
       </div>
 
       <div>
-        <svg class={`arrows ${this.props.bounceClass}`}>
+        <svg className={`arrows ${this.props.bounceClass}`}>
           <path d="M0 20 L20 42 L40 20"></path>
           <path d="M0 30 L20 52 L40 30"></path>
         </svg>
