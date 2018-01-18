@@ -11,18 +11,24 @@
     top: 200;
   }
   .contact-info{
+    color: white;
     height: 2vh;
-    width: 20vw;
-    padding: .5em;
-    background-color: white;
+    width: 24vw;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, .3);
     font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: .2px solid black;
+    border-top: .2px solid black;
+    border-bottom: .2px solid black;
+    box-shadow: inset 0 0 10px black;
   }
   .contact-info > h5 {
-    font-size: .8em;
+    font-size: 1em;
   }
   .logo-container {
     background-color: #333;
@@ -256,6 +262,68 @@
     justify-content: center;
     align-items: center;
   }
+  .card{
+    height: 40vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    color: rgb(0, 178, 164);
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
+  }
+  .contact-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid rgb(0, 178, 164);
+  }
+  .contact-title > span {
+    font-size: 1.1em;
+    letter-spacing: .3em;
+  }
+  .contact-title > h1 {
+    font-size: 1.8em;
+    letter-spacing: .5em;
+    margin: 0;
+  }
+  .social-links {
+    width: 80%;
+    margin: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+  .contact-icon{
+    max-height: 1.8em;
+    max-width: 6em;
+    margin: 0;
+    padding: .5em;
+    border: .2px solid rgb(255, 142, 0);
+    box-shadow: 0 0 55px black;
+  }
+  .contact-icon:hover{
+    cursor: pointer;
+  }
+  .phone-email{
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .phone-email > p{
+    text-align: center;
+    padding: .2em;
+    width: 40vw;
+    border: .2px solid rgb(0, 178, 164);
+    font-size: .8em;
+  }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 1024px) {
@@ -271,11 +339,20 @@
     height: 2vh;
     width: 20vw;
     padding: 1em;
-    background-color: white;
+    background-color: rgba(0, 0, 0, .1);
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: .2px solid black;
+    border-top: .2px solid black;
+    border-bottom: .2px solid black;
+    box-shadow: inset 0 0 10px black;
+  }
+  .contact-info:hover{
+    cursor: pointer;
   }
   .contact-info > h5 {
     font-size: 1em;
@@ -521,12 +598,73 @@
     width: 100vw;
   }
   .contact-container{
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
     background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .card{
+    height: 30vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    color: rgb(0, 178, 164);
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
+  }
+  .contact-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid rgb(0, 178, 164);
+  }
+  .contact-title > span {
+    font-size: 1.2em;
+    letter-spacing: .3em;
+  }
+  .contact-title > h1 {
+    font-size: 2em;
+    letter-spacing: .5em;
+    margin: 0;
+  }
+  .social-links {
+    width: 80%;
+    margin: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+  .contact-icon{
+    max-width: 8em;
+    margin: 0;
+    padding: .5em;
+    border: .2px solid rgb(255, 142, 0);
+    box-shadow: 0 0 55px black;
+  }
+  .contact-icon:hover{
+    cursor: pointer;
+  }
+  .phone-email{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .phone-email > p{
+    font-size: .7em;
+    text-align: center;
+    padding: .2em;
+    width: 18vw;
+    border: .2px solid rgb(0, 178, 164);
   }
 }
 
@@ -543,12 +681,20 @@
     height: 2vh;
     width: 10vw;
     padding: 1em;
-    background-color: white;
+    background-color: rgba(0, 0, 0, .1);
     font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: .2px solid black;
+    border-top: .2px solid black;
+    border-bottom: .2px solid black;
+    box-shadow: inset 0 0 10px black;
+  }
+  .contact-info:hover{
+    cursor: pointer;
   }
   .contact-info > h5 {
     font-size: 1em;
@@ -791,11 +937,71 @@
     width: 100vw;
   }
   .contact-container{
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
     background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .card{
+    height: 40vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    color: rgb(0, 178, 164);
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
+  }
+  .contact-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid rgb(0, 178, 164);
+  }
+  .contact-title > span {
+    font-size: 1.2em;
+    letter-spacing: .3em;
+  }
+  .contact-title > h1 {
+    font-size: 2.5em;
+    letter-spacing: .5em;
+    margin: 0;
+  }
+  .social-links {
+    width: 80%;
+    margin: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+  .contact-icon{
+    max-width: 8em;
+    margin: 0;
+    padding: .5em;
+    border: .2px solid rgb(255, 142, 0);
+    box-shadow: 0 0 55px black;
+  }
+  .contact-icon:hover{
+    cursor: pointer;
+  }
+  .phone-email{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .phone-email > p{
+    text-align: center;
+    padding: .2em;
+    width: 18vw;
+    border: .2px solid rgb(0, 178, 164);
   }
 }
