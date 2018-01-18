@@ -9,21 +9,25 @@ import Contact from './components/Contact';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleLoad = this.handleLoad.bind(this);
 
     this.state = {
       bounceClass: null,
       lineClass: null,
       logoClass: null,
-      scrollingLock: false
+      scrollingLock: false,
+      contactOrTop: true,
     }
 
+    this.handleLoad = this.handleLoad.bind(this);
     this.handleScroll = this.handleScroll.bind(this)
+    this.goToContactPage = this.goToContactPage.bind(this)
+    this.handleContactText = this.handleContactText.bind(this)
   }
 
   componentDidMount() {
     window.addEventListener('load', this.handleLoad);
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleContactText)
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -43,17 +47,32 @@ class App extends Component {
       this.setState({scrollingLock: false});
     }
   }
+  handleContactText() {
+    let contactY = window.innerHeight * 3 + (window.innerHeight / 2)
+    if(window.scrollY > contactY){
+      this.setState({contactOrTop: false})
+    }else{
+      this.setState({contactOrTop: true})
+    }
+  }
   goToContactPage() {
-    this.refs.hello.scrollIntoView();
+    let contactY = window.innerHeight * 3
+    let contact = document.getElementsByClassName("contact-container")[0]
+    let top = document.getElementsByClassName("aboutme-container")[0]
+    if(window.scrollY > contactY){
+      top.scrollIntoView({behavior: 'smooth'})
+    }else{
+      contact.scrollIntoView({behavior: 'smooth'})
+    }
   }
 
   render() {
     return (<div className="App">
       <Logo bounceClass={this.state.bounceClass} lineClass={this.state.lineClass} logoClass={this.state.logoClass}/>
-      <AboutMe goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} />
+      <AboutMe contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} />
       <Skills/>
       <Projects/>
-      <Contact name="contact"/>
+      <Contact ref="contactMe" name="contact"/>
     </div>);
   }
 }
