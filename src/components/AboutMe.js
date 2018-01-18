@@ -6,7 +6,7 @@ export default class AboutMe extends Component {
 
   render() {
     return (<div>
-      <Navigation goToContactPage={this.props.goToContactPage} scrollingLock={this.props.scrollingLock}/>
+      <Navigation contactOrTop={this.props.contactOrTop} goToContactPage={this.props.goToContactPage} scrollingLock={this.props.scrollingLock}/>
       <div className="aboutme-container">
 
         <div className="image">
