@@ -6,9 +6,9 @@ export default class Contact extends Component {
 
   render() {
     return (<div className="contact-container">
-      <div class="card">
+      <div className="card">
 
-        <div class="contact-title">
+        <div className="contact-title">
           <h1>Kyle Gibson</h1>
           <span>Software Engineer</span>
         </div>
@@ -19,8 +19,8 @@ export default class Contact extends Component {
         </div>
 
         <div className="phone-email">
-            <p>+1-270-577-3957</p>
-            <p>kylegibson15@gmail.com</p>
+            <a className="phone">+1-270-577-3957</a>
+            <a className="email" href="mailto:kylegibson15@gmail.com">kylegibson15@gmail.com</a>
         </div>
 
       </div>
