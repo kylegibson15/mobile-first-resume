@@ -69,7 +69,7 @@ class App extends Component {
   }
   handleProjectScroll(){
     let projectX = window.innerWidth
-    console.log(window.innerWidth)
+    // console.log(window.innerWidth)
   }
   render() {
     return (<div className="App">
