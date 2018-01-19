@@ -22,12 +22,14 @@ class App extends Component {
     this.handleScroll = this.handleScroll.bind(this)
     this.goToContactPage = this.goToContactPage.bind(this)
     this.handleContactText = this.handleContactText.bind(this)
+    this.handleProjectScroll = this.handleProjectScroll.bind(this)
   }
 
   componentDidMount() {
     window.addEventListener('load', this.handleLoad);
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('scroll', this.handleContactText)
+    window.addEventListener('scroll', this.handleProjectScroll)
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -48,7 +50,7 @@ class App extends Component {
     }
   }
   handleContactText() {
-    let contactY = window.innerHeight * 3 + (window.innerHeight / 2)
+    let contactY = window.innerHeight * 2 + (window.innerHeight / 2)
     if(window.scrollY > contactY){
       this.setState({contactOrTop: false})
     }else{
@@ -56,7 +58,7 @@ class App extends Component {
     }
   }
   goToContactPage() {
-    let contactY = window.innerHeight * 3
+    let contactY = window.innerHeight * 2
     let contact = document.getElementsByClassName("contact-container")[0]
     let top = document.getElementsByClassName("aboutme-container")[0]
     if(window.scrollY > contactY){
@@ -65,13 +67,16 @@ class App extends Component {
       contact.scrollIntoView({behavior: 'smooth'})
     }
   }
-
+  handleProjectScroll(){
+    let projectX = window.innerWidth
+    console.log(window.innerWidth)
+  }
   render() {
     return (<div className="App">
       <Logo bounceClass={this.state.bounceClass} lineClass={this.state.lineClass} logoClass={this.state.logoClass}/>
       <AboutMe contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} />
       <Skills/>
-      <Projects/>
+      {/* <Projects handleProjectScroll={this.handleProjectScroll}/> */}
       <Contact ref="contactMe" name="contact"/>
     </div>);
   }
