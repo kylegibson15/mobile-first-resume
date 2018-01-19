@@ -217,6 +217,8 @@
   }
   .logos-under{
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-x: scroll;
     width: 100vw;
     margin-left: .6em;
@@ -230,10 +232,27 @@
     margin: .4em;
   }
   .lang-logo{
-    max-height: 2.8em;
+    max-height: 3em;
     margin: .1em;
-    border: 1px solid black;
-    background-color: rgba(0,0,0, .3);
+    filter: grayscale(100%) drop-shadow(0 0 5px black);
+  }
+  .js, .python{
+    max-height: 2.5em;
+  }
+  .github{
+    max-height: 2.5em;
+  }
+  .redux, .html{
+    max-height: 1.3em;
+  }
+  .slack, .rp, .rd, .agile{
+    max-height: 2em;
+  }
+  .react, .git{
+    max-height: .8em;
+  }
+  .pair, .tdd, .pivotal, .chrome{
+    max-height: 1em;
   }
   .resume-contain{
     display: flex;
@@ -577,6 +596,8 @@
   }
   .logos-under{
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-x: scroll;
     width: 100vw;
     margin-left: .6em;
@@ -592,9 +613,21 @@
   .lang-logo{
     max-height: 3em;
     margin: .1em;
-    border: 1px solid black;
-    background-color: rgba(0,0,0, .3);
+    filter: grayscale(100%) drop-shadow(0 0 5px black);
   }
+  .js, .python{
+    max-height: 4em;
+  }
+  .rd, .agile{
+    max-height: 3em;
+  }
+  .redux, .html, .slack, .rp, .pair, .tdd{
+    max-height: 2em;
+  }
+  .react, .git, .pivotal, .chrome{
+    max-height: 1em;
+  }
+
   .resume-contain{
     display: flex;
     align-items: center;
@@ -950,6 +983,8 @@
   }
   .logos-under{
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-x: scroll;
     width: 100vw;
     margin-left: .6em;
@@ -963,10 +998,21 @@
     margin: .4em;
   }
   .lang-logo{
-    max-height: 1.8em;
+    max-height: 3em;
     margin: .1em;
-    border: 1px solid black;
-    background-color: rgba(0,0,0, .3);
+    filter: grayscale(100%) drop-shadow(0 0 5px black);
+  }
+  .js, .python{
+    max-height: 3em;
+  }
+  .github{
+    max-height: 2.5em;
+  }
+  .redux, .html, .slack, .rp, .rd, .agile{
+    max-height: 2em;
+  }
+  .react, .git, .pair, .tdd, .pivotal, .chrome{
+    max-height: 1em;
   }
   .resume-contain{
     display: flex;
