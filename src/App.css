@@ -183,6 +183,7 @@
     width: 100px;
     border-radius: 50%;
     z-index: 1;
+    box-shadow: 0 0 25px black;
   }
   .image{
     height: 100px;
@@ -525,6 +526,7 @@
     width: 200px;
     border-radius: 50%;
     z-index: 1;
+    box-shadow: 0 0 25px black;
   }
   .image{
     height: 100px;
@@ -890,6 +892,7 @@
     width: 250px;
     border-radius: 50%;
     z-index: 1;
+    box-shadow: 0 0 25px black;
   }
   .image{
     height: 200px;
