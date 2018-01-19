@@ -19,7 +19,7 @@ export default class Contact extends Component {
         </div>
 
         <div className="phone-email">
-            <a className="phone">+1-270-577-3957</a>
+            <a href="tel:+12705773957" className="phone">+1-270-577-3957</a>
             <a className="email" href="mailto:kylegibson15@gmail.com">kylegibson15@gmail.com</a>
         </div>
 
