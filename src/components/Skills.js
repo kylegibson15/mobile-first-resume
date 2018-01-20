@@ -86,8 +86,9 @@ export default class Skills extends Component {
 
       <div className="skill-head resume-contain">
         <a className="resume" href={resume} download="resume">
-          RESUME
+          <p>my resume</p>
           <img className="download-logo" src={download} alt="download"/>
+          <p>pdf</p>
         </a>
       </div>
     </div>)
