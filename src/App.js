@@ -69,14 +69,17 @@ class App extends Component {
   }
   handleProjectScroll(){
     let projectX = window.innerWidth
-    // console.log(window.innerWidth)
   }
   render() {
     return (<div className="App">
       <Logo bounceClass={this.state.bounceClass} lineClass={this.state.lineClass} logoClass={this.state.logoClass}/>
+
       <AboutMe contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} />
-      <Skills/>
+
       {/* <Projects handleProjectScroll={this.handleProjectScroll}/> */}
+
+      <Skills/>
+
       <Contact ref="contactMe" name="contact"/>
     </div>);
   }
