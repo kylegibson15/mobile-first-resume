@@ -2,7 +2,7 @@
   overflow-x: hidden;
 }
 @media only screen and (max-width: 500px) {
-  .navigation-container{
+  .navigation-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -11,29 +11,23 @@
     top: 200;
     z-index: 1;
   }
-  .contact-info{
-    color: white;
+  .contact-info {
+    color: black;
     height: 2vh;
-    width: 24vw;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, .3);
+    padding-right: 1em;
+    padding-bottom: .2em;
     font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-left: .2px solid black;
-    border-top: .2px solid black;
     border-bottom: .2px solid black;
-    box-shadow: inset 0 0 10px black;
   }
-  .contact-info > h5 {
+  .contact-info>h5 {
     font-size: .7em;
     letter-spacing: .2em;
   }
   .logo-container {
-    background-color: #333;
+    background: linear-gradient(0deg, white, black);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -41,7 +35,7 @@
     align-items: center;
     color: rgb(0, 178, 164);
   }
-  .title{
+  .title {
     position: absolute;
     width: 100%;
     align-self: flex-start;
@@ -52,7 +46,18 @@
     align-items: center;
     flex-direction: column;
   }
-  .title > h1, .title > h6 {
+  .title>h1 {
+    font-size: 2em;
+    text-shadow: .5px 3px 2px rgba(0,0,0,0.3),
+                 0px -5px 55px rgba(255,255,255,0.1);
+    color: rgba(0,178,164,0.8);
+  }
+  .title>h6 {
+    color: rgba(0,178,164,0.8);
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+  }
+  .title>h1, .title>h6 {
     padding: 0;
     padding-left: .2em;
     margin: .2em;
@@ -170,22 +175,22 @@
     background-image: radial-gradient(circle 9.5em at 0em 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 5.1em at .3em .3em, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
     position: relative;
   }
-  .aboutme-container{
+  .aboutme-container {
     background-color: white;
-    color: rgb(255, 142, 0);
+    /* color: rgb(255, 142, 0); */
     height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 1em;
   }
-  .headshot{
+  .headshot {
     height: 100px;
     width: 100px;
     border-radius: 50%;
     z-index: 1;
     box-shadow: 0 0 25px black;
   }
-  .image{
+  .image {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -196,12 +201,12 @@
     justify-content: center;
     align-items: center;
   }
-  .description{
+  .description {
     width: 100%;
-    letter-spacing: .1em;
+    /* letter-spacing: .em; */
     font-size: .9em;
   }
-  .skills-container{
+  .skills-container {
     background-color: rgb(255, 142, 0);
     height: 100vh;
     width: 100vw;
@@ -211,11 +216,11 @@
     justify-content: space-around;
     align-items: center;
   }
-  .skill-head{
+  .skill-head {
     font-size: 2em;
     letter-spacing: .5em;
   }
-  .logos-under{
+  .logos-under {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,37 +229,37 @@
     margin-left: .6em;
     margin-right: .6em;
   }
-  .languages{
+  .languages {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: .4em;
   }
-  .lang-logo{
+  .lang-logo {
     max-height: 3em;
     margin: .1em;
     filter: grayscale(100%) drop-shadow(0 0 5px black);
   }
-  .js, .python{
+  .js, .python {
     max-height: 2.5em;
   }
-  .github{
+  .github {
     max-height: 2.5em;
   }
-  .redux, .html{
+  .redux, .html {
     max-height: 1.3em;
   }
-  .slack, .rp, .rd, .agile{
+  .slack, .rp, .rd, .agile {
     max-height: 2em;
   }
-  .react, .git{
+  .react, .git {
     max-height: .8em;
   }
-  .pair, .tdd, .pivotal, .chrome{
+  .pair, .tdd, .pivotal, .chrome {
     max-height: 1em;
   }
-  .resume-contain{
+  .resume-contain {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,19 +271,19 @@
     margin-top: .3em;
     background-color: #333;
   }
-  .download-logo{
+  .download-logo {
     max-height: .5em;
     color: white;
     filter: invert(1);
   }
-  .resume{
+  .resume {
     color: white;
     text-decoration: none;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .resume > p {
+  .resume>p {
     font-size: .2em;
     letter-spacing: 1em;
     margin-left: 1em;
@@ -288,93 +293,107 @@
     height: 100vh;
     width: 100vw;
   }
-  .contact-container{
+  .contact-container {
     height: 100vh;
     width: 100vw;
-    background-color: #333;
+    background-image: url('./assets/images/phone-bg-4phone.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
     display: flex;
     justify-content: center;
+    flex-flow: wrap;
+  }
+  .name-title {
+    width: 100vw;
+    color: rgb(0, 178, 164);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
   }
-  .card{
-    height: 40vh;
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #333;
+  .name-title>h1 {
+    font-size: 1.8em;
+    letter-spacing: .2em;
     color: rgb(0, 178, 164);
+    margin-bottom: .2em;
+    text-decoration-color: black;
+  }
+  .white{
+    color: white;
+  }
+  .card {
+    height: 70vh;
+    width: 78vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
   }
-  .contact-title{
+  .contact-title {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
-    height: 50%;
-    border-bottom: 3px solid rgb(0, 178, 164);
-  }
-  .contact-title > span {
-    font-size: 1.1em;
-    letter-spacing: .3em;
-  }
-  .contact-title > h1 {
-    font-size: 1.8em;
-    letter-spacing: .5em;
-    margin: 0;
+    padding-left: .2em;
   }
   .social-links {
-    width: 80%;
+    width: 90%;
     margin: 1em;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0;
   }
-  .contact-icon{
+  .contact-icon {
     max-height: 1.8em;
-    max-width: 6em;
     margin: 0;
     padding: .5em;
-    border: .2px solid rgb(255, 142, 0);
-    box-shadow: 0 0 55px black;
-    background-color: rgba(255, 255, 255, .2);
   }
-  .contact-icon:hover{
+  .contact-icon:hover {
     cursor: pointer;
   }
-  .phone-email{
+  .phone-email {
+    margin-top: 2em;
     width: 98%;
     height: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-  .email, .phone{
-    font-size: .8em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.2em;
+  .email, .phone {
+    font-size: .75em;
     text-decoration: none;
-    color: rgb(0, 178, 164);
+    color: white;
+    display: flex;
+    justify-content: flex-start;
     text-align: center;
-    padding: .2em;
-    width: 40vw;
-    border: .2px solid rgb(0, 178, 164);
-    box-shadow: 0 0 25px black;
+    padding-bottom: .5em;
+    margin: 1em;
+    letter-spacing: .1em;
   }
-  .email:hover, .phone:hover{
-    box-shadow: inset 0 0 15px 2px black;
-    border: 1px solid rgb(0, 178, 164);
+  .ph-mail-icon {
+    height: 1.5em;
+    margin-right: .3em;
+  }
+  .email:hover, .phone:hover {
+    font-size: .9em;
+  }
+  .copyright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: .5em;
+  }
+  .copyright>p {
+    margin: 0;
+    color: white;
+    font-style: thin;
   }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 1024px) {
-  .navigation-container{
+  .navigation-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -383,39 +402,33 @@
     top: 200;
     z-index: 1;
   }
-  .contact-info{
-    color: white;
+  .contact-info {
+    color: black;
     height: 2vh;
-    width: 20vw;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, .3);
+    padding-right: 1em;
+    padding-bottom: .2em;
     font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-left: .2px solid black;
-    border-top: .2px solid black;
     border-bottom: .2px solid black;
-    box-shadow: inset 0 0 10px black;
   }
-  .contact-info:hover{
+  .contact-info:hover {
     cursor: pointer;
   }
-  .contact-info > h5 {
+  .contact-info>h5 {
     font-size: 1em;
     letter-spacing: .2em;
   }
   .logo-container {
-    background-color: #333;
+    background: linear-gradient(0deg, white, black);
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .title{
+  .title {
     position: absolute;
     width: 100%;
     align-self: flex-start;
@@ -427,13 +440,43 @@
     flex-direction: column;
     color: rgb(0, 178, 164)
   }
-  .title > h1{
-    font-size: 4em;
+  .title>h1 {
+    font-size: 3.5em;
+    color: rgba(0,178,164,0.8);
+    text-shadow: 0 1px 0 rgb(1, 112, 103),
+             0 2px 0 rgb(1, 112, 103),
+             0 3px 0 rgb(0, 0, 0),
+             0 20px 20px rgba(0,0,0,.15);
   }
-  .title > h6 {
+  .title > h1::after {
+    position: absolute;
+    z-index: 1;
+    bottom: 28px;
+    display: block;
+    content: 'KYLE GIBSON';
+    transform: rotateX(70deg);
+    opacity: .1;
+    font-style: italic;
+  }
+  .title>h6 {
     font-size: 1em;
+    color: rgba(0,178,164,0.8);
+    text-shadow: 0 1px 0 rgb(1, 112, 103),
+           0 2px 0 rgb(1, 112, 103),
+           0 3px 0 rgb(0, 0, 0),
+           0 20px 20px rgba(0,0,0,.15);
   }
-  .title > h1, .title > h6 {
+  .title > h6::after {
+    position: absolute;
+    z-index: 1;
+    bottom: 15px;
+    display: block;
+    content: 'SOFTWARE ENGINEER';
+    transform: rotateX(70deg);
+    opacity: .1;
+    font-style: italic;
+  }
+  .title>h1, .title>h6 {
     padding: 0;
     margin: .2em;
     letter-spacing: .5em;
@@ -550,22 +593,22 @@
     background-image: radial-gradient(circle 13.5em at 0em 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 6.1em at .4em .4em, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
     position: relative;
   }
-  .aboutme-container{
+  .aboutme-container {
     background-color: white;
-    color: rgb(255, 142, 0);
+    /* color: rgb(255, 142, 0); */
     height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 4em;
   }
-  .headshot{
+  .headshot {
     height: 200px;
     width: 200px;
     border-radius: 50%;
     z-index: 1;
     box-shadow: 0 0 25px black;
   }
-  .image{
+  .image {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -577,13 +620,13 @@
     justify-content: center;
     align-items: center;
   }
-  .description{
+  .description {
     margin-top: 3em;
     width: 100%;
     letter-spacing: .2em;
     line-height: 1.5em;
   }
-  .skills-container{
+  .skills-container {
     background-color: rgb(255, 142, 0);
     height: 100vh;
     width: 100vw;
@@ -593,11 +636,11 @@
     justify-content: space-around;
     align-items: center;
   }
-  .skill-head{
+  .skill-head {
     font-size: 3em;
     letter-spacing: .5em;
   }
-  .tools-under{
+  .tools-under {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -606,7 +649,7 @@
     margin-left: .6em;
     margin-right: .6em;
   }
-  .logos-under{
+  .logos-under {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -615,31 +658,31 @@
     margin-left: .6em;
     margin-right: .6em;
   }
-  .languages{
+  .languages {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: .4em;
   }
-  .lang-logo{
+  .lang-logo {
     max-height: 3em;
     margin: .1em;
     filter: grayscale(100%) drop-shadow(0 0 5px black);
   }
-  .js, .python{
+  .js, .python {
     max-height: 4em;
   }
-  .rd, .agile{
+  .rd, .agile {
     max-height: 3em;
   }
-  .redux, .html, .slack, .rp, .pair, .tdd{
+  .redux, .html, .slack, .rp, .pair, .tdd {
     max-height: 2em;
   }
-  .react, .git, .pivotal, .chrome{
+  .react, .git, .pivotal, .chrome {
     max-height: 1em;
   }
-  .resume-contain{
+  .resume-contain {
     width: 25vw;
     display: flex;
     align-items: center;
@@ -652,19 +695,19 @@
     margin-top: .3em;
     background-color: #333;
   }
-  .download-logo{
+  .download-logo {
     max-height: .5em;
     color: white;
     filter: invert(1);
   }
-  .resume{
+  .resume {
     color: white;
     text-decoration: none;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .resume > p {
+  .resume>p {
     font-size: .2em;
     letter-spacing: 1em;
     margin-right: .5em;
@@ -678,166 +721,216 @@
     flex-direction: row;
     overflow-x: scroll;
   }
-  .brunch-container, .slelp-container, .sleuth-container{
+  .brunch-container, .slelp-container, .sleuth-container {
     height: 100vh;
     width: 100vw;
     z-index: 0;
   }
-  .brunch-container{
+  .brunch-container {
     background-color: black;
-
   }
-  .slelp-container{
+  .slelp-container {
     background-color: red;
   }
-  .sleuth-container{
+  .sleuth-container {
     background-color: white;
   }
-  .contact-container{
-    height: 50vh;
+  .contact-container {
+    height: 100vh;
     width: 100vw;
-    background-color: #333;
+    background-image: url('./assets/images/phone-bg-4phone.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .card{
-    height: 30vh;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background-color: #333;
+  }
+  .white{
+    color: white;
+  }
+  .card {
+    height: 70vh;
+    width: 78vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     color: rgb(0, 178, 164);
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
   }
-  .contact-title{
+  .contact-title {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
+    align-items: flex-start;
     width: 100%;
     height: 50%;
-    border-bottom: 4px solid rgb(0, 178, 164);
+    padding-left: .2em;
   }
-  .contact-title > span {
+  .contact-title>span {
     font-size: 1.2em;
     letter-spacing: .3em;
   }
-  .contact-title > h1 {
+  .contact-title>h1 {
     font-size: 2em;
     letter-spacing: .5em;
     margin: 0;
   }
   .social-links {
-    width: 80%;
+    width: 90%;
     margin: 1em;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0;
   }
-  .contact-icon{
-    max-width: 8em;
+  .contact-icon {
+    max-height: 1.8em;
     margin: 0;
     padding: .5em;
-    border: .2px solid rgb(255, 142, 0);
-    box-shadow: 0 0 55px black;
-    background-color: rgba(255, 255, 255, .2);
   }
-  .contact-icon:hover{
+  .contact-icon:hover {
     cursor: pointer;
   }
-  .phone-email{
-    width: 80%;
-    height: 25%;
+  .name-title {
+    width: 100vw;
+    color: rgb(0, 178, 164);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .name-title>h1 {
+    font-size: 2em;
+    letter-spacing: .2em;
+    color: rgb(0, 178, 164);
+    margin-bottom: .2em;
+    text-decoration-color: black;
+  }
+  .phone-email {
+    margin-top: 2em;
+    width: 98%;
+    height: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-  .email, .phone{
-    font-size: .7em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.2em;
+  .email, .phone {
+    font-size: .75em;
     text-decoration: none;
-    color: rgb(0, 178, 164);
+    color: white;
+    display: flex;
+    justify-content: flex-start;
     text-align: center;
-    padding: .2em;
-    width: 18vw;
-    border: .2px solid rgb(0, 178, 164);
-    box-shadow: 0 0 25px black;
+    margin-left: 1em;
+    letter-spacing: .1em;
   }
-  .email:hover, .phone:hover{
+  .ph-mail-icon {
+    height: 1.5em;
+    margin-right: .3em;
+  }
+  .email:hover, .phone:hover {
     box-shadow: inset 0 0 15px 2px black;
     border: 1px solid rgb(0, 178, 164);
+  }
+  .copyright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: .5em;
+  }
+  .copyright>p {
+    margin: 0;
+    color: white;
+    font-style: thin;
   }
 }
 
 @media only screen and (min-width: 1025px) {
-  .navigation-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100vw;
-    height: 10vh;
-    top: 200;
-    z-index: 1;
-  }
-  .contact-info{
-    color: white;
-    height: 2vh;
-    width: 10vw;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, .3);
-    font-size: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-left: .2px solid black;
-    border-top: .2px solid black;
-    border-bottom: .2px solid black;
-    box-shadow: inset 0 0 10px black;
-  }
-  .contact-info:hover{
-    cursor: pointer;
-  }
-  .contact-info > h5 {
-    font-size: 1em;
-    letter-spacing: .2em;
-  }
+  .navigation-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw;
+      height: 10vh;
+      top: 200;
+      z-index: 1;
+    }
+  .contact-info {
+      color: #333;
+      height: 2vh;
+      width: 10vw;
+      padding: 1em;
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: .2px solid black;
+    }
+  .contact-info:hover {
+      cursor: pointer;
+    }
+  .contact-info>h5 {
+      font-size: 1em;
+      letter-spacing: .2em;
+    }
   .logo-container {
-    background-color: #333;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .title{
-    position: absolute;
-    width: 100%;
-    align-self: flex-start;
-    height: 15vh;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: rgb(0, 178, 164)
-  }
-  .title > h1{
-    font-size: 4em;
-  }
-  .title > h6 {
+      background: linear-gradient(0deg, white, black);
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  .title {
+      position: absolute;
+      width: 100%;
+      align-self: flex-start;
+      height: 15vh;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: rgb(0, 178, 164)
+    }
+  .title>h1 {
+      font-size: 4em;
+      color: rgba(0,178,164,0.8);
+      text-shadow: 0 1px 0 rgb(1, 112, 103),
+               0 2px 0 rgb(1, 112, 103),
+               0 3px 0 rgb(0, 0, 0),
+               0 20px 20px rgba(0,0,0,.15);
+    }
+  .title > h1::after {
+      position: absolute;
+      z-index: 1;
+      bottom: 15px;
+      display: block;
+      content: 'KYLE GIBSON';
+      transform: rotateX(70deg);
+      opacity: .1;
+      font-style: italic;
+    }
+  .title>h6 {
     font-size: 1em;
+    color: rgba(0,178,164,0.8);
+    text-shadow: 0 1px 0 rgb(1, 112, 103),
+             0 2px 0 rgb(1, 112, 103),
+             0 3px 0 rgb(0, 0, 0),
+             0 20px 20px rgba(0,0,0,.15);
   }
-  .title > h1, .title > h6 {
+  .title > h6::after {
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
+    display: block;
+    content: 'SOFTWARE ENGINEER';
+    transform: rotateX(70deg);
+    opacity: .1;
+    font-style: italic;
+  }
+  .title>h1, .title>h6 {
     padding: 0;
     margin: .2em;
     letter-spacing: .5em;
@@ -942,31 +1035,32 @@
     align-items: center;
   }
   #ball {
-    width: 200px;
-    height: 200px;
+    width: 13em;
+    height: 13em;
     border-radius: 150px;
     background-color: rgb(255, 142, 0);
     background-image: radial-gradient(circle 14.8em at 0em 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 6.1em at .4em .4em, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
     position: relative;
   }
-  .aboutme-container{
-    background-color: white;
-    color: rgb(255, 142, 0);
+  .aboutme-container {
+    background: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 4em;
+    padding-bottom: 0;
+    padding-top: 12em;
   }
-  .headshot{
-    height: 250px;
-    width: 250px;
+  .headshot {
+    height: 20em;
+    width: 20em;
     border-radius: 50%;
     z-index: 1;
     box-shadow: 0 0 25px black;
   }
-  .image{
-    height: 200px;
-    width: 200px;
+  .image {
+    height: 10em;
+    width: 10em;
     border-radius: 50%;
     align-self: center;
     margin-top: 1em;
@@ -976,14 +1070,14 @@
     justify-content: center;
     align-items: center;
   }
-  .description{
-    margin-top: 3em;
+  .description {
+    margin-top: 10em;
     width: 100%;
     letter-spacing: .2em;
     line-height: 1.5em;
     text-shadow: black;
   }
-  .skills-container{
+  .skills-container {
     background-color: rgb(255, 142, 0);
     height: 100vh;
     width: 100vw;
@@ -993,11 +1087,11 @@
     justify-content: space-around;
     align-items: center;
   }
-  .skill-head{
+  .skill-head {
     font-size: 3em;
     letter-spacing: .5em;
   }
-  .tools-under{
+  .tools-under {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1006,7 +1100,7 @@
     margin-left: .6em;
     margin-right: .6em;
   }
-  .logos-under{
+  .logos-under {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1015,31 +1109,31 @@
     margin-left: .6em;
     margin-right: .6em;
   }
-  .languages{
+  .languages {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: .4em;
   }
-  .lang-logo{
+  .lang-logo {
     max-height: 3em;
     margin: .1em;
     filter: grayscale(100%) drop-shadow(0 0 5px black);
   }
-  .js, .python{
+  .js, .python {
     max-height: 3em;
   }
-  .github{
+  .github {
     max-height: 2.5em;
   }
-  .redux, .html, .slack, .rp, .rd, .agile{
+  .redux, .html, .slack, .rp, .rd, .agile {
     max-height: 2em;
   }
-  .react, .git, .pair, .tdd, .pivotal, .chrome{
+  .react, .git, .pair, .tdd, .pivotal, .chrome {
     max-height: 1em;
   }
-  .resume-contain{
+  .resume-contain {
     width: 25vw;
     display: flex;
     align-items: center;
@@ -1050,21 +1144,21 @@
     padding-right: .3em;
     box-shadow: inset 0 0 15px black;
     margin-top: .3em;
-    background-color: #333;
+    background: rgb(255, 142, 0);
   }
-  .download-logo{
+  .download-logo {
     max-height: .5em;
     color: white;
     filter: invert(1);
   }
-  .resume{
+  .resume {
     color: white;
     text-decoration: none;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .resume > p {
+  .resume>p {
     font-size: .3em;
     letter-spacing: 1em;
     margin-right: .7em;
@@ -1080,7 +1174,7 @@
     align-items: center;
     overflow-x: scroll;
   }
-  .scroll-button{
+  .scroll-button {
     height: 20vh;
     width: 10vw;
     background-color: red;
@@ -1088,105 +1182,136 @@
     font-size: 10em;
     color: white;
   }
-  .brunch-container{
+  .brunch-container {
     background-color: black;
     height: 100vh;
     width: 95vw;
     z-index: 0;
   }
-  .slelp-container{
+  .slelp-container {
     background-color: red;
     height: 100vh;
     width: 95vw;
     z-index: 0;
   }
-  .sleuth-container{
+  .sleuth-container {
     height: 100vh;
     width: 95vw;
     z-index: 0;
   }
-  .contact-container{
-    height: 50vh;
+  .contact-container {
+    background-color: #111;
+    height: 100vh;
     width: 100vw;
-    background-color: #333;
+    background-image: url('./assets/images/big-phone-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .card{
-    height: 40vh;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background-color: #333;
+  }
+  .name-title {
+    width: 100vw;
+    color: rgb(0, 178, 164);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .name-title>h1 {
+    font-size: 2em;
+    letter-spacing: .2em;
+    color: rgb(0, 178, 164);
+    margin-bottom: .2em;
+    text-decoration-color: black;
+  }
+  .card {
+    height: 70vh;
+    width: 78vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     color: rgb(0, 178, 164);
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
   }
-  .contact-title{
+  .contact-title {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
+    align-items: flex-start;
     width: 100%;
     height: 50%;
-    border-bottom: 3px solid rgb(0, 178, 164);
-
+    padding-left: .2em;
   }
-  .contact-title > span {
+  .contact-title>span {
     font-size: 1.2em;
     letter-spacing: .3em;
   }
-  .contact-title > h1 {
-    font-size: 2.5em;
+  .contact-title>h1 {
+    font-size: 2em;
     letter-spacing: .5em;
     margin: 0;
   }
   .social-links {
-    width: 80%;
-    margin: 1em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-  }
-  .contact-icon{
-    max-width: 8em;
-    margin: 0;
-    padding: .5em;
-    border: .2px solid rgb(255, 142, 0);
-    box-shadow: 0 0 55px black;
-    background-color: rgba(255, 255, 255, .2);
-  }
-  .contact-icon:hover{
-    cursor: pointer;
-    max-width: 8.1em;
-    box-shadow: 0 5px 55px black;
-  }
-  .phone-email{
-    width: 80%;
-    height: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .email, .phone{
+    width: 100%;
+    margin-bottom: 1em;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 1.2em;
-    text-decoration: none;
-    color: rgb(0, 178, 164);
-    text-align: center;
-    padding: .2em;
-    width: 18vw;
-    border: .2px solid rgb(0, 178, 164);
-    box-shadow: 0 0 25px black;
+    align-items: flex-end;
+    padding: 0;
+    height: 15%
   }
-  .email:hover, .phone:hover{
-    box-shadow: inset 0 0 15px 2px black;
-    border: 1px solid rgb(0, 178, 164);
+  .contact-icon {
+    max-height: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: .5em;
+  }
+  .contact-icon:hover {
+    cursor: pointer;
+  }
+  .contact-icon:hover {
+    cursor: pointer;
+    text-shadow: 0 5px 55px white;
+    margin-bottom: .5em;
+  }
+  .phone-email {
+    margin-top: 2em;
+    width: 50%;
+    height: 20%;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .email, .phone {
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 1em;
+    letter-spacing: .1em;
+  }
+  .ph-mail-icon {
+    height: 1.5em;
+    margin-right: .3em;
+  }
+  .email:hover, .phone:hover {
+    margin-left: 1.5em;
+  }
+  .copyright{
+    display: flex;
+    padding: .5em;
+    align-self: flex-end;
+    margin-right: 3em;
+  }
+  .copyright>p {
+    font-size: 1em;
+    margin: 0;
+    color: white;
+    font-style: oblique;
   }
 }
