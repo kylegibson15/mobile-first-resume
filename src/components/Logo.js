@@ -6,8 +6,8 @@ export default class Logo extends Component {
   render() {
     return (<div className="logo-container">
       <div className="title">
-        <h1>Kyle Gibson</h1>
-        <h6>Software Engineer</h6>
+        <h1>KYLE GIBSON</h1>
+        <h6>SOFTWARE ENGINEER</h6>
       </div>
 
       <div className={`l-container ${this.props.lineClass}`}>
