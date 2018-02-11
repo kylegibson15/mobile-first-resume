@@ -5,6 +5,10 @@ import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Main from './components/Main';
+import AboutMeV2 from './components/AboutMeV2';
+import ContactV2 from './components/ContactV2';
+import ProjectsV2 from './components/ProjectsV2';
 
 class App extends Component {
   constructor(props) {
@@ -59,8 +63,8 @@ class App extends Component {
   }
   goToContactPage() {
     let contactY = window.innerHeight * 2
-    let contact = document.getElementsByClassName("contact-container")[0]
-    let top = document.getElementsByClassName("aboutme-container")[0]
+    let contact = document.getElementsByClassName("contactv2-container")[0]
+    let top = document.getElementsByClassName("aboutmev2-container")[0]
     if(window.scrollY > contactY){
       top.scrollIntoView({behavior: 'smooth'})
     }else{
@@ -72,15 +76,22 @@ class App extends Component {
   }
   render() {
     return (<div className="App">
-      <Logo bounceClass={this.state.bounceClass} lineClass={this.state.lineClass} logoClass={this.state.logoClass}/>
+      <Main />
 
-      <AboutMe contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} />
+      {/* <Logo bounceClass={this.state.bounceClass} lineClass={this.state.lineClass} logoClass={this.state.logoClass}/> */}
+
+      <AboutMeV2 contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage}
+        scrollingLock={this.state.scrollingLock}/>
+      {/* <AboutMe contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} /> */}
 
       {/* <Projects handleProjectScroll={this.handleProjectScroll}/> */}
+      <ProjectsV2 />
 
-      <Skills/>
+      
+      {/* <Skills/> */}
 
-      <Contact ref="contactMe" name="contact"/>
+      <ContactV2 />
+      {/* <Contact ref="contactMe" name="contact"/> */}
     </div>);
   }
 }
