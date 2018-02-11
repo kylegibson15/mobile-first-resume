@@ -8,8 +8,8 @@ export default class Projects extends Component {
   render(){
     return (
       <div className="projects-container" handleProjectScroll={this.props.handleProjectScroll}>
-        <button className="scroll-button">></button>
-        <Sleuth />
+        {/* <button className="scroll-button">></button> */}
+        <Sleuth  />
         <Slelp />
         <Brunch />
       </div>
