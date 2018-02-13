@@ -38,13 +38,13 @@ export default class ContactV2 extends Component {
 
 
         <div className="social-links">
-          <a href="https://www.facebook.com/kyle.gibson.3194"><img className="contact-icon" alt="facebook" src={facebook}/></a>
+          <a href="https://www.facebook.com/kyle.gibson.3194" target="_blank"><img className="contact-icon" alt="facebook"  src={facebook}/></a>
 
-          <a href="https://github.com/kylegibson15"><img className="contact-icon" alt="github" src={github}/></a>
+          <a href="https://github.com/kylegibson15" target="_blank"><img className="contact-icon" alt="github"  src={github}/></a>
 
-          <a href="https://www.linkedin.com/in/kylegibson15"><img className="contact-icon" alt="linkedIn" src={linkedin}/></a>
+          <a href="https://www.linkedin.com/in/kylegibson15" target="_blank"><img className="contact-icon" alt="linkedIn"  src={linkedin}/></a>
 
-          <a href="https://www.instagram.com/1gibby4/?hl=en"><img className="contact-icon" alt="instagram" src={instagram}/></a>
+          <a href="https://www.instagram.com/1gibby4/?hl=en" target="_blank"><img className="contact-icon" alt="instagram"  src={instagram}/></a>
         </div>
 
       {/* </div> */}
