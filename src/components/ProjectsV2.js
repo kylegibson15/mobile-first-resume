@@ -10,9 +10,9 @@ export default class ProjectsV2 extends Component {
         <div className="project-box">
           <div className="logo-desc">
             <a href="https://github.com/kylegibson15/HealthAlarm">
-              <img className="project-logo" src='https://s3.amazonaws.com/www.kylegibson15.com/HealthAlarm-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/HealthAlarm-logo.png'/>
             </a>
-
+            <p>click the logo to see source code</p>
             <div className="pdv2">
               <p>Wakes you up with a game plan for how to start your day. Understand where you are on your personal goals and overall health.
               </p>
@@ -25,58 +25,58 @@ export default class ProjectsV2 extends Component {
             <div class="slider">
               <div class="slide-track">
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/postgresql-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/raspberry-pi-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/raspberry-pi-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/node.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/dialogflow.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/dialogflow.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/google-assistant.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/google-assistant.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/google_home.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/google_home.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/react-native.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/react-native.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/Python-Logo-PNG-Image.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/Python-Logo-PNG-Image.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/swift.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/swift.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/postgresql-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/raspberry-pi-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/raspberry-pi-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/node.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/dialogflow.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/dialogflow.png' height="60" alt=""/>
                 </div>
               </div>
             </div>
@@ -87,9 +87,9 @@ export default class ProjectsV2 extends Component {
         <div className="project-box">
           <div className="logo-desc">
             <a href="https://github.com/g64-sleuth/Sleuth-Chrome">
-              <img className="project-logo" src='https://s3.amazonaws.com/www.kylegibson15.com/sleuthv2-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/sleuthv2-logo.png'/>
             </a>
-
+            <p>click the logo to see source code</p>
             <div className="pdv2">
               <p>Even the playing field for all ISPs. Check your download speed and compare top download speeds amongst other ISPs.
               </p>
@@ -101,70 +101,70 @@ export default class ProjectsV2 extends Component {
             <div class="slider">
               <div class="slide-track">
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/postgresql-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/node.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/jsx.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/jsx.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/google-chrome.ico' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.ico' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/reactjs2.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/reactjs2.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/postgresql-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/node.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/jsx.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/jsx.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/google-chrome.ico' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.ico' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/reactjs2.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/reactjs2.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
               </div>
             </div>
@@ -176,9 +176,9 @@ export default class ProjectsV2 extends Component {
           <div className="logo-desc">
 
             <a href="https://github.com/Slelp/Slelp_2.0">
-              <img className="project-logo" src='https://s3.amazonaws.com/www.kylegibson15.com/slelpApp-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/slelpApp-logo.png'/>
             </a>
-
+            <p>click the logo to see source code</p>
             <div className="pdv2">
               <p>Quick and easy access to find answered questions, answer questions, and to request help on specific team issues.
               </p>
@@ -190,58 +190,58 @@ export default class ProjectsV2 extends Component {
             <div class="slider">
               <div class="slide-track">
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/postgresql-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/node.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/handlebars-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/handlebars-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/postgresql-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/node.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/handlebars-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/handlebars-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/knex.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/express.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
                 </div>
               </div>
             </div>
@@ -252,9 +252,9 @@ export default class ProjectsV2 extends Component {
           <div className="logo-desc">
 
             <a href="https://github.com/kylegibson15/Brunch.">
-              <img className="project-logo" src='https://s3.amazonaws.com/www.kylegibson15.com/brunch-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/brunch-logo.png'/>
             </a>
-
+            <p>click the logo to see source code</p>
             <div className="pdv2">
               <p>Search via flavors, specific food items, without having to scourer through restaurants menus.
               </p>
@@ -266,76 +266,76 @@ export default class ProjectsV2 extends Component {
             <div class="slider">
               <div class="slide-track">
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/ruuvi-tag-javascript.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://s3.amazonaws.com/www.kylegibson15.com/css3-logo.png' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
               </div>
             </div>
