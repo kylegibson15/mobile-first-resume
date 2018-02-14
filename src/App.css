@@ -5,7 +5,7 @@
   .main-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/sitting-on-edge.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/sitting-on-edge.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -117,7 +117,7 @@
   .aboutmev2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/blue-snowboarding-skinny.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/blue-snowboarding-skinny.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -132,7 +132,7 @@
     flex-direction: row;
   }
   .about-title {
-    font-size: 1em;
+    font-size: .5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +145,8 @@
   }
   .descriptionV2 {
     font-size: .75em;
-    width: 52vw;
+    width: 55vw;
+    max-height: 80vh;
     margin: 3em;
     margin-right: .5em;
     color: white;
@@ -155,7 +156,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding: 1em;
+    padding: .5em;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:0px 5px 35px 15px rgba(50, 60, 76, 0.8);
@@ -163,13 +164,14 @@
   .descriptionV2>p {
     font-family: 'Work Sans', sans-serif;
     letter-spacing: .05em;
+    overflow-y: scroll;
   }
 
 
   .projects-containerv2 {
     height: 200vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/nathan-anderson-152403.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/nathan-anderson-152403.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -187,6 +189,7 @@
   .project-box {
     height: 45vh;
     width: 90vw;
+    border: .5px solid white;
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
   }
@@ -202,6 +205,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .logo-desc>p{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: .5em;
   }
   .project-logo {
     max-height: 6em;
@@ -220,10 +229,15 @@
     padding-top: 0;
     width: 90%;
     margin: .5em;
+    margin-top: 0;
     border-radius: 5px;
     letter-spacing: .1em;
     overflow-y: scroll;
     font-size: .8em;
+  }
+  .pdv2>p {
+    margin-top: .5em;
+    margin-bottom: .5em;
   }
   .skill {
     max-width: .2em;
@@ -288,7 +302,7 @@
     background-color: rgb(202, 198, 154);
     height: 50vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/selfie-frame.jpeg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/selfie-frame.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -437,59 +451,6 @@
     fill: transparent;
     stroke-width: 1.5px;
   }
-  .bounce {
-    -moz-animation: bounce 3s infinite;
-    -webkit-animation: bounce 3s infinite;
-    animation: bounce 3s infinite;
-  }
-  @-moz-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -moz-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-  @-webkit-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -webkit-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -webkit-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-20px);
-      -ms-transform: translateY(-20px);
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px);
-    }
-    60% {
-      -moz-transform: translateY(-15px);
-      -ms-transform: translateY(-15px);
-      -webkit-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
   .logo {
     max-height: 36vh;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -629,17 +590,6 @@
     height: 100vh;
     width: 100vw;
   }
-  /* .contact-container {
-    height: 100vh;
-    width: 100vw;
-    background-image: url('./assets/images/phone-bg-4phone.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat:no-repeat;
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
-  } */
   .name-title {
     width: 100vw;
     color: rgb(0, 178, 164);
@@ -724,7 +674,7 @@
   .main-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/sitting-on-edge.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/sitting-on-edge.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -837,7 +787,7 @@
   .aboutmev2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/blue-snowboarding.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/blue-snowboarding.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -888,7 +838,7 @@
     background-color: rgb(202, 198, 154);
     height: 50vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/selfie-frame.jpeg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/selfie-frame.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -963,7 +913,7 @@
   .projects-containerv2 {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/nathan-anderson-152403.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/nathan-anderson-152403.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -981,6 +931,7 @@
   .project-box {
     height: 20vh;
     width: 90vw;
+    border: .5px solid white;
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
   }
@@ -990,6 +941,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .logo-desc>p{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 0;
+    visibility: hidden;
   }
   .project-logo {
     max-width: 100%;
@@ -1371,43 +1329,6 @@
     margin-right: .5em;
     margin-left: 1em;
   }
-  .projects-container {
-    background-color: rgb(0, 178, 164);
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-  }
-  .brunch-container, .slelp-container, .sleuth-container {
-    height: 100vh;
-    width: 100vw;
-    z-index: 0;
-  }
-  .brunch-container {
-    background-color: black;
-  }
-  .slelp-container {
-    background-color: red;
-  }
-  .sleuth-container {
-    background-color: white;
-  }
-  /* .contact-container {
-    height: 100vh;
-    width: 100vw;
-    background-image: url('./assets/images/phone-bg-4phone.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat:no-repeat;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-  } */
-  .white{
-    color: white;
-  }
   .card {
     height: 70vh;
     width: 78vw;
@@ -1500,7 +1421,7 @@
   .main-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/sitting-on-edge.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/sitting-on-edge.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1606,7 +1527,7 @@
   .aboutmev2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/blue-snowboarding.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/blue-snowboarding.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1657,7 +1578,7 @@
   .projects-containerv2 {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/nathan-anderson-152403.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/nathan-anderson-152403.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1677,6 +1598,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    border: .5px solid white;
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
   }
@@ -1687,6 +1609,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .logo-desc>p{
+    margin: 0;
+    padding: 0;
+    color: rgb(123, 97, 94);
+    font-size: 1em;
+    background-color: grey;
+    visibility: hidden;
   }
   .project-logo {
     max-height: 8em;
@@ -1723,8 +1653,6 @@
 
 
   }
-
-
   .project-skills {
     align-items: center;
     display: flex;
@@ -1781,7 +1709,7 @@
   .contactv2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://s3.amazonaws.com/www.kylegibson15.com/selfie-frame.jpeg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/selfie-frame.jpeg');
     background-position: center;
     background-size: cover;
     display: flex;
@@ -2095,7 +2023,6 @@
     text-shadow: black;
   }
   .skills-container {
-    background-image: url('./assets/images/main/red-blue-delores.jpg');
     background-size: cover;
     height: 100vh;
     width: 100vw;
@@ -2217,7 +2144,6 @@
     background-color: #111;
     height: 100vh;
     width: 100vw;
-    background-image: url('./assets/images/big-phone-bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat:no-repeat;
