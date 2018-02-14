@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import Logo from './components/Logo';
-import AboutMe from './components/AboutMe';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
 import Main from './components/Main';
 import AboutMeV2 from './components/AboutMeV2';
 import ContactV2 from './components/ContactV2';
@@ -78,20 +73,14 @@ class App extends Component {
     return (<div className="App">
       <Main />
 
-      {/* <Logo bounceClass={this.state.bounceClass} lineClass={this.state.lineClass} logoClass={this.state.logoClass}/> */}
 
       <AboutMeV2 contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage}
         scrollingLock={this.state.scrollingLock}/>
-      {/* <AboutMe contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock} /> */}
 
-      {/* <Projects handleProjectScroll={this.handleProjectScroll}/> */}
       <ProjectsV2 />
 
-      
-      {/* <Skills/> */}
-
       <ContactV2 />
-      {/* <Contact ref="contactMe" name="contact"/> */}
+
     </div>);
   }
 }
