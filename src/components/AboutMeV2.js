@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import headshot from '../assets/images/headshot.jpg';
 import Navigation from './Navigation';
 
 export default class AboutMe extends Component {
