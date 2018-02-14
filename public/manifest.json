@@ -1,13 +1,11 @@
 {
   "short_name": "Portfolio Site",
   "name": "Kyle Gibson Portfolio Website",
-  "icons": [
-    {
-      "src": "sea-foam.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
+  "icons": [{
+    "src": "sea-foam.png",
+    "sizes": "64x64 32x32 24x24 16x16",
+    "type": "image/x-icon"
+  }],
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
