@@ -34,7 +34,7 @@
   }
   .name {
     color: rgb(0, 83, 130);
-    font-size: 1.4em;
+    font-size: 1.3em;
     letter-spacing: .7em;
     margin: 0;
     padding: 0;
@@ -132,21 +132,22 @@
     flex-direction: row;
   }
   .about-title {
-    font-size: 1.1em;
+    font-size: 1em;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
   .about-title>h1{
     margin: 0;
-    color: rgba(53, 69, 76, 1);
-    text-shadow: 1px 2px 6px rgba(0,0,0,0.6),
+    color: rgba(0, 80, 132, 1);
+    text-shadow: 1px 2px 6px rgba(255,255,255,0.6),
                  0px -5px 35px rgba(255,255,255,0.2);
   }
   .descriptionV2 {
-    font-size: .5em;
-    width: 50vw;
+    font-size: .75em;
+    width: 52vw;
     margin: 3em;
+    margin-right: .5em;
     color: white;
     background-color: rgba(113, 93, 94, .9);
     border-radius: 5px;
@@ -212,7 +213,7 @@
     animation: 1s;
   }
   .pdv2 {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(0,0,0,0.8);
     color: white;
     padding: 1em;
     padding-bottom: 0;
@@ -222,7 +223,7 @@
     border-radius: 5px;
     letter-spacing: .1em;
     overflow-y: scroll;
-    font-size: .5em;
+    font-size: .8em;
   }
   .skill {
     max-width: .2em;
@@ -252,7 +253,7 @@
     width: 960px;
   }
   .slider::before, .slider::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     content: "";
     height: 100px;
     position: absolute;
@@ -285,9 +286,9 @@
 
   .contactv2-container {
     background-color: rgb(202, 198, 154);
-    height: 45vh;
+    height: 50vh;
     width: 100vw;
-    background-image: url('./assets/images/main/red-blue-contact.jpeg');
+    background-image: url('./assets/images/main/selfie-frame.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -295,25 +296,33 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    overflow-y: hidden;
+  }
+  .infov2 {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
   }
   .social-links {
-    width: 70%;
-    margin: 0;
+    width: 50vw;
+    height: 50vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 0;
   }
   .contact-me {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    color: rgba(53, 69, 76, 1);
+    color: rgba(2, 69, 75, 1);
     text-shadow: 1px 5px 6px rgba(0,0,0,0.6),
                  0px -5px 35px rgba(255,255,255,0.2);
-    font-size: 1em;
-    margin-top: 4em;
+    font-size: 1.5em;
   }
   .contact-me>h1{
     margin: 0;
@@ -328,12 +337,13 @@
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
   }
   .phone-emailv2 {
-    width: 50%;
+    width: 50vw;
+    height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: row;
-    margin-top: 1em;
+    flex-direction: column;
+    padding-right: 2em;
   }
   .contact-info {
     color: white;
@@ -347,6 +357,7 @@
     border-bottom: .2px solid white;
     visibility: hidden;
   }
+
 
 
   .contact-info>h5 {
@@ -848,8 +859,8 @@
   }
   .about-title>h1{
     margin: 0;
-    color: rgba(53, 69, 76, 1);
-    text-shadow: 1px 2px 6px rgba(0,0,0,0.6),
+    color: rgba(0, 80, 132, 1);
+    text-shadow: 1px 2px 6px rgba(255,255,255,0.6),
                  0px -5px 35px rgba(255,255,255,0.2);
   }
   .descriptionV2 {
@@ -877,29 +888,40 @@
     background-color: rgb(202, 198, 154);
     height: 50vh;
     width: 100vw;
-    background-image: url('./assets/images/main/red-blue-contact.jpeg');
-    background-size: contain;
+    background-image: url('./assets/images/main/selfie-frame.jpeg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: hidden;
   }
   .social-links {
-    width: 70%;
-    margin: 3em;
+    width: 50vw;
+    height: 50vh;
+    /* margin: 3em; */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 0;
+  }
+  .infov2 {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
   }
   .contact-me {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    color: rgba(53, 69, 76, 1);
+    /* padding: 1em; */
+    color: rgba(2, 69, 75, 1);
     text-shadow: 1px 5px 6px rgba(0,0,0,0.6),
                  0px -5px 35px rgba(255,255,255,0.2);
     font-size: 2em;
@@ -917,12 +939,13 @@
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
   }
   .phone-emailv2 {
-    width: 50%;
+    width: 50vw;
+    height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: row;
-    margin-top: 3em;
+    flex-direction: column;
+    padding-right: 2em;
   }
   .contact-info {
     color: white;
@@ -936,6 +959,8 @@
     border-bottom: .2px solid white;
     visibility: hidden;
   }
+
+
 
   .projects-containerv2 {
     height: 100vh;
@@ -980,7 +1005,7 @@
     animation: 1s;
   }
   .pdv2 {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(0,0,0,0.8);
     color: white;
     padding: 1em;
     padding-bottom: 0;
@@ -1019,7 +1044,7 @@
     width: 960px;
   }
   .slider::before, .slider::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     content: "";
     height: 100px;
     position: absolute;
@@ -1413,8 +1438,8 @@
     margin: 0;
   }
   .contact-icon {
-    max-height: 1.8em;
-    margin: 0;
+    max-height: 3.8em;
+    margin: 1em;
     padding: .5em;
   }
   .contact-icon:hover {
@@ -1444,7 +1469,7 @@
     justify-content: space-around;
   }
   .email, .phone {
-    font-size: .75em;
+    font-size: 2.5em;
     text-decoration: none;
     color: white;
     display: flex;
@@ -1607,8 +1632,8 @@
   }
   .about-title>h1{
     margin: 0;
-    color: rgba(53, 69, 76, 1);
-    text-shadow: 1px 5px 6px rgba(0,0,0,0.6),
+    color: rgba(0, 80, 132, 1);
+    text-shadow: 1px 5px 6px rgba(255,255,255,0.6),
                  0px -5px 35px rgba(255,255,255,0.2);
   }
   .descriptionV2 {
@@ -1653,19 +1678,24 @@
   .project-box {
     height: 45vh;
     width: 45vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     /* background-color: rgba(155,155,0,0.2); */
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
   }
   .logo-desc {
     width: 100%;
-    height: 55%;
+    height: 98%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .project-logo {
-    width: 13em;
-    max-height: 12em;
+    /* width: 13em; */
+    max-height: 8em;
     border-radius: 5px;
     margin: .5em;
     box-shadow: -5px 5px 18px black;
@@ -1674,16 +1704,19 @@
     transform: rotate(-10deg);
   }
   .pdv2 {
-    /* background-color: rgba(0, 0, 0, .7); */
-    background-color: rgba(255,255,255,0.2);
+    height: 7em;
+    background-color: rgba(0,0,0,0.8);
     color: white;
-    padding: 1em;
+    padding: .5em;
     padding-bottom: 0;
     padding-top: 0;
-    width: 70%;
-    margin: 1em;
+    width: 90%;
+    margin: .1em;
     border-radius: 5px;
     letter-spacing: .1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .skill {
     max-width: 3.5em;
@@ -1716,14 +1749,14 @@
   .slider {
     background: rgba(255, 255, 255, .3);
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-    height: 100px;
-    margin: auto;
+    height: 90px;
+    /* margin: .1em; */
     overflow: hidden;
     position: relative;
     width: 960px;
   }
   .slider::before, .slider::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     content: "";
     height: 100px;
     position: absolute;
@@ -1755,22 +1788,41 @@
   .contactv2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('./assets/images/main/red-blue-contact.jpeg');
+    background-image: url('./assets/images/main/selfie-frame.jpeg');
+    background-position: center;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
   }
+  .film {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, .2)
+  }
+  .infov2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
   .contact-me {
+    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    color: rgba(53, 69, 76, 1);
-    text-shadow: 1px 5px 6px rgba(0,0,0,0.6),
+    color: rgba(2, 69, 75, 1);
+    text-shadow: 1px 3px 10px rgba(255,255,255,0.6),
                  0px -5px 35px rgba(255,255,255,0.2);
     font-size: 2em;
+  }
+  .contact-me>h1{
+    padding: 0;
+    margin-bottom: 0;
   }
   .cardv2 {
     height: 30vh;
@@ -1782,21 +1834,36 @@
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
   }
   .social-links {
-    width: 100%;
-    margin-bottom: 1em;
+    width: 25vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .sagan-quote {
+    width: 25vw;
+    height: 30vh;
+    color: white;
+    font-size: 3em;
+    letter-spacing: .2em;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: red; */
+  }
+  .sagan-quote>h6, .sagan-quote>h5 {
     padding: 0;
-    height: 15%;
+    margin: .2em;
   }
   .phone-emailv2 {
     width: 25vw;
-    height: 10vh;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
   }
   .email, .phone {
     font-size: 2em;
@@ -1808,12 +1875,8 @@
     letter-spacing: .1em;
   }
   .email:hover, .phone:hover {
-    margin-bottom: .5em;
+    margin-left: .5em;
   }
-
-
-
-
 
 
 
@@ -2043,7 +2106,6 @@
     text-shadow: black;
   }
   .skills-container {
-    /* background-color: #111; */
     background-image: url('./assets/images/main/red-blue-delores.jpg');
     background-size: cover;
     height: 100vh;
@@ -2161,7 +2223,6 @@
   }
   .sleuth-container {
     height: 100vh;
-    /* width: 10vw; */
   }
   .contact-container {
     background-color: #111;
@@ -2221,15 +2282,13 @@
     max-height: 3em;
     margin-left: 2em;
     margin-right: 2em;
+    margin: 1em;
     padding: .5em;
   }
   .contact-icon:hover {
     cursor: pointer;
-  }
-  .contact-icon:hover {
-    cursor: pointer;
     text-shadow: 0 5px 55px white;
-    margin-bottom: .5em;
+    margin-left: 1.5em;
   }
   .phone-email {
     margin-top: 2em;
