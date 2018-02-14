@@ -10,9 +10,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      bounceClass: null,
-      lineClass: null,
-      logoClass: null,
+      text: ['contact me', 'call me', 'email me', 'say hello'],
+      count: 0,
       scrollingLock: false,
       contactOrTop: true,
     }
@@ -21,18 +20,23 @@ class App extends Component {
     this.handleScroll = this.handleScroll.bind(this)
     this.goToContactPage = this.goToContactPage.bind(this)
     this.handleContactText = this.handleContactText.bind(this)
-    this.handleProjectScroll = this.handleProjectScroll.bind(this)
+    // this.changeValue = this.changeValue.bind(this)
   }
 
   componentDidMount() {
     window.addEventListener('load', this.handleLoad);
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('scroll', this.handleContactText)
-    window.addEventListener('scroll', this.handleProjectScroll)
+
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
+  // async componentDidUpdate() {
+  //   window.setTimeout(function() {
+  //     this.changeValue();
+  //   }.bind(this), 3000)
+  // }
   handleLoad() {
     this.setState({lineClass: "hover", logoClass: "logo-hover"})
     setTimeout(function() {
@@ -40,6 +44,14 @@ class App extends Component {
     }.bind(this), 2000)
   }
 
+  // changeValue() {
+  //   if(this.state.count < 4){
+  //     this.setState({count: this.state.count + 1});
+  //   }else{
+  //     this.setState({count: 0});
+  //   }
+  //   console.log('line 45', this.state.count);
+  // }
   handleScroll() {
     let Y = window.innerHeight
     if (window.scrollY > Y) {
@@ -66,9 +78,7 @@ class App extends Component {
       contact.scrollIntoView({behavior: 'smooth'})
     }
   }
-  handleProjectScroll(){
-    let projectX = window.innerWidth
-  }
+
   render() {
     return (<div className="App">
       <Main />
@@ -79,7 +89,7 @@ class App extends Component {
 
       <ProjectsV2 />
 
-      <ContactV2 />
+      <ContactV2 text={this.state.text} changeValue={this.changeValue} count={this.state.count}/>
 
     </div>);
   }
