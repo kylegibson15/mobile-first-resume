@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import healthAlarm from '../assets/images/main/HealthAlarm-logo.png';
-import sleuth from '../assets/images/main/sleuth-logo.png';
-import slelp from '../assets/images/main/slelp-logo.png';
+import sleuth from '../assets/images/main/sleuthv2-logo.png';
+import slelp from '../assets/images/main/slelpApp-logo.png';
 import brunch from '../assets/images/main/brunch-logo.png';
 
 import python from '../assets/images/skills/Python-Logo-PNG-Image.png';
@@ -37,7 +37,7 @@ export default class ProjectsV2 extends Component {
             </a>
 
             <div className="pdv2">
-              <p>HealthAlarm is an alarm clock that wakes you up with a game plan for how to start your day. Using Google Home and Google Assistant via Dialogflow API so you can have a conversation to better understand where you are on your personal goals, and health data.
+              <p>Wakes you up with a game plan for how to start your day. Understand where you are on your personal goals and overall health.
               </p>
             </div>
 
@@ -121,7 +121,7 @@ export default class ProjectsV2 extends Component {
             </a>
 
             <div className="pdv2">
-              <p>Sleuth is an app designed to create an even playing field for all ISPs. When using the app, you can check your download speed and compare top download speeds amongst other ISPs.
+              <p>Even the playing field for all ISPs. Check your download speed and compare top download speeds amongst other ISPs.
               </p>
             </div>
 
@@ -210,7 +210,7 @@ export default class ProjectsV2 extends Component {
             </a>
 
             <div className="pdv2">
-              <p>An app that provides a team quick and easy access to find answered questions, answer questions, and to request help on specific issues.
+              <p>Quick and easy access to find answered questions, answer questions, and to request help on specific team issues.
               </p>
             </div>
 
@@ -286,7 +286,7 @@ export default class ProjectsV2 extends Component {
             </a>
 
             <div className="pdv2">
-              <p>Web App that takes on the goal of wanting to be able to search via flavors, specific food items, without having to search through restaurants menus. Let Brunch tell you where what you want to eat is. (specific to Denver and brunch food)
+              <p>Search via flavors, specific food items, without having to scourer through restaurants menus.
               </p>
             </div>
 
