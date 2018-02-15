@@ -1626,18 +1626,18 @@
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
   }
-  .healthAlarm {
+  .healthAlarm, .sleuth, .slelp, .brunch {
     background-color:  rgba(41,61,81,.5);
   }
-  .sleuth {
+  /* .sleuth {
     background-color: rgba(90, 129, 148, .5);
   }
   .slelp {
     background-color: rgba(255, 255, 255, .5);
   }
   .brunch {
-    background-color: rgba(255, 104, 107, .5);
-  }
+    background-color: rgba(41,61,81,.5);
+  } */
   .logo-desc {
     width: 100%;
     height: 98%;
