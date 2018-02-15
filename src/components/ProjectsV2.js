@@ -119,10 +119,10 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.ico' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/reactjs2.png' height="60" alt=""/>
@@ -149,7 +149,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.ico' height="60" alt=""/>
@@ -208,7 +208,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -232,7 +232,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -266,7 +266,7 @@ export default class ProjectsV2 extends Component {
             <div class="slider">
               <div class="slide-track">
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -275,7 +275,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -284,7 +284,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -293,7 +293,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -302,7 +302,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -311,7 +311,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
@@ -320,7 +320,7 @@ export default class ProjectsV2 extends Component {
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
-                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.svg' height="60" alt=""/>
+                  <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
                 </div>
                 <div class="slide">
                   <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
