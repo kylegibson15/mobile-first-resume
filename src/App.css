@@ -5,7 +5,7 @@
   .main-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/sitting-on-edge.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/on-edge.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -117,7 +117,7 @@
   .aboutmev2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/blue-snowboarding-skinny.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/snowboarding-mobile.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -171,7 +171,7 @@
   .projects-containerv2 {
     height: 200vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/nathan-anderson-152403.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/b&w-mountains.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -189,9 +189,21 @@
   .project-box {
     height: 45vh;
     width: 90vw;
-    border: .5px solid white;
+    /* border: .5px solid white; */
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
+  }
+  .healthAlarm {
+    background-color:  rgba(41,61,81,.5);
+  }
+  .sleuth {
+    background-color: rgba(90, 129, 148, .5);
+  }
+  .slelp {
+    background-color: rgba(255, 255, 255, .5);
+  }
+  .brunch {
+    background-color: rgba(255, 104, 107, .5);
   }
   .logo-desc {
     width: 100%;
@@ -302,7 +314,7 @@
     background-color: rgb(202, 198, 154);
     height: 50vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/selfie-frame.jpeg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/photo-card.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -674,7 +686,7 @@
   .main-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/sitting-on-edge.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/on-edge.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -787,7 +799,7 @@
   .aboutmev2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/blue-snowboarding.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfrontsnowboarding.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -838,7 +850,7 @@
     background-color: rgb(202, 198, 154);
     height: 50vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/selfie-frame.jpeg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/photo-card.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -913,7 +925,7 @@
   .projects-containerv2 {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/nathan-anderson-152403.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/b&w-mountains.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -931,15 +943,27 @@
   .project-box {
     height: 20vh;
     width: 90vw;
-    border: .5px solid white;
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
+  }
+  .healthAlarm {
+    background-color:  rgba(41,61,81,.5);
+  }
+  .sleuth {
+    background-color: rgba(90, 129, 148, .5);
+  }
+  .slelp {
+    background-color: rgba(255, 255, 255, .5);
+  }
+  .brunch {
+    background-color: rgba(255, 104, 107, .5);
   }
   .logo-desc {
     width: 100%;
     height: 60%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
   }
   .logo-desc>p{
@@ -1421,7 +1445,7 @@
   .main-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/sitting-on-edge.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/on-edge.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1527,7 +1551,7 @@
   .aboutmev2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/blue-snowboarding.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/snowboarding.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1558,7 +1582,8 @@
     width: 50vw;
     margin: 3em;
     color: white;
-    background-color: rgba(113, 93, 94, .9);
+    /* background-color: rgba(113, 93, 94, .9); */
+    background-color: rgba(0, 0, 0, .9);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -1578,7 +1603,7 @@
   .projects-containerv2 {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/nathan-anderson-152403.jpg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/b&w-mountains.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1598,9 +1623,20 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    border: .5px solid white;
     box-shadow: 5px 8px 28px #888888;
     margin: .5em;
+  }
+  .healthAlarm {
+    background-color:  rgba(41,61,81,.5);
+  }
+  .sleuth {
+    background-color: rgba(90, 129, 148, .5);
+  }
+  .slelp {
+    background-color: rgba(255, 255, 255, .5);
+  }
+  .brunch {
+    background-color: rgba(255, 104, 107, .5);
   }
   .logo-desc {
     width: 100%;
@@ -1709,7 +1745,7 @@
   .contactv2-container {
     height: 100vh;
     width: 100vw;
-    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/selfie-frame.jpeg');
+    background-image: url('https://d22lxpqe1nsxs.cloudfront.net/photo-card.jpeg');
     background-position: center;
     background-size: cover;
     display: flex;
@@ -2126,19 +2162,6 @@
     z-index: 3;
     font-size: 10em;
     color: white;
-  }
-  .brunch-container {
-    background-color: black;
-    height: 100vh;
-    /* width: 80vw; */
-  }
-  .slelp-container {
-    background-color: red;
-    height: 100vh;
-    /* width: 10vw; */
-  }
-  .sleuth-container {
-    height: 100vh;
   }
   .contact-container {
     background-color: #111;
