@@ -7,12 +7,12 @@ export default class ProjectsV2 extends Component {
     return (<div className="projects-containerv2">
       <div className="projects-wrapperv2">
 
-        <div className="project-box">
+        <div className="project-box healthAlarm">
           <div className="logo-desc">
             <a href="https://github.com/kylegibson15/HealthAlarm">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/HealthAlarm-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/HealthAlarm_-logo.png'/>
             </a>
-            <p>click the logo to see source code</p>
+            <p>click the logo to see github</p>
             <div className="pdv2">
               <p>Wakes you up with a game plan for how to start your day. Understand where you are on your personal goals and overall health.
               </p>
@@ -84,12 +84,12 @@ export default class ProjectsV2 extends Component {
 
         </div>
 
-        <div className="project-box">
+        <div className="project-box sleuth">
           <div className="logo-desc">
             <a href="https://github.com/g64-sleuth/Sleuth-Chrome">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/sleuthv2-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/sleuth-logo-big.png'/>
             </a>
-            <p>click the logo to see source code</p>
+            <p>click the logo to see github</p>
             <div className="pdv2">
               <p>Even the playing field for all ISPs. Check your download speed and compare top download speeds amongst other ISPs.
               </p>
@@ -172,13 +172,13 @@ export default class ProjectsV2 extends Component {
 
         </div>
 
-        <div className="project-box">
+        <div className="project-box slelp">
           <div className="logo-desc">
 
             <a href="https://github.com/Slelp/Slelp_2.0">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/slelpApp-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/slelp-logo-big.png'/>
             </a>
-            <p>click the logo to see source code</p>
+            <p>click the logo to see github</p>
             <div className="pdv2">
               <p>Quick and easy access to find answered questions, answer questions, and to request help on specific team issues.
               </p>
@@ -248,13 +248,13 @@ export default class ProjectsV2 extends Component {
           </div>
         </div>
 
-        <div className="project-box">
+        <div className="project-box brunch">
           <div className="logo-desc">
 
             <a href="https://github.com/kylegibson15/Brunch.">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/brunch-logo.png'/>
+              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/brunch-logo-big.png'/>
             </a>
-            <p>click the logo to see source code</p>
+            <p>click the logo to see github</p>
             <div className="pdv2">
               <p>Search via flavors, specific food items, without having to scourer through restaurants menus.
               </p>
