@@ -18,13 +18,13 @@ export default class ContactV2 extends Component {
         </div>
 
         <div className="social-links">
-          <a href="https://www.facebook.com/kyle.gibson.3194" target="_blank"><img className="contact-icon" alt="facebook" src='https://d22lxpqe1nsxs.cloudfront.net/white-fb-icon-facebook.png'/></a>
+          <a href="https://www.facebook.com/kyle.gibson.3194" target="_blank" rel="noopener noreferrer"><img className="contact-icon" alt="facebook" src='https://d22lxpqe1nsxs.cloudfront.net/white-fb-icon-facebook.png'/></a>
 
-          <a href="https://github.com/kylegibson15" target="_blank"><img className="contact-icon" alt="github" src='https://d22lxpqe1nsxs.cloudfront.net/white-github.png'/></a>
+          <a href="https://github.com/kylegibson15" target="_blank" rel="noopener noreferrer"><img className="contact-icon" alt="github" src='https://d22lxpqe1nsxs.cloudfront.net/white-github.png'/></a>
 
-          <a href="https://www.linkedin.com/in/kylegibson15" target="_blank"><img className="contact-icon" alt="linkedIn" src='https://d22lxpqe1nsxs.cloudfront.net/white-linkedin-icon.png'/></a>
+          <a href="https://www.linkedin.com/in/kylegibson15" target="_blank" rel="noopener noreferrer"><img className="contact-icon" alt="linkedIn" src='https://d22lxpqe1nsxs.cloudfront.net/white-linkedin-icon.png'/></a>
 
-          <a href="https://www.instagram.com/1gibby4/?hl=en" target="_blank"><img className="contact-icon" alt="instagram" src='https://d22lxpqe1nsxs.cloudfront.net/white-instagram-icon.png'/></a>
+          <a href="https://www.instagram.com/1gibby4/?hl=en" target="_blank" rel="noopener noreferrer"><img className="contact-icon" alt="instagram" src='https://d22lxpqe1nsxs.cloudfront.net/white-instagram-icon.png'/></a>
         </div>
       </div>
 
