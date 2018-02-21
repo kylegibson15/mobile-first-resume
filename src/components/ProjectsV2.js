@@ -10,7 +10,7 @@ export default class ProjectsV2 extends Component {
         <div className="project-box healthAlarm">
           <div className="logo-desc">
             <a href="https://github.com/kylegibson15/HealthAlarm">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/HealthAlarm_-logo.png'/>
+              <img className="project-logo" alt="" src='https://d22lxpqe1nsxs.cloudfront.net/HealthAlarm_-logo.png'/>
             </a>
             <p>click the logo to see github</p>
             <div className="pdv2">
@@ -87,7 +87,7 @@ export default class ProjectsV2 extends Component {
         <div className="project-box sleuth">
           <div className="logo-desc">
             <a href="https://github.com/g64-sleuth/Sleuth-Chrome">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/sleuth-logo-big.png'/>
+              <img className="project-logo" alt="" src='https://d22lxpqe1nsxs.cloudfront.net/sleuth-logo-big.png'/>
             </a>
             <p>click the logo to see github</p>
             <div className="pdv2">
@@ -176,7 +176,7 @@ export default class ProjectsV2 extends Component {
           <div className="logo-desc">
 
             <a href="https://github.com/Slelp/Slelp_2.0">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/slelp-logo-big.png'/>
+              <img className="project-logo" alt="" src='https://d22lxpqe1nsxs.cloudfront.net/slelp-logo-big.png'/>
             </a>
             <p>click the logo to see github</p>
             <div className="pdv2">
@@ -252,7 +252,7 @@ export default class ProjectsV2 extends Component {
           <div className="logo-desc">
 
             <a href="https://github.com/kylegibson15/Brunch.">
-              <img className="project-logo" src='https://d22lxpqe1nsxs.cloudfront.net/brunch-logo-big.png'/>
+              <img className="project-logo" alt="" src='https://d22lxpqe1nsxs.cloudfront.net/brunch-logo-big.png'/>
             </a>
             <p>click the logo to see github</p>
             <div className="pdv2">
