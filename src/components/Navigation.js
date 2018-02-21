@@ -11,7 +11,7 @@ export default class Navigation extends Component {
           ? "0"
           : null
       }}>
-      <img className="nav-logo" src='https://d22lxpqe1nsxs.cloudfront.net/blue.png'/>
+      <img className="nav-logo" alt="" src='https://d22lxpqe1nsxs.cloudfront.net/blue.png'/>
       <a onClick={this.props.goToContactPage} className="contact-info">
         <h5>{
             this.props.contactOrTop
