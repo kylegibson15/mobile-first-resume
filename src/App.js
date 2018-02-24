@@ -65,7 +65,7 @@ class App extends Component {
     }
   }
   handleContactText() {
-    let contactY = window.innerHeight * 3 + (window.innerHeight / 2)
+    let contactY = window.innerHeight * 5 + (window.innerHeight / 2)
     if(window.scrollY > contactY){
       this.setState({contactOrTop: false})
     }else{
@@ -73,7 +73,7 @@ class App extends Component {
     }
   }
   goToContactPage() {
-    let contactY = window.innerHeight * 3
+    let contactY = window.innerHeight * 5
     let contact = document.getElementsByClassName("contactv2-container")[0]
     let top = document.getElementsByClassName("aboutmev2-container")[0]
     if(window.scrollY > contactY){
