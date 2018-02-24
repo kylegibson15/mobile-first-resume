@@ -20,15 +20,11 @@ export default class Brunch extends Component {
 
             <div className="project-skills-v3">
 
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
 
-
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
-
-
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
-
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
 
             </div>
           </div>
@@ -39,18 +35,16 @@ export default class Brunch extends Component {
           <div className="right">
             <h1 className="h1">Brunch.</h1>
 
-              <div className="author">
-                <a className="thumbnail-anchor" href="https://github.com/kylegibson15" target="_blank">
-                  <img className="thumbnail-image" src="https://avatars2.githubusercontent.com/u/25071080?s=460&v=4"/>
-                  <h2 className="h2">Kyle G</h2>
-                </a>
-              </div>
-
-
+            <div className="author">
+              <a className="thumbnail-anchor" href="https://github.com/kylegibson15" target="_blank">
+                <img className="thumbnail-image" src="https://avatars2.githubusercontent.com/u/25071080?s=460&v=4"/>
+                <h2 className="h2">Kyle G</h2>
+              </a>
+            </div>
 
             <div className="separator"></div>
 
-            <p>Brunch. is a web app that takes on the goal of wanting to be able to search via flavors, specific food items, without having to search through restaurants menus.  Let Brunch tell you where what you want to eat is. (specific to Denver and brunch food)</p>
+            <p>Brunch. is a web app that takes on the goal of wanting to be able to search via flavors, specific food items, without having to search through restaurants menus. Let Brunch tell you where what you want to eat is. (specific to Denver and brunch food)</p>
           </div>
 
           <a className="fab-two slel" href="https://brunch-app-project-1.firebaseapp.com/" target="_blank">
