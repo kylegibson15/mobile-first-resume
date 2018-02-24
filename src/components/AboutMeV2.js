@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 export default class AboutMe extends Component {
 
   render() {
-    return (<div>
+    return (<div >
       <Navigation contactOrTop={this.props.contactOrTop} goToContactPage={this.props.goToContactPage} scrollingLock={this.props.scrollingLock}/>
       <div className="aboutmev2-container">
 
