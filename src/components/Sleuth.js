@@ -20,25 +20,25 @@ export default class Sleuth extends Component {
 
             <div className="project-skills-v3">
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/jsx.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/jsx.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/google-chrome.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/reactjs2.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/reactjs2.png' height="60" alt=""/>
 
-                <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
+              <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
             </div>
           </div>
 
@@ -113,7 +113,6 @@ export default class Sleuth extends Component {
               </div>
 
             </div>
-
 
             <div className="separator"></div>
 
