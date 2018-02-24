@@ -4,6 +4,10 @@ import Main from './components/Main';
 import AboutMeV2 from './components/AboutMeV2';
 import ContactV2 from './components/ContactV2';
 import ProjectsV2 from './components/ProjectsV2';
+import HealthAlarm from './components/HealthAlarm';
+import Sleuth from './components/Sleuth';
+import Slelp from './components/Slelp';
+import Brunch from './components/Brunch';
 
 class App extends Component {
   constructor(props) {
@@ -61,7 +65,7 @@ class App extends Component {
     }
   }
   handleContactText() {
-    let contactY = window.innerHeight * 2 + (window.innerHeight / 2)
+    let contactY = window.innerHeight * 3 + (window.innerHeight / 2)
     if(window.scrollY > contactY){
       this.setState({contactOrTop: false})
     }else{
@@ -69,7 +73,7 @@ class App extends Component {
     }
   }
   goToContactPage() {
-    let contactY = window.innerHeight * 2
+    let contactY = window.innerHeight * 3
     let contact = document.getElementsByClassName("contactv2-container")[0]
     let top = document.getElementsByClassName("aboutmev2-container")[0]
     if(window.scrollY > contactY){
@@ -87,7 +91,11 @@ class App extends Component {
       <AboutMeV2 contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage}
         scrollingLock={this.state.scrollingLock}/>
 
-      <ProjectsV2 />
+      {/* <ProjectsV2 /> */}
+      <HealthAlarm />
+      <Sleuth />
+      <Slelp />
+      <Brunch />
 
       <ContactV2 text={this.state.text} changeValue={this.changeValue} count={this.state.count}/>
 
