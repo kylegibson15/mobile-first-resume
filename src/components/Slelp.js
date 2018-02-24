@@ -20,21 +20,21 @@ export default class Slelp extends Component {
 
             <div className="project-skills-v3">
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/ruuvi-tag-javascript.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/postgresql-logo.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/handlebars-logo.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/handlebars-logo.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/css3-logo.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/html5-no-border.png' height="60" alt=""/>
 
-                <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
+              <img src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
 
             </div>
           </div>
@@ -82,7 +82,6 @@ export default class Slelp extends Component {
               </div>
 
             </div>
-
 
             <div className="separator"></div>
 
