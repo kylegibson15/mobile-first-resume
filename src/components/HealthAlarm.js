@@ -30,7 +30,6 @@ export default class HealthAlarm extends Component {
               <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/raspberry-pi-logo.png' height="60" alt=""/>
               <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/node.png' height="60" alt=""/>
 
-
               <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/knex.png' height="60" alt=""/>
               <img className="proj-skill" src='https://d22lxpqe1nsxs.cloudfront.net/express.svg' height="60" alt=""/>
             </div>
