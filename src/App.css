@@ -128,18 +128,26 @@
   .intro-about-container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .intro-text {
+    visibility: hidden;
+    height: 0;
+    width: 0;
   }
   .about-title {
     font-size: .5em;
     display: flex;
+    width: 80%;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 80, 132, 1);
     border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
+    border-right: 1px solid black;
   }
   .about-title>h1{
     margin: .5em;
@@ -327,6 +335,7 @@
     margin-top: .5em;
     display: flex;
     align-items: center;
+    padding-bottom: 1em;
   }
   .authors{
     display: flex;
