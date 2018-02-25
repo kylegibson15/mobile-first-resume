@@ -35,10 +35,10 @@ class App extends Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
-  // scrollDownComponent() {
-  //   if (window.scrollY) {}
-  //
-  // }
+  scrollDownComponent() {
+    // if (window.scrollY) {}
+
+  }
   handleScroll() {
     let Y = window.innerHeight
     if (window.scrollY > Y) {
