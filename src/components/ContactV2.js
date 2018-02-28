@@ -26,7 +26,12 @@ export default class ContactV2 extends Component {
 
           <a href="https://www.instagram.com/1gibby4/?hl=en" target="_blank" rel="noopener noreferrer"><img className="contact-icon" alt="instagram" src='https://d22lxpqe1nsxs.cloudfront.net/white-instagram-icon.png'/></a>
         </div>
+
       </div>
+      <a className="codewars" href="https://www.codewars.com/users/kylegibson15" target="_blank">
+        <h2>Codewars</h2>
+        <img alt="codeware" src="https://www.codewars.com/users/kylegibson15/badges/large"/>
+      </a>
 
     </div>)
   }

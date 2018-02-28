@@ -765,6 +765,22 @@
     border-bottom: .2px solid white;
     visibility: hidden;
   }
+  .codewars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+    text-decoration: none;
+  }
+  .codewars > h2 {
+    font-size: 1em;
+    color: white;
+    margin: 0;
+    margin-bottom: .5em;
+  }
+  .codewars > img {
+    width: 60%;
+  }
 
 
 
@@ -1310,7 +1326,19 @@
     border-bottom: .2px solid white;
     visibility: hidden;
   }
-
+  .codewars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+    text-decoration: none;
+  }
+  .codewars > h2 {
+    font-size: 2em;
+    color: white;
+    margin: 0;
+    margin-bottom: .5em;
+  }
 
 
   .project {
@@ -2840,7 +2868,20 @@
   .email:hover, .phone:hover {
     margin-left: .5em;
   }
-
+  .codewars {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+    text-decoration: none;
+  }
+  .codewars > h2 {
+    font-size: 2em;
+    color: white;
+    margin: 0;
+    margin-bottom: .5em;
+  }
 
 
   .contact-info {
