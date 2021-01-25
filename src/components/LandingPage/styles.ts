@@ -8,22 +8,22 @@ const useStyles = (mode: Mode) => ({
   container: {
     background: palette[mode].main,
     color: palette[mode].text.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
     display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     height: '100vh',
     width: '100vw'
   },
   name: {
-    fontSize: '2.5em',
-    letterSpacing: '1.5em',
+    fontSize: '2.5rem',
+    letterSpacing: '1.5rem',
     margin: 0,
     padding: 0,
     textShadow: palette[mode].text.shadow_1
   },
   job_title: {
-    letterSpacing: '1em',
-    fontSize: '1em',
+    letterSpacing: '1rem',
+    fontSize: '1rem',
     textShadow: palette[mode].text.shadow_1
   }
 });

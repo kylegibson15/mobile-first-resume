@@ -72,13 +72,13 @@ class App extends Component {
       <LandingPage />
       {/* <Main/> */}
 
-      <AboutMeV2 contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock}/> {/* <ProjectsV2 /> */}
-      <HealthAlarm/>
-      <Sleuth/>
-      <Slelp/>
-      <Brunch/>
+      {/* <AboutMeV2 contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock}/> <ProjectsV2 /> */}
+      {/* <HealthAlarm/> */}
+      {/* <Sleuth/> */}
+      {/* <Slelp/> */}
+      {/* <Brunch/> */}
 
-      <ContactV2 text={this.state.text} changeValue={this.changeValue} count={this.state.count}/>
+      {/* <ContactV2 text={this.state.text} changeValue={this.changeValue} count={this.state.count}/> */}
 
     </div>);
   }

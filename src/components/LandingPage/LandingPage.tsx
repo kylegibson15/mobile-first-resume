@@ -7,8 +7,8 @@ function LandingPage() {
   const [mode, setMode] = useState(Mode.Dark);
   const styles = useStyles(mode);
   return (
-    <div style={styles.container}>
-      <div style={{ height: '90vh', width: '90vw' }}>
+    <div style={{ ...styles.container, flexDirection: 'column' }}>
+      <div style={{ width: '90vw' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '4em' }}>
 
           <div>
@@ -18,6 +18,15 @@ function LandingPage() {
 
         </div>
         <button onClick={() => setMode(mode === Mode.Dark ? Mode.Light : Mode.Dark)}>{mode === Mode.Dark ? Mode.Light : Mode.Dark}</button>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <p style={{ color: '#ea5455', marginRight: '13px' }}>Creative.</p>
+        <p style={{ color: '#ffd460', marginRight: '13px' }}>Motivated.</p>
+        <p style={{ marginRight: '13px' }}>Persistent.</p>
+        <p style={{ color: '#f07b3f', marginRight: '13px' }}>Focused.</p>
+      </div>
+      <div>
+        Resume
       </div>
     </div>
   )
