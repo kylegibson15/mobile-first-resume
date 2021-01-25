@@ -4,11 +4,12 @@ import './App.css';
 import Main from './components/Main';
 import AboutMeV2 from './components/AboutMeV2';
 import ContactV2 from './components/ContactV2';
-import ProjectsV2 from './components/ProjectsV2';
+// import ProjectsV2 from './components/ProjectsV2';
 import HealthAlarm from './components/HealthAlarm';
 import Sleuth from './components/Sleuth';
 import Slelp from './components/Slelp';
 import Brunch from './components/Brunch';
+import { LandingPage } from './components/LandingPage';
 
 class App extends Component {
   constructor(props) {
@@ -68,7 +69,8 @@ class App extends Component {
 
   render() {
     return (<div className="App">
-      <Main/>
+      <LandingPage />
+      {/* <Main/> */}
 
       <AboutMeV2 contactOrTop={this.state.contactOrTop} goToContactPage={this.goToContactPage} scrollingLock={this.state.scrollingLock}/> {/* <ProjectsV2 /> */}
       <HealthAlarm/>
