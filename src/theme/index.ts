@@ -1,2 +1,2 @@
 export * from './interfaces';
-export { default as theme } from './theme';
+export { setupFn as getTheme } from './theme';

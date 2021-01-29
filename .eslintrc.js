@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   root: true,
   extends: [
@@ -22,7 +23,7 @@ module.exports = {
       arrowFunctions: true,
     },
   },
-  plugins: ["react", "@typescript-eslint", "prettier"],
+  plugins: ["react", "@typescript-eslint", "prettier", "formatjs"],
   settings: {
     react: {
       version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
@@ -36,6 +37,7 @@ module.exports = {
   },
   rules: {
     // Existing rules
+    "formatjs/no-offset": "error",
     "comma-dangle": "off", // https://eslint.org/docs/rules/comma-dangle
     "function-paren-newline": "off", // https://eslint.org/docs/rules/function-paren-newline
     "global-require": "off", // https://eslint.org/docs/rules/global-require
@@ -46,6 +48,6 @@ module.exports = {
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
 };

@@ -1,0 +1,26 @@
+{
+  "landing-page-adjective-creative": {
+    "defaultMessage": "Creative.",
+    "description": "adjective: creative"
+  },
+  "landing-page-adjective-focused": {
+    "defaultMessage": "Focused.",
+    "description": "adjective: focused"
+  },
+  "landing-page-adjective-motivated": {
+    "defaultMessage": "Motivated.",
+    "description": "adjective: motivated"
+  },
+  "landing-page-adjective-persistent": {
+    "defaultMessage": "Persistent.",
+    "description": "adjective: persistent"
+  },
+  "landing-page-job-title": {
+    "defaultMessage": "software engineer",
+    "description": "job title"
+  },
+  "landing-page-toggle-locale": {
+    "defaultMessage": "Toggle Locale",
+    "description": "toggle button for locale"
+  }
+}
