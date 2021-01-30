@@ -5,7 +5,6 @@ import { IApplicationState } from './interfaces';
 
 export const INITIAL_STATE: IApplicationState = {
   theme: 'dark',
-  isDesktop: true,
   locale: 'en',
 };
 

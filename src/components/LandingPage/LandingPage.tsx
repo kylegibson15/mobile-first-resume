@@ -1,36 +1,27 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
-import { ToggleThemeButton } from '../ToggleThemeButton';
-import { setApplicationLocale, IApplicationState } from '../../state';
+import { ICustomTheme } from '../../theme';
 
 import useStyles from './styles';
 
 function LandingPage() {
-  const locale = useSelector((state: IApplicationState) => state.locale);
-  const dispatch = useDispatch();
-  const styles = useStyles();
-
-  function toggleLocale() {
-    dispatch(setApplicationLocale(locale === 'en' ? 'es' : 'en'));
-  }
+  const theme: ICustomTheme = useTheme();
+  const trigger = useMediaQuery(theme.breakpoints.up('sm'));
+  const styles = useStyles(trigger);
 
   return (
     <div className={styles.container}>
       <div style={{ width: '90vw' }}>
         <div className={styles.nameJobTitle}>
-          <h1 className={styles.name}>KYLE GIBSON</h1>
+          {trigger ? <h1 className={styles.name}>KYLE GIBSON</h1> : null}
           <h4 className={styles.jobTitle}>
             <FormattedMessage id='landing-page-job-title' description='job title' defaultMessage='software engineer' />
           </h4>
         </div>
-        <ToggleThemeButton />
-        <button onClick={toggleLocale}>
-          <FormattedMessage id='landing-page-toggle-locale' description='toggle button for locale' defaultMessage='Toggle Locale' />
-        </button>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div style={{ display: 'flex', flexDirection: trigger ? 'row' : 'column' }}>
         <p className={styles.textCreative}>
           <FormattedMessage id='landing-page-adjective-creative' description='adjective: creative' defaultMessage='Creative.' />
         </p>
