@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/styles';
 import { ICustomTheme } from '../../theme';
 
 const useStyles = (desktop: boolean) => {
-  console.log('IN STYLES :: ', { desktop });
   return makeStyles(({ palette }: ICustomTheme) => {
     return {
       container: {
