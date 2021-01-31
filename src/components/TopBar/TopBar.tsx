@@ -1,8 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, IconButton, Toolbar, Typography, useTheme, useMediaQuery } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, useTheme, useMediaQuery } from '@material-ui/core';
 import { PublicOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
+import logo from '../../images/sea-foam.png';
 import { setApplicationLocale, IApplicationState } from '../../state';
 import { ThemeToggleButton } from '../Buttons';
 import { ICustomTheme } from '../../theme';
@@ -23,9 +25,11 @@ export default function TopBar() {
   return (
     <AppBar position='fixed'>
       <Toolbar className={classes.toolbar}>
-        <Typography className={classes.title} variant='h5'>
-          {trigger ? null : 'KYLE GIBSON'}
-        </Typography>
+        <div className={classes.title}>
+          <Link to='/'>
+            <img src={logo} height='38' width='24' />
+          </Link>
+        </div>
         <IconButton onClick={toggleLocale}>
           <PublicOutlined />
         </IconButton>

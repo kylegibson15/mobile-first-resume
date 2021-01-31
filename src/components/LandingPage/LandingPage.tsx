@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useMediaQuery, useTheme } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import { ICustomTheme } from '../../theme';
 
@@ -35,7 +36,9 @@ function LandingPage() {
           <FormattedMessage id='landing-page-adjective-focused' description='adjective: focused' defaultMessage='Focused.' />
         </p>
       </div>
-      <div>Resume</div>
+      <Link to='/resume'>
+        <div>Resume</div>
+      </Link>
     </div>
   );
 }

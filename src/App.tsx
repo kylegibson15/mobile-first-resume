@@ -2,8 +2,9 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { MuiThemeProvider, Theme } from '@material-ui/core';
 import { IntlProvider } from 'react-intl';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { LandingPage, TopBar } from './components';
+import { LandingPage, Resume, TopBar } from './components';
 import { IApplicationState } from './state';
 import { getTheme } from './theme';
 
@@ -19,11 +20,21 @@ function App({ messages }: IApplicationProps) {
   return (
     <MuiThemeProvider theme={theme as Theme}>
       <IntlProvider locale={locale} key={locale} messages={messages[locale]} defaultLocale={navigator.language}>
-        <div style={{ overflowX: 'hidden', maxHeight: '100vh' }}>
-          <TopBar />
-          <LandingPage />
-          {/* <div style={{ height: '5000px' }}>Extra</div> */}
-        </div>
+        <Router>
+          <div style={{ overflowX: 'hidden', maxHeight: '100vh' }}>
+            <TopBar />
+            {/* <LandingPage /> */}
+            {/* <div style={{ height: '5000px' }}>Extra</div> */}
+          </div>
+          <Switch>
+            <Route path='/resume'>
+              <Resume />
+            </Route>
+            <Route path='/'>
+              <LandingPage />
+            </Route>
+          </Switch>
+        </Router>
       </IntlProvider>
     </MuiThemeProvider>
   );
