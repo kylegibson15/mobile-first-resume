@@ -23,8 +23,6 @@ function App({ messages }: IApplicationProps) {
         <Router>
           <div style={{ overflowX: 'hidden', maxHeight: '100vh' }}>
             <TopBar />
-            {/* <LandingPage /> */}
-            {/* <div style={{ height: '5000px' }}>Extra</div> */}
           </div>
           <Switch>
             <Route path='/resume'>

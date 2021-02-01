@@ -8,12 +8,17 @@ const darkTheme = createMuiTheme({
     primary: {
       accent: '#FC8C00',
       main: 'hsla(205, 46%, 10%, 1)',
+      seafoam: 'rgb(0, 173, 160)',
+    },
+    background: {
+      main: 'hsla(205, 46%, 10%, 1)',
     },
     text: {
       accent_1: '#ea5455',
       accent_2: '#f07b3f',
       accent_3: '#ffd460',
-      accent_4: 'inherit',
+      accent_4: 'rgb(0, 173, 160)',
+      paragraph: 'white',
       primary: '#00B9AF',
       secondary: '#FC8C00',
       shadow_1: `
@@ -44,12 +49,17 @@ const lightTheme = createMuiTheme({
     primary: {
       accent: '#FC8C00',
       main: 'hsla(233, 100%, 90%, 1)',
+      seafoam: 'rgb(0, 173, 160)',
+    },
+    background: {
+      main: '#F7F7FF',
     },
     text: {
       accent_1: '#035aa6',
-      accent_2: '#a40a3c',
+      accent_2: '#eb596e',
       accent_3: '#004445',
       accent_4: '#FC8C00',
+      paragraph: 'black',
       primary: '#FC8C00',
       secondary: '#00B9AF',
       shadow_1: `

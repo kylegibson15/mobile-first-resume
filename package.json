@@ -5,8 +5,10 @@
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.3",
+    "classnames": "^2.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
     "react-intl": "^5.10.19",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
@@ -47,6 +49,7 @@
   },
   "devDependencies": {
     "@formatjs/cli": "^3.0.5",
+    "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

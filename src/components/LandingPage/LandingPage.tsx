@@ -36,7 +36,7 @@ function LandingPage() {
           <FormattedMessage id='landing-page-adjective-focused' description='adjective: focused' defaultMessage='Focused.' />
         </p>
       </div>
-      <Link to='/resume'>
+      <Link style={{ color: 'inherit', textDecoration: 'none' }} to='/resume'>
         <div>Resume</div>
       </Link>
     </div>

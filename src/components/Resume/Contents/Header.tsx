@@ -1,32 +1,37 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core';
+import { FiLinkedin, FiGithub } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import logo from '../../../images/sea-foam.png';
 import { ICustomTheme } from '../../../theme';
 
+import useStyles from './styles';
+
 function Header() {
   const theme: ICustomTheme = useTheme();
+  const classes = useStyles();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+    <div className={classes.container}>
       <img src={logo} height='150' width='85' />
-      <div style={{ display: 'flex', flexDirection: 'column', width: '100%', margin: '8px', height: '15vh', justifyContent: 'center' }}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            borderBottom: `3px solid ${theme.palette.text.primary}`,
-          }}
-        >
-          <h1 style={{ margin: '5px', fontSize: '32px', color: theme.palette.text.primary, letterSpacing: '1rem' }}>KYLE GIBSON</h1>
-          <h4 style={{ margin: '5px' }}>Denver, CO</h4>
+      <div className={classes.nameLinksContainer}>
+        <div className={classes.nameLocation}>
+          <h1 className={classes.name}>KYLE GIBSON</h1>
+          <h4 className={classes.margin5}>Denver, CO</h4>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-          <h4 style={{ margin: '5px' }}>LinkedIn</h4>
-          <h4 style={{ margin: '5px' }}>Github</h4>
-          <h4 style={{ margin: '5px', color: theme.palette.text.accent_3 }}>Software Engineer</h4>
+        <div className={classes.links}>
+          <Link className={classes.link} to='https://github.com/kylegibson15'>
+            <FiLinkedin />
+            <h4 className={classes.margin5}>/in/kylegibson15</h4>
+          </Link>
+
+          <Link className={classes.link} to='https://www.linkedin.com/in/kylegibson15/'>
+            <FiGithub />
+            <h4 className={classes.margin5}>/kylegibson15</h4>
+          </Link>
+
+          <h4 className={classes.title}>Software Engineer</h4>
         </div>
       </div>
     </div>

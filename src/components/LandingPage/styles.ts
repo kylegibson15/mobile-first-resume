@@ -6,7 +6,7 @@ const useStyles = (desktop: boolean) => {
   return makeStyles(({ palette }: ICustomTheme) => {
     return {
       container: {
-        background: palette.primary.main,
+        background: palette.background.main,
         color: palette.text.primary,
         flexDirection: 'column',
         display: 'flex',
