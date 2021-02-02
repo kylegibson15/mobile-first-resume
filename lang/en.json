@@ -19,8 +19,28 @@
     "defaultMessage": "software engineer",
     "description": "job title"
   },
-  "landing-page-toggle-locale": {
-    "defaultMessage": "Toggle Locale",
-    "description": "toggle button for locale"
+  "resume-section-education": {
+    "defaultMessage": "Education",
+    "description": "profile section education"
+  },
+  "resume-section-experience": {
+    "defaultMessage": "Experience",
+    "description": "profile section experience"
+  },
+  "resume-section-interests": {
+    "defaultMessage": "Interests",
+    "description": "profile section interests"
+  },
+  "resume-section-profile": {
+    "defaultMessage": "Profile",
+    "description": "profile title"
+  },
+  "resume-section-projects": {
+    "defaultMessage": "Projects",
+    "description": "profile section projects"
+  },
+  "resume-skills-section-title": {
+    "defaultMessage": "skills",
+    "description": "title for skills section of resume"
   }
 }

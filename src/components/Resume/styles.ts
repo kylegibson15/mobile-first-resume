@@ -3,8 +3,20 @@ import { makeStyles } from '@material-ui/styles';
 import { ICustomTheme } from '../../theme';
 
 const useStyles = (desktop?: boolean) => {
-  return makeStyles(({ palette }: ICustomTheme) => {
+  return makeStyles(({ palette, spacing }: ICustomTheme) => {
     return {
+      accent1: {
+        color: palette.text.accent_1,
+      },
+      accent2: {
+        color: palette.text.accent_2,
+      },
+      accent3: {
+        color: palette.text.accent_3,
+      },
+      accent4: {
+        color: palette.text.accent_4,
+      },
       container: {
         height: '100%',
         width: '100vw',
@@ -14,6 +26,26 @@ const useStyles = (desktop?: boolean) => {
         justifyContent: 'center',
         alignItems: 'center',
         padding: '15vh 0',
+      },
+      projectLink: {
+        textDecoration: 'none',
+      },
+      sectionContainer: {
+        borderLeft: `4px solid ${palette.text.primary}`,
+        padding: spacing(0, 0, 0, 2),
+        margin: spacing(1, 0),
+      },
+      sectionTitle: {
+        margin: spacing(0),
+        color: palette.text.primary,
+        letterSpacing: '.2rem',
+      },
+      sectionSubTitle: {
+        color: palette.text.accent_3,
+        margin: spacing(1, 0, 0),
+      },
+      zeroMargin: {
+        margin: spacing(0),
       },
     };
   })();

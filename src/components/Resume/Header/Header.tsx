@@ -1,15 +1,12 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import logo from '../../../images/sea-foam.png';
-import { ICustomTheme } from '../../../theme';
 
 import useStyles from './styles';
 
 function Header() {
-  const theme: ICustomTheme = useTheme();
   const classes = useStyles();
 
   return (
@@ -21,17 +18,19 @@ function Header() {
           <h4 className={classes.margin5}>Denver, CO</h4>
         </div>
         <div className={classes.links}>
-          <Link className={classes.link} to='https://github.com/kylegibson15'>
+          <a className={classes.link} href='https://www.linkedin.com/in/kylegibson15/' target='_blank' rel='noreferrer'>
             <FiLinkedin />
             <h4 className={classes.margin5}>/in/kylegibson15</h4>
-          </Link>
+          </a>
 
-          <Link className={classes.link} to='https://www.linkedin.com/in/kylegibson15/'>
+          <a className={classes.link} href='https://github.com/kylegibson15' target='_blank' rel='noreferrer'>
             <FiGithub />
             <h4 className={classes.margin5}>/kylegibson15</h4>
-          </Link>
+          </a>
 
-          <h4 className={classes.title}>Software Engineer</h4>
+          <h4 className={classes.title}>
+            <FormattedMessage id='landing-page-job-title' description='job title' defaultMessage='software engineer' />
+          </h4>
         </div>
       </div>
     </div>

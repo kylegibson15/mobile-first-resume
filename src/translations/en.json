@@ -4,5 +4,11 @@
   "landing-page-adjective-motivated": "Motivated.",
   "landing-page-adjective-persistent": "Persistent.",
   "landing-page-job-title": "software engineer",
-  "landing-page-toggle-locale": "Toggle Locale"
+  "landing-page-toggle-locale": "Toggle Locale",
+  "resume-skills-section-title": "skills",
+  "resume-section-profile": "Profile",
+  "resume-section-experience": "Experience",
+  "resume-section-projects": "Projects",
+  "resume-section-education": "Education",
+  "resume-section-interests": "Interests"
 }

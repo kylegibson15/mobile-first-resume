@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "resume-kyle-gibson"
+    "default": "resume-kyle-gibson",
+    "production": "resume-kyle-gibson"
   }
 }

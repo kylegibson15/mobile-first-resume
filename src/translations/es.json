@@ -3,6 +3,12 @@
   "landing-page-adjective-focused": "Concentrado.",
   "landing-page-adjective-motivated": "Motivado.",
   "landing-page-adjective-persistent": "Persistente.",
-  "landing-page-job-title": "el ingeniero de software",
-  "landing-page-toggle-locale": "alternar la configuración regional"
+  "landing-page-job-title": "ingeniero de software",
+  "landing-page-toggle-locale": "alternar la configuración regional",
+  "resume-skills-section-title": "técnicos",
+  "resume-section-profile": "Perfil",
+  "resume-section-experience": "Experiencia",
+  "resume-section-projects": "Proyectos",
+  "resume-section-education": "Educación",
+  "resume-section-interests": "Intereses"
 }
