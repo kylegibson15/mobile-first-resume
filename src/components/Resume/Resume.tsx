@@ -1,19 +1,22 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Container, useMediaQuery, useTheme } from '@material-ui/core';
 import { FormattedMessage } from 'react-intl';
 
 import { Skills } from './Skills';
 import { Header } from './Header';
 import useStyles from './styles';
+import { ICustomTheme } from '../../theme';
 
 function Resume() {
-  const classes = useStyles();
+  const theme: ICustomTheme = useTheme();
+  const trigger = useMediaQuery(theme.breakpoints.up('sm'));
+  const classes = useStyles(trigger);
 
   return (
     <div className={classes.container}>
       <Container maxWidth='md'>
         <Header />
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div style={{ display: 'flex', flexDirection: trigger ? 'row' : 'column' }}>
           <Skills />
 
           <div

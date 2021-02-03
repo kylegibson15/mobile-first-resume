@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import { ICustomTheme } from '../../../theme';
 
 const useStyles = (desktop?: boolean) => {
-  return makeStyles(({ palette }: ICustomTheme) => {
+  return makeStyles(({ palette, spacing }: ICustomTheme) => {
     const margin = (px: number) => ({ margin: `${px}px` });
     return {
       container: {
@@ -13,7 +13,7 @@ const useStyles = (desktop?: boolean) => {
       },
       links: {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: desktop ? 'row' : 'column-reverse',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
       },
@@ -24,9 +24,9 @@ const useStyles = (desktop?: boolean) => {
         color: 'inherit',
         textDecoration: 'none',
       },
-      margin5: { ...margin(5) },
+      margin5: { ...margin(5), fontSize: desktop ? 'initial' : spacing(1.5), whiteSpace: desktop ? 'initial' : 'nowrap' },
       name: {
-        fontSize: '32px',
+        fontSize: desktop ? spacing(4) : spacing(2),
         color: palette.primary.seafoam,
         letterSpacing: '1rem',
         ...margin(5),
@@ -48,6 +48,7 @@ const useStyles = (desktop?: boolean) => {
       },
       title: {
         ...margin(5),
+        fontSize: desktop ? 'initial' : spacing(1.5),
         color: palette.text.accent_3,
       },
     };

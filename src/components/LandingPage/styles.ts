@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/styles';
 import { ICustomTheme } from '../../theme';
 
 const useStyles = (desktop: boolean) => {
-  return makeStyles(({ palette }: ICustomTheme) => {
+  return makeStyles(({ palette, spacing }: ICustomTheme) => {
+    const adjective = { display: 'flex', justifyContent: 'center', margin: spacing(2), width: desktop ? 'initial' : '30%' };
     return {
       container: {
         background: palette.background.main,
@@ -15,14 +16,22 @@ const useStyles = (desktop: boolean) => {
         height: '100vh',
         width: '100vw',
       },
+      adjectives: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        width: '100%',
+      },
       jobTitle: {
         letterSpacing: desktop ? '1rem' : '.5rem',
-        fontSize: '1rem',
+        fontSize: desktop ? '1rem' : '.8rem',
         textShadow: palette.text.shadow_1,
         textTransform: 'uppercase',
+        textAlign: 'center',
       },
       name: {
-        fontSize: desktop ? '2.5rem' : '1.5rem',
+        fontSize: desktop ? '2.5rem' : '1.1rem',
         letterSpacing: desktop ? '1.5rem' : '1rem',
         margin: 0,
         padding: 0,
@@ -37,19 +46,19 @@ const useStyles = (desktop: boolean) => {
       },
       textCreative: {
         color: palette.text.accent_1,
-        marginRight: '13px',
+        ...adjective,
       },
       textFocused: {
         color: palette.text.accent_2,
-        marginRight: '13px',
+        ...adjective,
       },
       textMotivated: {
         color: palette.text.accent_3,
-        marginRight: '13px',
+        ...adjective,
       },
       textPersistant: {
         color: palette.text.accent_4,
-        marginRight: '13px',
+        ...adjective,
       },
     };
   })();

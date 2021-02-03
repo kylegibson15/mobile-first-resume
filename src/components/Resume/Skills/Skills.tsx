@@ -1,8 +1,9 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import { FormattedMessage } from 'react-intl';
 
 import useStyles from './styles';
+import { ICustomTheme } from '../../../theme';
 
 const skills = [
   'TypeScript',
@@ -31,7 +32,9 @@ const skills = [
 ];
 
 function Skills() {
-  const classes = useStyles();
+  const theme: ICustomTheme = useTheme();
+  const trigger = useMediaQuery(theme.breakpoints.up('sm'));
+  const classes = useStyles(trigger);
 
   return (
     <div className={classes.container}>

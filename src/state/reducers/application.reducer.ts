@@ -3,7 +3,12 @@ import { AnyAction } from 'redux';
 import { applicationActionConstants } from '../constants';
 import { IApplicationState } from '../interfaces';
 
-const applicationReducer = (state: IApplicationState | null = null, action: AnyAction) => {
+export const INITIAL_STATE: IApplicationState = {
+  theme: 'dark',
+  locale: 'en',
+};
+
+const applicationReducer = (state: IApplicationState = INITIAL_STATE, action: AnyAction): IApplicationState => {
   const { type, error } = action;
 
   if (type === applicationActionConstants.SET_THEME) {

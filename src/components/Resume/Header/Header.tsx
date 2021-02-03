@@ -1,13 +1,17 @@
 import React from 'react';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
 import { FormattedMessage } from 'react-intl';
 
 import logo from '../../../images/sea-foam.png';
 
 import useStyles from './styles';
+import { ICustomTheme } from '../../../theme';
 
 function Header() {
-  const classes = useStyles();
+  const theme: ICustomTheme = useTheme();
+  const trigger = useMediaQuery(theme.breakpoints.up('sm'));
+  const classes = useStyles(trigger);
 
   return (
     <div className={classes.container}>

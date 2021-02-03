@@ -46,6 +46,8 @@ const useStyles = (desktop?: boolean) => {
       },
       zeroMargin: {
         margin: spacing(0),
+        display: desktop ? undefined : 'flex',
+        flexWrap: desktop ? undefined : 'wrap',
       },
     };
   })();
