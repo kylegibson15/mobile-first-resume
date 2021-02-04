@@ -1,21 +1,23 @@
 import React from 'react';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
-import { FormattedMessage } from 'react-intl';
+import { useIntl } from 'react-intl';
 
 import logo from '../../../images/sea-foam.png';
 
 import useStyles from './styles';
 import { ICustomTheme } from '../../../theme';
+import { messages } from '../../../translations';
 
 function Header() {
+  const intl = useIntl();
   const theme: ICustomTheme = useTheme();
   const trigger = useMediaQuery(theme.breakpoints.up('sm'));
   const classes = useStyles(trigger);
 
   return (
     <div className={classes.container}>
-      <img src={logo} height='150' width='85' />
+      <img alt='kyle gibson website logo' src={logo} height='150' width='85' />
       <div className={classes.nameLinksContainer}>
         <div className={classes.nameLocation}>
           <h1 className={classes.name}>KYLE GIBSON</h1>
@@ -32,9 +34,7 @@ function Header() {
             <h4 className={classes.margin5}>/kylegibson15</h4>
           </a>
 
-          <h4 className={classes.title}>
-            <FormattedMessage id='landing-page-job-title' description='job title' defaultMessage='software engineer' />
-          </h4>
+          <h4 className={classes.title}>{intl.formatMessage(messages.job_title)}</h4>
         </div>
       </div>
     </div>

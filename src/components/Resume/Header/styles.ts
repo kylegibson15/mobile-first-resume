@@ -23,8 +23,22 @@ const useStyles = (desktop?: boolean) => {
         alignItems: 'center',
         color: 'inherit',
         textDecoration: 'none',
+        background: `linear-gradient(to bottom, ${palette.text.primary} 0%, ${palette.text.primary} 100%)`,
+        backgroundPosition: '100% 0',
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: '4px 0px',
+        transition: 'background-size .2s',
+        '&:hover': {
+          backgroundSize: '4px 50px',
+          color: '#000',
+          borderRadius: '0 0 2px 2px',
+        },
       },
-      margin5: { ...margin(5), fontSize: desktop ? 'initial' : spacing(1.5), whiteSpace: desktop ? 'initial' : 'nowrap' },
+      margin5: {
+        ...margin(5),
+        fontSize: desktop ? 'initial' : spacing(1.5),
+        whiteSpace: desktop ? 'initial' : 'nowrap',
+      },
       name: {
         fontSize: desktop ? spacing(4) : spacing(2),
         color: palette.primary.seafoam,

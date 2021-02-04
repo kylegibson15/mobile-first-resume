@@ -44,6 +44,19 @@ const useStyles = (desktop: boolean) => {
         marginTop: '4em',
         flexDirection: 'column',
       },
+      resumeLink: {
+        color: 'inherit',
+        textDecoration: 'none',
+        background: `linear-gradient(to bottom, ${palette.text.primary} 0%, ${palette.text.primary} 100%)`,
+        backgroundPosition: '0 100%',
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: '4px 0px',
+        transition: 'background-size .2s',
+        '&:hover': {
+          backgroundSize: '4px 50px',
+          color: '#000',
+        },
+      },
       textCreative: {
         color: palette.text.accent_1,
         ...adjective,

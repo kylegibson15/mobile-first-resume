@@ -1,9 +1,10 @@
 import React from 'react';
 import { Typography, useMediaQuery, useTheme } from '@material-ui/core';
-import { FormattedMessage } from 'react-intl';
+import { useIntl } from 'react-intl';
 
 import useStyles from './styles';
 import { ICustomTheme } from '../../../theme';
+import { messages } from '../../../translations';
 
 const skills = [
   'TypeScript',
@@ -32,6 +33,7 @@ const skills = [
 ];
 
 function Skills() {
+  const intl = useIntl();
   const theme: ICustomTheme = useTheme();
   const trigger = useMediaQuery(theme.breakpoints.up('sm'));
   const classes = useStyles(trigger);
@@ -43,9 +45,7 @@ function Skills() {
         <h4>kylegibson15@gmail.com</h4>
       </div>
       <div className={classes.title}>
-        <Typography className={classes.text}>
-          <FormattedMessage id='resume-skills-section-title' description='title for skills section of resume' defaultMessage='skills' />
-        </Typography>
+        <Typography className={classes.text}>{intl.formatMessage(messages.resume_section_title_skills)}</Typography>
       </div>
       <ul className={classes.skillsSection}>
         {skills.map(skill => (

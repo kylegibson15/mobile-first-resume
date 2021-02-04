@@ -1,50 +1,54 @@
 {
-  "landing-page-adjective-creative": {
-    "defaultMessage": "Creative.",
-    "description": "adjective: creative"
+  "adjective-creative": {
+    "defaultMessage": "Creative."
   },
-  "landing-page-adjective-focused": {
-    "defaultMessage": "Focused.",
-    "description": "adjective: focused"
+  "adjective-focused": {
+    "defaultMessage": "Focused."
   },
-  "landing-page-adjective-motivated": {
-    "defaultMessage": "Motivated.",
-    "description": "adjective: motivated"
+  "adjective-motivated": {
+    "defaultMessage": "Motivated."
   },
-  "landing-page-adjective-persistent": {
-    "defaultMessage": "Persistent.",
-    "description": "adjective: persistent"
+  "adjective-persistent": {
+    "defaultMessage": "Persistent."
   },
-  "landing-page-job-title": {
-    "defaultMessage": "software engineer",
-    "description": "job title"
+  "job-title": {
+    "defaultMessage": "Software Engineer"
   },
   "landing-page-resume-link": {
     "defaultMessage": "Resume",
     "description": "link to resume"
   },
+  "resume-date-present": {
+    "defaultMessage": "Present"
+  },
+  "resume-profile-paragraph-sentence-1": {
+    "defaultMessage": "I think anything is possible when you get enough people to believe in what they’re creating."
+  },
+  "resume-profile-paragraph-sentence-2": {
+    "defaultMessage": "I enjoy being challenged and building quality software alongside a motivated team on a mission to change the world."
+  },
+  "resume-profile-paragraph-sentence-3": {
+    "defaultMessage": "Sharing my knowledge and expertise while taking pride in learning from my peers."
+  },
+  "resume-profile-paragraph-sentence-4": {
+    "defaultMessage": "Understanding the low level details and grasping the high level goal to better instruct architecture and design."
+  },
   "resume-section-education": {
-    "defaultMessage": "Education",
-    "description": "profile section education"
+    "defaultMessage": "Experience"
   },
   "resume-section-experience": {
-    "defaultMessage": "Experience",
-    "description": "profile section experience"
+    "defaultMessage": "Experience"
   },
   "resume-section-interests": {
-    "defaultMessage": "Interests",
-    "description": "profile section interests"
+    "defaultMessage": "Interests"
   },
   "resume-section-profile": {
-    "defaultMessage": "Profile",
-    "description": "profile title"
+    "defaultMessage": "Profile"
   },
   "resume-section-projects": {
-    "defaultMessage": "Projects",
-    "description": "profile section projects"
+    "defaultMessage": "Projects"
   },
-  "resume-skills-section-title": {
-    "defaultMessage": "skills",
-    "description": "title for skills section of resume"
+  "resume-section-skills": {
+    "defaultMessage": "skills"
   }
 }

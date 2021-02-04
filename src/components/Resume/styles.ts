@@ -30,6 +30,10 @@ const useStyles = (desktop?: boolean) => {
       projectLink: {
         textDecoration: 'none',
       },
+      resumeBodyContainer: {
+        display: 'flex',
+        flexDirection: desktop ? 'row' : 'column',
+      },
       sectionContainer: {
         borderLeft: `4px solid ${palette.text.primary}`,
         padding: spacing(0, 0, 0, 2),
@@ -43,6 +47,17 @@ const useStyles = (desktop?: boolean) => {
       sectionSubTitle: {
         color: palette.text.accent_3,
         margin: spacing(1, 0, 0),
+        // background: `linear-gradient(to right, ${palette.text.primary} 0%, ${palette.text.primary}, transparent 0px)`,
+        // backgroundRepeat: 'repeat-x',
+        // '&:hover': {
+        //   background: `linear-gradient(to right, ${palette.text.primary} 0%, ${palette.text.primary} 10%, transparent)`,
+        //   color: '#000',
+        // },
+      },
+      sectionWrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        marginLeft: '8px',
       },
       zeroMargin: {
         margin: spacing(0),
