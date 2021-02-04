@@ -19,6 +19,10 @@
     "defaultMessage": "software engineer",
     "description": "job title"
   },
+  "landing-page-resume-link": {
+    "defaultMessage": "Resume",
+    "description": "link to resume"
+  },
   "resume-section-education": {
     "defaultMessage": "Education",
     "description": "profile section education"

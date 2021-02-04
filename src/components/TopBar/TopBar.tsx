@@ -1,20 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, IconButton, Toolbar, useTheme, useMediaQuery } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import { PublicOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
 import logo from '../../images/sea-foam.png';
 import { setApplicationLocale, IApplicationState } from '../../state';
 import { ThemeToggleButton } from '../Buttons';
-import { ICustomTheme } from '../../theme';
 
 import useStyles from './styles';
 
 export default function TopBar() {
   const locale = useSelector((state: IApplicationState) => state.locale);
-  const theme: ICustomTheme = useTheme();
-  const trigger = useMediaQuery(theme.breakpoints.up('sm'));
   const dispatch = useDispatch();
   const classes = useStyles();
 
