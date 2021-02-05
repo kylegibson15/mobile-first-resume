@@ -47,12 +47,6 @@ const useStyles = (desktop?: boolean) => {
       sectionSubTitle: {
         color: palette.text.accent_3,
         margin: spacing(1, 0, 0),
-        // background: `linear-gradient(to right, ${palette.text.primary} 0%, ${palette.text.primary}, transparent 0px)`,
-        // backgroundRepeat: 'repeat-x',
-        // '&:hover': {
-        //   background: `linear-gradient(to right, ${palette.text.primary} 0%, ${palette.text.primary} 10%, transparent)`,
-        //   color: '#000',
-        // },
       },
       sectionWrapper: {
         display: 'flex',

@@ -29,6 +29,15 @@ const useStyles = (desktop: boolean) => {
         textShadow: palette.text.shadow_1,
         textTransform: 'uppercase',
         textAlign: 'center',
+        animation: '$reveal 3000ms ease-in-out forwards 200ms',
+      },
+      '@keyframes reveal': {
+        '80%': {
+          letterSpacing: '8px',
+        },
+        '90%': {
+          backgroundSize: '300% 300%',
+        },
       },
       name: {
         fontSize: desktop ? '2.5rem' : '1.1rem',
@@ -36,6 +45,7 @@ const useStyles = (desktop: boolean) => {
         margin: 0,
         padding: 0,
         textShadow: palette.text.shadow_1,
+        animation: '$reveal 3000ms ease-in-out forwards 200ms',
       },
       nameJobTitle: {
         display: 'flex',
