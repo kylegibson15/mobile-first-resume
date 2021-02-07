@@ -19,7 +19,7 @@ const skills = [
   'MaterialUI',
   'Python',
   'Pandas/Numpy',
-  'C++',
+  'C/C++',
   'SQL',
   'Git',
   'Analytics',
