@@ -4,7 +4,7 @@ import { MuiThemeProvider, Theme } from '@material-ui/core';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { LandingPage, Resume, TopBar } from './components';
+import { LandingPage, Projects, Resume, TopBar } from './components';
 import { IApplicationState } from './state';
 import { getTheme } from './theme';
 
@@ -25,6 +25,9 @@ function App({ messages }: IApplicationProps) {
             <TopBar />
           </div>
           <Switch>
+            <Route path='/projects'>
+              <Projects />
+            </Route>
             <Route path='/resume'>
               <Resume />
             </Route>

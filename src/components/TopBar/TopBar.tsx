@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, Button, IconButton, Toolbar } from '@material-ui/core';
 import { PublicOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
@@ -27,10 +27,24 @@ export default function TopBar() {
             <img src={logo} height='38' width='24' />
           </Link>
         </div>
-        <IconButton onClick={toggleLocale}>
-          <PublicOutlined />
-        </IconButton>
-        <ThemeToggleButton />
+        <div>
+          <Button>
+            <Link className={classes.projectsLink} to='/projects'>
+              Projects
+            </Link>
+          </Button>
+          <Button>
+            <Link className={classes.projectsLink} to='/resume'>
+              Resume
+            </Link>
+          </Button>
+        </div>
+        <div>
+          <IconButton onClick={toggleLocale}>
+            <PublicOutlined />
+          </IconButton>
+          <ThemeToggleButton />
+        </div>
       </Toolbar>
     </AppBar>
   );
