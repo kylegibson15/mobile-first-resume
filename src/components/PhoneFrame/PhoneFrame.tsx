@@ -1,10 +1,13 @@
 import React from 'react';
 
-function PhoneFrame() {
+import useStyles from './styles';
+
+function PhoneFrame(): React.ReactElement {
+  const classes = useStyles();
   return (
-    <div style={{ height: '500px', width: '300px' }}>
-      <div style={{ padding: '65px 10px', backgroundColor: '#222', borderRadius: '50px', border: '3px solid lightgrey' }}>
-        <iframe src='https://kylegibson15.github.io/my-vacation-home' height='468' width='280' style={{ border: 'none' }} />
+    <div className={classes.container}>
+      <div className={classes.frame}>
+        <iframe src={'https://kylegibson15.github.io/my-vacation-home'} height='468' width='280' style={{ border: 'none' }} />
       </div>
     </div>
   );

@@ -1,17 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, Button, IconButton, Toolbar } from '@material-ui/core';
-import { PublicOutlined } from '@material-ui/icons';
-import { Link } from 'react-router-dom';
+import { AppBar, Button, ButtonGroup, IconButton, Toolbar } from '@material-ui/core';
+import { TranslateOutlined } from '@material-ui/icons';
+import { Link, useLocation } from 'react-router-dom';
 
 import logo from '../../images/sea-foam.png';
-import { setApplicationLocale, IApplicationState } from '../../state';
+import { IApplicationState, setApplicationLocale, setProject } from '../../state';
 import { ThemeToggleButton } from '../Buttons';
 
 import useStyles from './styles';
 
 export default function TopBar() {
   const locale = useSelector((state: IApplicationState) => state.locale);
+  const location = useLocation();
   const dispatch = useDispatch();
   const classes = useStyles();
 
@@ -19,6 +20,9 @@ export default function TopBar() {
     dispatch(setApplicationLocale(locale === 'en' ? 'es' : 'en'));
   }
 
+  function handleProjectSelection(value: 'mvh' | 'cv') {
+    dispatch(setProject(value));
+  }
   return (
     <AppBar position='fixed'>
       <Toolbar className={classes.toolbar}>
@@ -41,11 +45,23 @@ export default function TopBar() {
         </div>
         <div>
           <IconButton onClick={toggleLocale}>
-            <PublicOutlined />
+            <TranslateOutlined />
           </IconButton>
           <ThemeToggleButton />
         </div>
       </Toolbar>
+      {location.pathname === '/projects' ? (
+        <Toolbar className={classes.projectsToolbar}>
+          <ButtonGroup variant='text' aria-label='text primary button group'>
+            <Button className={classes.button} onClick={() => handleProjectSelection('mvh')} style={{ paddingLeft: '15px' }}>
+              My Vacation Home
+            </Button>
+            <Button className={classes.button} onClick={() => handleProjectSelection('cv')}>
+              OpenCV
+            </Button>
+          </ButtonGroup>
+        </Toolbar>
+      ) : null}
     </AppBar>
   );
 }

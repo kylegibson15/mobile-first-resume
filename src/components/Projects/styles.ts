@@ -8,7 +8,7 @@ const useStyles = (desktop?: boolean) => {
       container: {
         background: palette.background.main,
         color: palette.text.primary,
-        flexDirection: 'column',
+        flexDirection: 'row',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
