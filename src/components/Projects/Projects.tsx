@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { PhoneFrame } from '../PhoneFrame';
 import OpenCV from './OpenCV';
+import MVH from './MVH';
 
 import { IApplicationState } from '../../state';
 
@@ -13,7 +13,7 @@ function Empty() {
 }
 
 const projects = new Map([
-  ['mvh', { component: PhoneFrame }],
+  ['mvh', { component: MVH }],
   ['cv', { component: OpenCV }],
 ]);
 

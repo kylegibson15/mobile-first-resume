@@ -14,6 +14,20 @@ const useStyles = (desktop?: boolean) => {
         alignItems: 'center',
         height: '100vh',
       },
+      mvhLink: {
+        color: 'inherit',
+        textTransform: 'uppercase',
+      },
+      mvhZeroMargin: {
+        margin: 0,
+      },
+      mvhWhiteText: {
+        color: palette.text.paragraph,
+      },
+      mvhTextContainer: {
+        padding: spacing(2),
+        height: '100%',
+      },
     };
   })();
 };

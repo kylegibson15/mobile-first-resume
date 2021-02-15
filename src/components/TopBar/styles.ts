@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: ICustomTheme) => ({
     },
   },
   button: {
-    color: theme.palette.text.accent_3,
+    color: theme.palette.text.accent_1,
   },
   toolbar: {
     display: 'flex',
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme: ICustomTheme) => ({
     marginTop: '3px',
     paddingLeft: 'unset',
     overflowX: 'scroll',
+    overflowY: 'hidden',
     animation: '$drop-in .5s linear',
   },
 }));

@@ -12,6 +12,7 @@ import useStyles from './styles';
 
 export default function TopBar() {
   const locale = useSelector((state: IApplicationState) => state.locale);
+  const project = useSelector((state: IApplicationState) => state.project);
   const location = useLocation();
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -22,6 +23,10 @@ export default function TopBar() {
 
   function handleProjectSelection(value: 'mvh' | 'cv') {
     dispatch(setProject(value));
+  }
+
+  function calculateVariant(projectVariant: 'mvh' | 'cv') {
+    return project === projectVariant ? 'contained' : 'text';
   }
   return (
     <AppBar position='fixed'>
@@ -53,10 +58,15 @@ export default function TopBar() {
       {location.pathname === '/projects' ? (
         <Toolbar className={classes.projectsToolbar}>
           <ButtonGroup variant='text' aria-label='text primary button group'>
-            <Button className={classes.button} onClick={() => handleProjectSelection('mvh')} style={{ paddingLeft: '15px' }}>
+            <Button
+              className={classes.button}
+              variant={calculateVariant('mvh')}
+              onClick={() => handleProjectSelection('mvh')}
+              style={{ paddingLeft: '15px' }}
+            >
               My Vacation Home
             </Button>
-            <Button className={classes.button} onClick={() => handleProjectSelection('cv')}>
+            <Button className={classes.button} onClick={() => handleProjectSelection('cv')} variant={calculateVariant('cv')}>
               OpenCV
             </Button>
           </ButtonGroup>
