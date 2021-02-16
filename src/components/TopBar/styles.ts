@@ -2,18 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 
 import { ICustomTheme } from '../../theme';
 
-const useStyles = makeStyles((theme: ICustomTheme) => ({
-  '@keyframes drop-in': {
-    '0%': {
-      height: '0px',
-    },
-    '100%': {
-      height: theme.spacing(4),
-    },
-  },
-  button: {
-    color: theme.palette.text.accent_1,
-  },
+const useStyles = makeStyles(({ palette, spacing }: ICustomTheme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -21,15 +10,19 @@ const useStyles = makeStyles((theme: ICustomTheme) => ({
   },
   title: {
     letterSpacing: '1.5rem',
-    textShadow: theme.palette.text.shadow_1,
+    textShadow: palette.text.shadow_1,
   },
-  projectsLink: {
-    textDecoration: 'none',
-    color: 'unset',
+  '@keyframes drop-in': {
+    '0%': {
+      height: '0px',
+    },
+    '100%': {
+      height: spacing(4),
+    },
   },
   projectsToolbar: {
     minHeight: 'unset',
-    height: theme.spacing(4),
+    height: spacing(4),
     marginTop: '3px',
     paddingLeft: 'unset',
     overflowX: 'scroll',

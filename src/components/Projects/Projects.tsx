@@ -24,6 +24,7 @@ function Projects() {
   const ProjectComponent = useMemo(() => {
     return projects.get(project)?.component ?? Empty;
   }, [project]);
+
   return (
     <div className={classes.container}>
       <ProjectComponent />

@@ -19,7 +19,6 @@ const skills = [
   'MaterialUI',
   'Python',
   'Pandas/Numpy',
-  'C/C++',
   'SQL',
   'Git',
   'Analytics',
@@ -30,6 +29,7 @@ const skills = [
   'Agile',
   'UX/UI',
   'JSON/XML',
+  'C/C++',
 ];
 
 function Skills() {
