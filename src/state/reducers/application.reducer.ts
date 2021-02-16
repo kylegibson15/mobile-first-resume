@@ -1,4 +1,5 @@
 import { AnyAction } from 'redux';
+import { PROJECTS } from '../../components/Projects';
 
 import { applicationActionConstants } from '../constants';
 import { IApplicationState } from '../interfaces';
@@ -6,7 +7,7 @@ import { IApplicationState } from '../interfaces';
 export const INITIAL_STATE: IApplicationState = {
   theme: 'dark',
   locale: 'en',
-  project: 'mvh',
+  project: PROJECTS.mvh,
 };
 
 const applicationReducer = (state: IApplicationState = INITIAL_STATE, action: AnyAction): IApplicationState => {

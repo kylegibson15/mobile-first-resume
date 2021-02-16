@@ -1,21 +1,14 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import OpenCV from './OpenCV';
-import MVH from './MVH';
-
 import { IApplicationState } from '../../state';
 
+import { projects } from './constants';
 import useStyles from './styles';
 
 function Empty() {
   return <></>;
 }
-
-const projects = new Map([
-  ['mvh', { component: MVH }],
-  ['cv', { component: OpenCV }],
-]);
 
 function Projects() {
   const project = useSelector((state: IApplicationState) => state.project);
