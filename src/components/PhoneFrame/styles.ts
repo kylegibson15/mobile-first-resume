@@ -19,7 +19,7 @@ const useStyles = (desktop?: boolean) => {
         padding: '65px 10px',
         backgroundColor: '#222',
         borderRadius: '50px',
-        border: '3px solid lightgrey',
+        border: `${spacing(0.2)}px solid lightgrey`,
         display: 'flex',
         justifyContent: 'center',
       },
