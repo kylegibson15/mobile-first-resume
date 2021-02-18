@@ -1,6 +1,7 @@
 import { defineMessages } from 'react-intl';
 
 export const messages = defineMessages({
+  // General
   adjective_creative: {
     id: 'adjective-creative',
     defaultMessage: 'Creative.',
@@ -22,6 +23,35 @@ export const messages = defineMessages({
     description: 'link to resume',
     defaultMessage: 'Resume',
   },
+  job_title: {
+    id: 'job-title',
+    defaultMessage: 'Software Engineer',
+  },
+  // My Vacation Home - Project
+  mvh_paragraph_one: {
+    id: 'mvh-description-p-1',
+    defaultMessage:
+      'I created My Vacation Home as an information website for my home in Winter Park, CO that I am renting out. You can visit the site {link} or by scanning the QR code below.',
+  },
+  mvh_paragraph_two: {
+    id: 'mvh-description-p-2',
+    defaultMessage:
+      'Users can navigate use buttons that hook into their mobile devices app store to download the application for the free local transit to get to and from the Winter Park Ski Resort.',
+  },
+  mvh_paragraph_three: {
+    id: 'mvh-description-p-3',
+    defaultMessage:
+      'Users have a list of restaurants to explore with the ability to click and access their native OSs navigation application.',
+  },
+  mvh_best_on_mobile: {
+    id: 'mvh-best-on-mobile',
+    defaultMessage: 'Best on mobile',
+  },
+  mvh_here_link: {
+    id: 'mvh-here-link',
+    defaultMessage: 'HERE',
+  },
+  // Resume
   resume_experience_1: {
     id: 'resume-date-present',
     defaultMessage: 'Present',
@@ -111,9 +141,5 @@ export const messages = defineMessages({
   resume_section_title_skills: {
     id: 'resume-section-skills',
     defaultMessage: 'skills',
-  },
-  job_title: {
-    id: 'job-title',
-    defaultMessage: 'Software Engineer',
   },
 });
