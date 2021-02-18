@@ -1,3 +1,4 @@
+import { PROJECTS } from '../../components/Projects';
 import { applicationActionConstants } from '../constants';
 
 export const setApplicationLocale = (locale = 'en') => ({
@@ -7,4 +8,9 @@ export const setApplicationLocale = (locale = 'en') => ({
 
 export const toggleApplicationTheme = () => ({
   type: applicationActionConstants.SET_THEME,
+});
+
+export const setProject = (project = PROJECTS.mvh) => ({
+  type: applicationActionConstants.SET_PROJECT,
+  project,
 });
