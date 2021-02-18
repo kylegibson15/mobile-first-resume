@@ -26,26 +26,17 @@ function MVH() {
           <Grid className={classes.mvhWhiteText} item xs>
             <h6 className={classes.mvhZeroMargin}>TypeScript, React, React Router, Framer Motion, Redux, Github Pages, Material UI</h6>
             <p>
-              {/* {intl.formatMessage(messages.mvh_paragraph_one, {
+              {intl.formatMessage(messages.mvh_paragraph_one, {
                 link: (
                   <a className={classes.mvhLink} href='https://kylegibson15.github.io/my-vacation-home/' target='_blank' rel='noreferrer'>
-                    messages.mvh_here_link
+                    {intl.formatMessage(messages.mvh_here_link)}
                   </a>
                 ),
-              })} */}
-              I created My Vacation Home as an information website for my home in Winter Park, CO that I am renting out. You can visit the
-              site&nbsp;
-              <a className={classes.mvhLink} href='https://kylegibson15.github.io/my-vacation-home/' target='_blank' rel='noreferrer'>
-                HERE
-              </a>
-              &nbsp;or by scanning the QR code below.
+              })}
             </p>
-            <p>
-              Users can navigate use buttons that hook into their mobile devices app store to download the application for the free local
-              transit to get to and from the Winter Park Ski Resort.
-            </p>
-            <p>Users have a list of restaurants to explore with the ability to click and access their native OSs navigation application</p>
-            <p>Best on mobile</p>
+            <p>{intl.formatMessage(messages.mvh_paragraph_two)}</p>
+            <p>{intl.formatMessage(messages.mvh_paragraph_three)}</p>
+            <p>{intl.formatMessage(messages.mvh_best_on_mobile)}</p>
           </Grid>
           <Grid container item direction='row' justify='space-between' alignItems='flex-end'>
             <img src={QRCode} width='100' />
