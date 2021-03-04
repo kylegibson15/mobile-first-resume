@@ -28,7 +28,7 @@ function WIP() {
           `}
           <Grid container item justify='flex-end'>
             <Grid item>
-              <IconButton href='https://github.com/g64-sleuth' target='_blank'>
+              <IconButton href='https://github.com/kylegibson15' target='_blank'>
                 <GitHub fontSize='large' />
               </IconButton>
             </Grid>
