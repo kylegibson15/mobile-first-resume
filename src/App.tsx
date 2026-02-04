@@ -1,43 +1,65 @@
-import React, { useMemo } from 'react';
-import { useSelector } from 'react-redux';
-import { MuiThemeProvider, Theme } from '@material-ui/core';
-import { IntlProvider } from 'react-intl';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useEffect, useRef, lazy, Suspense } from 'react';
+import Lenis from 'lenis';
+import { Helmet } from 'react-helmet-async';
+import Nav from './components/Nav/Nav';
+import Hero from './components/Hero/Hero';
+import CustomCursor from './components/Hero/CustomCursor';
+import { useKonamiCode } from './hooks/useKonamiCode';
 
-import { LandingPage, Projects, Resume, TopBar } from './components';
-import { IApplicationState } from './state';
-import { getTheme } from './theme';
+const About = lazy(() => import('./components/About/About'));
+const Timeline = lazy(() => import('./components/Timeline/Timeline'));
+const SkillGrid = lazy(() => import('./components/Skills/SkillGrid'));
+const Projects = lazy(() => import('./components/Projects/Projects'));
+const Metrics = lazy(() => import('./components/Metrics/Metrics'));
+const Contact = lazy(() => import('./components/Contact/Contact'));
 
-interface IApplicationProps {
-  messages: Record<string, Record<string, string>>;
-}
+function App() {
+  useKonamiCode();
+  const lenisRef = useRef<Lenis | null>(null);
 
-function App({ messages }: IApplicationProps) {
-  const themeMode = useSelector((state: IApplicationState) => state.theme);
-  const locale = useSelector((state: IApplicationState) => state.locale);
-  const theme = useMemo(() => getTheme(themeMode), [themeMode]);
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    lenisRef.current = lenis;
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
-    <MuiThemeProvider theme={theme as Theme}>
-      <IntlProvider locale={locale} key={locale} messages={messages[locale]} defaultLocale={navigator.language}>
-        <Router>
-          <div style={{ overflowX: 'hidden', maxHeight: '100vh' }}>
-            <TopBar />
-          </div>
-          <Switch>
-            <Route path='/projects'>
-              <Projects />
-            </Route>
-            <Route path='/resume'>
-              <Resume />
-            </Route>
-            <Route path='/'>
-              <LandingPage />
-            </Route>
-          </Switch>
-        </Router>
-      </IntlProvider>
-    </MuiThemeProvider>
+    <>
+      <Helmet>
+        <title>Kyle Gibson — Software Engineering Lead | AI Infrastructure</title>
+        <meta
+          name="description"
+          content="Senior Software Engineer specializing in MLOps, Distributed Systems & AI Infrastructure. 8+ years building large-scale systems at Blue Origin and Alteryx."
+        />
+      </Helmet>
+
+      <CustomCursor />
+      <Nav />
+
+      <main>
+        <Hero />
+        <Suspense fallback={null}>
+          <About />
+          <Timeline />
+          <SkillGrid />
+          <Projects />
+          <Metrics />
+          <Contact />
+        </Suspense>
+      </main>
+    </>
   );
 }
 
