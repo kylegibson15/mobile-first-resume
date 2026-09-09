@@ -12,18 +12,24 @@ function check(name, ok, detail = '') {
 
 // Headless Chrome's new mode defaults prefers-color-scheme to dark, and this
 // site's tokens.css defines a real dark palette. Every check that loads a
-// page must force light explicitly, or it silently exercises the wrong
-// design instead of the one being verified.
-const FORCE_LIGHT = {
+// page must force a scheme explicitly, or it silently exercises the wrong
+// design instead of the one being verified. Layout/structure/JS-budget-style
+// checks below stay light-only (the scheme can't change what they measure);
+// the contrast check runs both, since light and dark are separately tuned
+// token sets that can fail independently.
+const emulatedMedia = (scheme) => ({
   method: 'Emulation.setEmulatedMedia',
-  params: { features: [{ name: 'prefers-color-scheme', value: 'light' }] },
-};
-async function openLight(port, url) {
+  params: { features: [{ name: 'prefers-color-scheme', value: scheme }] },
+});
+async function openWithScheme(port, url, scheme) {
   const page = await connect(port, 'about:blank');
-  await page.send(FORCE_LIGHT.method, FORCE_LIGHT.params);
+  const { method, params } = emulatedMedia(scheme);
+  await page.send(method, params);
   await page.send('Page.navigate', { url });
   return page;
 }
+const FORCE_LIGHT = emulatedMedia('light');
+const openLight = (port, url) => openWithScheme(port, url, 'light');
 
 const html = readFileSync('build/index.html', 'utf8');
 
@@ -186,8 +192,14 @@ try {
   }
 
   // 10. Contrast, measured against rendered pixels rather than by eye.
-  {
-    const page = await openLight(port, `${BASE}/`);
+  // Runs in both colour schemes: light and dark carry separately-tuned
+  // tokens and either can fail independently of the other. Background is
+  // resolved per-element by walking up to the nearest ancestor with a real
+  // (non-transparent) background-color rather than assuming body's — a flat
+  // `.evidence` figure sits on --paper-raised, not --paper, and the two
+  // surfaces aren't equally forgiving in both schemes.
+  for (const scheme of ['light', 'dark']) {
+    const page = await openWithScheme(port, `${BASE}/`, scheme);
     await sleep(800);
     const worst = await page.evaluate(`
       (() => {
@@ -198,14 +210,26 @@ try {
           });
           return 0.2126 * r + 0.7152 * g + 0.0722 * b;
         };
-        const parse = (s) => s.match(/\\d+/g).slice(0, 3).map(Number);
-        const bg = parse(getComputedStyle(document.body).backgroundColor);
+        const parse = (s) => s.match(/\\d+(\\.\\d+)?/g).map(Number);
+        const isTransparent = (s) => {
+          if (!s || s === 'transparent') return true;
+          const nums = parse(s);
+          return nums.length === 4 && nums[3] === 0;
+        };
+        const bgOf = (el) => {
+          for (let n = el; n && n !== document.documentElement; n = n.parentElement) {
+            const c = getComputedStyle(n).backgroundColor;
+            if (!isTransparent(c)) return c;
+          }
+          return getComputedStyle(document.body).backgroundColor;
+        };
         let worst = 99;
         let worstText = '';
         for (const el of document.querySelectorAll('p, li, h1, h2, h3, h4, blockquote, figcaption, .status, a')) {
           if (!el.textContent.trim()) continue;
           const style = getComputedStyle(el);
-          const fg = parse(style.color);
+          const fg = parse(style.color).slice(0, 3);
+          const bg = parse(bgOf(el)).slice(0, 3);
           const size = parseFloat(style.fontSize);
           const large = size >= 24 || (size >= 18.66 && Number(style.fontWeight) >= 700);
           const a = lum(fg);
@@ -214,13 +238,13 @@ try {
           const required = large ? 3 : 4.5;
           if (ratio < required && ratio < worst) {
             worst = ratio;
-            worstText = el.tagName + ' ' + size.toFixed(0) + 'px';
+            worstText = el.tagName + (el.className ? '.' + String(el.className).split(' ')[0] : '') + ' ' + size.toFixed(0) + 'px on ' + bgOf(el);
           }
         }
         return { worst: worst === 99 ? null : worst, worstText };
       })()`);
     check(
-      'all text meets its contrast requirement',
+      `all text meets its contrast requirement (${scheme} mode)`,
       worst.worst === null,
       worst.worst === null ? 'no failures' : `${worst.worst.toFixed(2)}:1 on ${worst.worstText}`,
     );

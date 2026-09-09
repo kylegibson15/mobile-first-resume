@@ -11,11 +11,16 @@ export async function launch(port = 9222) {
     '--window-size=1280,900',
   ]);
 
+  let spawnError = null;
   chrome.on('error', (error) => {
+    spawnError = error;
     console.error('chrome failed to spawn:', error.message);
   });
 
   for (let attempt = 0; attempt < 60; attempt += 1) {
+    if (spawnError) {
+      throw new Error(`Chrome did not open its devtools port: spawn failed — ${spawnError.message}`);
+    }
     try {
       const res = await fetch(`http://127.0.0.1:${port}/json/version`);
       if (res.ok) return { chrome, port };
@@ -24,7 +29,11 @@ export async function launch(port = 9222) {
     }
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
-  throw new Error('Chrome did not open its devtools port');
+  throw new Error(
+    spawnError
+      ? `Chrome did not open its devtools port: spawn failed — ${spawnError.message}`
+      : 'Chrome did not open its devtools port (spawned, but the port never became reachable within 15s)',
+  );
 }
 
 export async function connect(port, url) {

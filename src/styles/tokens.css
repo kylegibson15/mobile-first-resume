@@ -39,9 +39,13 @@
     --paper-raised: #1a1815;
     --ink: #f2efe7;
     --ink-muted: #b0aa9c;
-    /* Was #7d7768 — 4.24:1 against dark --paper, same AA shortfall as the
-       light value. Lightened to clear 4.5:1 with margin (measured 4.60:1). */
-    --ink-faint: #837d6d;
+    /* Was #7d7768 (4.24:1 on --paper), then #837d6d — which cleared --paper
+       (4.60:1) but not --paper-raised #1a1815, the surface figcaption/
+       evidence text actually sits on (measured 4.32:1, still below 4.5:1).
+       Lightened further to clear both dark surfaces with margin: 5.42:1 on
+       --paper, 5.09:1 on --paper-raised. Still darker than --ink-muted
+       (#b0aa9c), so it stays the quietest of the three tones. */
+    --ink-faint: #8f897a;
     --rule: #2c2924;
     --accent: #e8734f;
   }
