@@ -47,7 +47,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     slug: 'blue-origin',
     name: 'Blue Origin — Lunar Permanence',
     status: 'CURRENT',
-    what: 'The platform that designs and simulates a lunar lander, automating vehicle design, simulation and performance tracking across every subsystem.',
+    what: 'The platform that designs and simulates a lunar lander, automating performance tracking across every subsystem.',
     hardPart:
       'High-volume analysis and simulation jobs that depend on each other, over data classified as CUI — so every row needs access control and every change needs a permanent history, without that bookkeeping becoming the bottleneck.',
     decision:
@@ -56,7 +56,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     evidence: {
       kind: 'figures',
       source: 'Lead engineer, five-person team, 2024–present',
-      body: '40% faster simulations · 99.999% service availability · 5 engineers led',
+      body: '40% faster simulations · 5 engineers led',
     },
   },
   {
