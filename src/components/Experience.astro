@@ -53,6 +53,11 @@ import { education, experience } from '../data/resume';
   @media (min-width: 48rem) {
     .role {
       grid-template-columns: 15rem 1fr;
+      /* The company (display serif, --step-1) and the role title (bold
+         Inter, --step-0) have different first-baseline offsets, so
+         top-aligning the two columns left the two most prominent words in
+         each row sitting on visibly different lines. */
+      align-items: baseline;
     }
   }
 

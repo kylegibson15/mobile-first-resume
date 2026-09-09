@@ -79,6 +79,25 @@ a:hover {
   padding-inline: var(--gap-page);
 }
 
+/*
+ * Section label. This lives here rather than in a component because three
+ * components use it — index.astro, HowIWork, Experience. It was previously
+ * declared inside index.astro's scoped <style>, where Astro compiled it to
+ * `.section-head[data-astro-cid-<index>]`, so only "Selected work" ever
+ * received it: "How I work" and "Experience" silently fell back to the
+ * global display-serif h2 and rendered three times too large. Every
+ * automated check passed while the page had two different treatments for
+ * the same thing.
+ */
+.section-head {
+  font-family: var(--font-text);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

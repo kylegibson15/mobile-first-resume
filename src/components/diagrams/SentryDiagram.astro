@@ -2,7 +2,14 @@
 // Brain and muscle, and the deliberately narrow interface between them.
 ---
 
-<svg viewBox="0 0 640 200" role="img" aria-labelledby="sn-title sn-desc" class="diagram">
+<!--
+  viewBox cropped to the drawing, not padded around it. At "0 0 640 200"
+  the geometry occupied y 36–142, so 34 units of empty above and 58 below
+  scaled up to roughly 100px of blank panel inside the evidence block —
+  visible as two dead bands framing the diagram. No coordinate moved; the
+  frame just stopped including nothing.
+-->
+<svg viewBox="0 24 644 130" role="img" aria-labelledby="sn-title sn-desc" class="diagram">
   <title id="sn-title">The Sentry's split-microcontroller architecture</title>
   <desc id="sn-desc">
     A camera feeds a Raspberry Pi doing image processing. The Pi sends simple

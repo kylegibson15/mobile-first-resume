@@ -53,7 +53,23 @@ const PRACTICES = [
   @media (min-width: 56rem) {
     .grid {
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
+      grid-template-rows: auto auto auto;
+      /* Row gap must stay zero: the three rows are the inside of each
+         column, and h3/figure already carry their own spacing. A row-gap
+         here opens a hole under every title. */
+      column-gap: 2.5rem;
+      row-gap: 0;
+    }
+
+    /* The three bodies are different lengths, so the quotation blocks
+       started at three different heights — a ragged row of the one element
+       that is supposed to look like a set. Subgrid puts the titles, the
+       bodies and the artifacts each on a shared line. */
+    .grid > article {
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+      align-content: start;
     }
   }
 
@@ -81,5 +97,8 @@ const PRACTICES = [
     font-family: var(--font-mono);
     font-size: var(--step--1);
     color: var(--ink-faint);
+    /* "home-claw/README.md, hardware table" otherwise leaves "table" alone
+       on a line of its own in the third column. */
+    text-wrap: pretty;
   }
 </style>

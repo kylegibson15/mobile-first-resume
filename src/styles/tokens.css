@@ -46,7 +46,14 @@
        --paper, 5.09:1 on --paper-raised. Still darker than --ink-muted
        (#b0aa9c), so it stays the quietest of the three tones. */
     --ink-faint: #8f897a;
-    --rule: #2c2924;
+    /* Was #2c2924. Light mode leans on --rule for all of its structure —
+       section dividers, the evidence panel edge, the status chip, the
+       quote strokes in "How I work". At #2c2924 every one of those went
+       invisible on a dark ground, so the dark page kept the palette but
+       lost the composition: a designed set of colours over an undesigned
+       layout. Raised until the same strokes carry the same weight they do
+       in light. */
+    --rule: #3b362e;
     --accent: #e8734f;
   }
 }

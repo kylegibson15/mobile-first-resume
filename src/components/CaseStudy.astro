@@ -50,12 +50,24 @@ const { study } = Astro.props;
     border-top: 1px solid var(--rule);
   }
 
+  /* The rules separate studies from each other; the section label already
+     separates the first one from the hero. With a rule there too, the
+     label sat flush on a hairline with zero clearance and read as a
+     collision rather than a heading. */
+  .study:first-of-type {
+    border-top: 0;
+    padding-top: 2.5rem;
+  }
+
   header {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.75rem 1rem;
-    margin-bottom: 0.75rem;
+    gap: 0.5rem 1rem;
+    /* Larger than the flex row-gap, so that when the chip wraps onto its
+       own line it stays grouped with the title instead of floating
+       equidistant between the title and the summary. */
+    margin-bottom: 1.25rem;
   }
 
   h3 {
@@ -63,15 +75,20 @@ const { study } = Astro.props;
   }
 
   /* The honest status is the point of the whole page: PHASE 0 next to a
-     finished-looking write-up is what makes the rest believable. */
+     finished-looking write-up is what makes the rest believable. So it has
+     to look chosen. As a hairline outline in --rule it was almost invisible
+     in light and gone entirely in dark; filled, it reads as a deliberate
+     label. Baseline alignment also hung it below the serif title — the
+     chip's own baseline met the title's, which drops the whole pill. */
   .status {
+    align-self: center;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.08em;
     color: var(--ink-muted);
-    border: 1px solid var(--rule);
+    background: var(--rule);
     border-radius: 999px;
-    padding: 0.15em 0.7em;
+    padding: 0.2em 0.75em;
     white-space: nowrap;
   }
 
@@ -79,6 +96,10 @@ const { study } = Astro.props;
     font-size: var(--step-1);
     font-family: var(--font-display);
     color: var(--ink);
+    /* Its own measure in its own em. The 68ch --measure is calibrated for
+       Inter; against Newsreader's narrow figures 68ch renders as ~87
+       characters, far past a comfortable display-serif line. */
+    max-width: 30em;
     margin-bottom: 2rem;
   }
 
@@ -105,10 +126,16 @@ const { study } = Astro.props;
     margin-bottom: 0.5rem;
   }
 
+  /*
+   * Separated by space rather than by interpuncts. Each `·` used to be an
+   * ::after on its own item, so it could not break away from the word it
+   * followed — every wrap of this row ended a line with a dangling
+   * separator ("Terraform ·"), which happens at 390px on all six studies.
+   */
   .stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 0.75rem;
+    gap: 0.45rem 1.4rem;
     list-style: none;
     padding: 0;
     margin-bottom: 2rem;
@@ -117,19 +144,17 @@ const { study } = Astro.props;
     color: var(--ink-muted);
   }
 
-  .stack li::after {
-    content: ' ·';
-    color: var(--ink-faint);
-  }
-
-  .stack li:last-child::after {
-    content: '';
-  }
-
+  /*
+   * This is supposed to be the most important thing in the case study: the
+   * verbatim artifact that makes the paragraphs above it checkable. So it
+   * gets a defined edge in both schemes — a white card 2% off warm paper
+   * was invisible in light, leaving the accent bar to do all the work.
+   */
   .evidence {
     margin: 0;
-    padding: 1.5rem;
+    padding: 1.75rem;
     background: var(--paper-raised);
+    border: 1px solid var(--rule);
     border-left: 3px solid var(--accent);
   }
 
@@ -137,17 +162,31 @@ const { study } = Astro.props;
     margin-bottom: 1.5rem;
   }
 
-  blockquote {
+  /*
+   * One treatment for the evidence whatever kind it is. These two branches
+   * render in the same structural slot, and only the quote branch was
+   * styled: the `figures` and `diagram` bodies fell through to 18px Inter
+   * and came out the quietest text in the study. Blue Origin's "40% faster
+   * simulations · 5 engineers led" — the strongest claim on the page — was
+   * set smaller than the prose it was there to substantiate.
+   */
+  blockquote,
+  .evidence-body {
     margin: 0;
     font-family: var(--font-display);
     font-size: var(--step-1);
     line-height: 1.45;
+    /* ~62 characters of Newsreader. Unconstrained, the quotation ran the
+       longest line on the page at 1280px and wider (69ch ≈ 87 characters),
+       longer than the prose columns above it. */
+    max-width: 28em;
   }
 
   figcaption {
-    margin-top: 0.9rem;
+    margin-top: 1rem;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     color: var(--ink-faint);
+    text-wrap: pretty;
   }
 </style>
