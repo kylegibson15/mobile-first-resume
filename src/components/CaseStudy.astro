@@ -1,0 +1,146 @@
+---
+import type { CaseStudy } from '../data/projects';
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+---
+
+<article class="study" id={study.slug}>
+  <header>
+    <h3>{study.name}</h3>
+    <span class="status">{study.status}</span>
+  </header>
+
+  <p class="what">{study.what}</p>
+
+  <div class="parts">
+    <section>
+      <h4>The hard part</h4>
+      <p>{study.hardPart}</p>
+    </section>
+    <section>
+      <h4>The decision</h4>
+      <p>{study.decision}</p>
+    </section>
+  </div>
+
+  <ul class="stack" aria-label={`Stack for ${study.name}`}>
+    {study.stack.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <figure class="evidence" data-kind={study.evidence.kind}>
+    {study.evidence.kind === 'quote' ? (
+      <blockquote>{study.evidence.body}</blockquote>
+    ) : (
+      <div class="evidence-body"><slot name="diagram">{study.evidence.body}</slot></div>
+    )}
+    <figcaption>{study.evidence.source}</figcaption>
+  </figure>
+</article>
+
+<style>
+  .study {
+    padding-block: var(--gap-section);
+    border-top: 1px solid var(--rule);
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: var(--step-3);
+  }
+
+  /* The honest status is the point of the whole page: PHASE 0 next to a
+     finished-looking write-up is what makes the rest believable. */
+  .status {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.15em 0.7em;
+    white-space: nowrap;
+  }
+
+  .what {
+    font-size: var(--step-1);
+    font-family: var(--font-display);
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .parts {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 48rem) {
+    .parts {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  h4 {
+    font-family: var(--font-text);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.5rem;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+
+  .stack li::after {
+    content: ' ·';
+    color: var(--ink-faint);
+  }
+
+  .stack li:last-child::after {
+    content: '';
+  }
+
+  .evidence {
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--paper-raised);
+    border-left: 3px solid var(--accent);
+  }
+
+  blockquote {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    line-height: 1.45;
+  }
+
+  figcaption {
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+</style>

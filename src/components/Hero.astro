@@ -1,0 +1,39 @@
+---
+import { profile } from '../data/resume';
+---
+
+<header class="hero">
+  <p class="eyebrow">{profile.title} · {profile.location}</p>
+  <h1>{profile.name}</h1>
+  <p class="thesis">
+    By day I lead the platform that designs and simulates a lunar lander at Blue Origin.
+    At night I build robots in my garage.
+  </p>
+</header>
+
+<style>
+  .hero {
+    padding-block: clamp(4rem, 12vh, 9rem) var(--gap-section);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-size: var(--step-4);
+    margin-bottom: 1.5rem;
+  }
+
+  .thesis {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    line-height: 1.35;
+    max-width: 28ch;
+  }
+</style>

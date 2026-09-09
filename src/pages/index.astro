@@ -1,5 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaseStudy from '../components/CaseStudy.astro';
+import Hero from '../components/Hero.astro';
+import { CASE_STUDIES } from '../data/projects';
 import { profile } from '../data/resume';
 ---
 
@@ -8,6 +11,22 @@ import { profile } from '../data/resume';
   description="Kyle Gibson leads the platform that designs and simulates a lunar lander at Blue Origin, and builds robots at night."
 >
   <main class="wrap">
-    <h1>{profile.name}</h1>
+    <Hero />
+
+    <section aria-labelledby="work">
+      <h2 id="work" class="section-head">Selected work</h2>
+      {CASE_STUDIES.map((study) => <CaseStudy study={study} />)}
+    </section>
   </main>
 </Base>
+
+<style>
+  .section-head {
+    font-family: var(--font-text);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+</style>
