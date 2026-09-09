@@ -11,7 +11,9 @@
   --paper-raised: #ffffff;
   --ink: #16150f;
   --ink-muted: #57544a;
-  --ink-faint: #8a8578;
+  /* Was #8a8578 — 3.47:1 against --paper, below WCAG AA's 4.5:1 for normal
+     text. Darkened to clear 4.5:1 with margin (measured 4.65:1). */
+  --ink-faint: #757065;
   --rule: #e3ded2;
   --accent: #b4432a;
 
@@ -37,7 +39,9 @@
     --paper-raised: #1a1815;
     --ink: #f2efe7;
     --ink-muted: #b0aa9c;
-    --ink-faint: #7d7768;
+    /* Was #7d7768 — 4.24:1 against dark --paper, same AA shortfall as the
+       light value. Lightened to clear 4.5:1 with margin (measured 4.60:1). */
+    --ink-faint: #837d6d;
     --rule: #2c2924;
     --accent: #e8734f;
   }
