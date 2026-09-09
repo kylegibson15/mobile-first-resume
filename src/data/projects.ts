@@ -8,12 +8,35 @@
 
 export type Status = 'CURRENT' | 'BETA' | 'IN BUILD' | 'TRIALS' | 'PHASE 0' | 'SEASONAL';
 
+/**
+ * `quote` and `quote-list` render verbatim repository text; `diagram` an
+ * inline SVG; `figures` a metric row.
+ */
+export type EvidenceKind = 'quote' | 'quote-list' | 'diagram' | 'figures';
+
+/**
+ * The kinds the site presents to the reader as literal repository text, inside
+ * a `<blockquote>`. Every one of them must carry a `sourcePath`, and
+ * `quotes.test.ts` checks the text against that file. This list is what makes
+ * the check exhaustive: add a quoting kind and the test starts covering it.
+ */
+export const QUOTED_KINDS: readonly EvidenceKind[] = ['quote', 'quote-list'];
+
 export interface Evidence {
-  /** `quote` renders verbatim repository text; `diagram` an inline SVG; `figures` a metric row. */
-  kind: 'quote' | 'diagram' | 'figures';
-  /** Where it came from, shown as a citation. */
+  kind: EvidenceKind;
+  /** Where it came from, shown as a citation. Display text, not a path. */
   source: string;
+  /**
+   * The file the quotation is taken from, relative to the directory holding
+   * these sibling repositories. Required for every quoting kind — the
+   * citation above is prose and cannot be resolved to a file, which is how
+   * three quotations drifted from their sources while thirty checks passed.
+   */
+  sourcePath?: string;
+  /** The quotation, or for `quote-list` the lead-in that precedes `items`. */
   body: string;
+  /** `quote-list` only: the list that follows `body`. Each item is verbatim. */
+  items?: readonly string[];
 }
 
 export interface CaseStudy {
@@ -70,9 +93,20 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       'Contract first. A single OpenAPI document generates both clients, so the Rust backend and the SwiftUI app cannot drift apart — the compiler catches a mismatch that would otherwise surface as a bug on somebody\'s holiday.',
     stack: ['Rust', 'Axum', 'SQLx', 'PostgreSQL 16', 'PostGIS', 'Redis 7', 'React 19', 'SwiftUI', 'Terraform'],
     evidence: {
-      kind: 'quote',
-      source: 'README.md',
-      body: 'When a group uses this app, they should always know: what\'s the plan, who\'s where, what\'s decided, who owes what — tracked and settled without awkward chasing.',
+      // The four questions are the strongest thing in that README, so they are
+      // quoted as they are written: a lead-in and four bullets. They were
+      // previously flattened into one sentence that appears nowhere in the
+      // file, with the fourth bullet's trailing clause welded onto the end.
+      kind: 'quote-list',
+      source: 'README.md, Overview',
+      sourcePath: 'my-travel-planner/README.md',
+      body: 'When a group uses this app, they should always know:',
+      items: [
+        'What\'s the plan? - Today\'s activities and what\'s coming next',
+        'Who\'s where? - Where everyone is during the trip',
+        'What\'s decided? - Clear record of group decisions',
+        'Who owes what? - Expenses tracked and settled without awkward chasing',
+      ],
     },
   },
   {
@@ -82,13 +116,17 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     what: 'A family assistant that answers from any room and never leaves the house.',
     hardPart:
       'A useful home assistant needs the family\'s schedules, preferences and medical information. Every product that does this well sends that data to someone else\'s servers.',
+    // Present tense would be a lie: the README's hardware table marks the Mac
+    // Mini "Setting up" and every Pi and the Jetson "Planned". The site quotes
+    // that same table two sections down as proof that unfinished work is
+    // labelled honestly, so the prose has to hold to it.
     decision:
-      'Privacy as an architectural constraint rather than a feature. Inference runs locally on a Mac Mini M4 Pro, Raspberry Pi voice stations sit at the edge, and a Jetson bridges to a robot arm. No cloud dependency, no subscription, nothing crossing the LAN boundary — which rules out the easy answer and makes model size a hardware problem.',
+      'Privacy as an architectural constraint rather than a feature. The Mac Mini M4 Pro being set up is intended to be the only machine that runs inference; the Raspberry Pi voice stations and the Jetson arm bridge are planned, not built. No cloud dependency, no subscription, nothing crossing the LAN boundary — which rules out the easy answer and makes model size a hardware problem.',
     stack: ['MLX', 'FastAPI', 'pgvector', 'Raspberry Pi', 'Jetson Orin Nano'],
     evidence: {
       kind: 'diagram',
-      source: 'Architecture, README.md',
-      body: 'The LAN boundary is the design: every component that touches family data sits inside it.',
+      source: 'Architecture and hardware table, README.md — dashed boxes are planned',
+      body: 'The LAN boundary is the design: every component that touches family data is meant to sit inside it.',
     },
   },
   {
@@ -104,6 +142,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     evidence: {
       kind: 'quote',
       source: 'README.md',
+      sourcePath: 'dog-selfie-cam-poc/README.md',
       body: 'This repo is the proof-of-concept ladder; each phase has a pass/fail gate before the next one earns any time.',
     },
   },
@@ -120,7 +159,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     evidence: {
       kind: 'quote',
       source: 'PROJECT_PLAN.md, Phase 3 exit test',
-      body: 'The robot stands in a neutral pose holding its own weight for several minutes without servo overheating or brownout; full-system current stays within BEC and battery limits.',
+      sourcePath: 'quadruped/PROJECT_PLAN.md',
+      // The leading ellipsis marks the dropped first half of the exit test
+      // (joint commanding and sensor streaming). "BEC/battery", not "BEC and
+      // battery" — the plan's wording, not a tidied-up version of it.
+      body: '…the robot stands in a neutral pose holding its own weight for several minutes without servo overheating or brownout; full-system current stays within BEC/battery limits.',
     },
   },
   {
@@ -130,13 +173,20 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     what: 'An animatronic that tracks people up the driveway every October.',
     hardPart:
       'Computer vision is soft real-time and servo control is hard real-time. Run both on one processor and the vision work steals the timing the servos need, so the head moves in visible jerks.',
+    // "no shared state" was authored, not sourced — the plan says nothing
+    // about shared state. What it does say is that the Pico "receives simple
+    // commands from the Pi", over serial. The claim now stops where the
+    // repository stops.
     decision:
-      'Split the two across processors. A Raspberry Pi is the brain and does the image processing; a Pico or Nano is the muscle and does nothing but precise servo and LED timing. The interface between them is deliberately narrow: simple commands, no shared state.',
+      'Split the two across processors. A Raspberry Pi is the brain and does the image processing; a Pico or Nano is the muscle and does nothing but precise servo and LED timing. The interface between them is deliberately narrow: the Pi sends simple commands over a serial link, and the Pico executes them.',
     stack: ['OpenCV', 'Raspberry Pi', 'Pi Pico', 'Arduino Nano', 'Adafruit PWM driver'],
     evidence: {
       kind: 'quote',
-      source: 'Project plan',
-      body: 'A Raspberry Pi will act as the "brain," handling all the complex image processing for object tracking. An Arduino Nano or Raspberry Pi Pico will act as the "muscle," executing the precise, real-time control of the servos and LEDs.',
+      source: 'README.md, project plan §1',
+      sourcePath: 'halloween-vampire/README.md',
+      // "receiving simple commands from the Pi and" was previously deleted
+      // without an ellipsis — the very clause the decision above rests on.
+      body: 'A Raspberry Pi will act as the "brain," handling all the complex image processing for object tracking. An Arduino Nano or Raspberry Pi Pico will act as the "muscle," receiving simple commands from the Pi and executing the precise, real-time control of the servos and LEDs.',
     },
   },
 ];

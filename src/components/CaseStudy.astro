@@ -6,12 +6,26 @@ interface Props {
 }
 
 const { study } = Astro.props;
+
+/*
+ * `Astro.slots.has('diagram')` is true for all six studies: index.astro passes
+ * `{study.slug === 'home-claw' && <HomeClawDiagram slot="diagram" />}`, and a
+ * slot expression that evaluates to `false` still counts as provided. That
+ * quietly emitted an empty `.evidence-figure` on every study. Rendering the
+ * slot and measuring it is the only reliable test, and the two studies that do
+ * have a diagram are not the two with a particular evidence kind — The Sentry
+ * has both a diagram and a quotation.
+ */
+const diagramHtml = Astro.slots.has('diagram') ? await Astro.slots.render('diagram') : '';
+const hasDiagram = diagramHtml.trim().length > 0;
 ---
 
 <article class="study" id={study.slug}>
   <header>
     <h3>{study.name}</h3>
-    <span class="status">{study.status}</span>
+    {/* Sighted readers get the chip's position and styling for free; a screen
+        reader was hearing a bare "PHASE 0" with nothing to attach it to. */}
+    <span class="status"><span class="sr-only">Status: </span>{study.status}</span>
   </header>
 
   <p class="what">{study.what}</p>
@@ -32,12 +46,36 @@ const { study } = Astro.props;
   </ul>
 
   <figure class="evidence" data-kind={study.evidence.kind}>
-    {Astro.slots.has('diagram') && (
-      <div class="evidence-figure"><slot name="diagram" /></div>
+    {hasDiagram && (
+      <Fragment>
+        {/* The diagram holds its own width and scrolls sideways on a phone
+            rather than shrinking its labels to 5px. tabindex makes the scroll
+            container reachable from the keyboard, which Chrome does not do for
+            scrollable regions on its own. */}
+        <div
+          class="evidence-figure"
+          tabindex="0"
+          role="group"
+          aria-label={`${study.name} architecture diagram, scrolls sideways`}
+          set:html={diagramHtml}
+        />
+        {/* On a phone the diagram is wider than the panel, and the clipped
+            edge on its own does not read as "scrollable" — it reads as
+            broken. The group above already announces it to a screen reader,
+            so this is for eyes only. */}
+        <p class="scroll-hint" aria-hidden="true">Scroll the diagram sideways →</p>
+      </Fragment>
     )}
-    {study.evidence.kind === 'quote' ? (
-      <blockquote>{study.evidence.body}</blockquote>
-    ) : (
+    {study.evidence.kind === 'quote' && <blockquote>{study.evidence.body}</blockquote>}
+    {study.evidence.kind === 'quote-list' && (
+      <blockquote>
+        <p>{study.evidence.body}</p>
+        <ul class="quoted-list">
+          {(study.evidence.items ?? []).map((item) => <li>{item}</li>)}
+        </ul>
+      </blockquote>
+    )}
+    {(study.evidence.kind === 'diagram' || study.evidence.kind === 'figures') && (
       <p class="evidence-body">{study.evidence.body}</p>
     )}
     <figcaption>{study.evidence.source}</figcaption>
@@ -160,6 +198,10 @@ const { study } = Astro.props;
 
   .evidence-figure {
     margin-bottom: 1.5rem;
+    /* The diagrams carry a min-width so their labels stay legible; below that
+       width the panel scrolls instead of the page. */
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
   }
 
   /*
@@ -180,6 +222,39 @@ const { study } = Astro.props;
        longest line on the page at 1280px and wider (69ch ≈ 87 characters),
        longer than the prose columns above it. */
     max-width: 28em;
+  }
+
+  blockquote p {
+    max-width: none;
+  }
+
+  /* The diagrams hold a 40rem min-width; the panel is wider than that from
+     roughly 46rem of viewport up, and above there is nothing to scroll. */
+  .scroll-hint {
+    display: none;
+  }
+
+  @media (max-width: 46rem) {
+    .scroll-hint {
+      display: block;
+      margin-top: -0.75rem;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: var(--step--1);
+      color: var(--ink-faint);
+    }
+  }
+
+  /* Four bullets quoted as four bullets. No list marker: a marker would be an
+     addition to text the panel presents as verbatim. */
+  .quoted-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.6em;
+  }
+
+  .quoted-list li + li {
+    margin-top: 0.3em;
   }
 
   figcaption {

@@ -8,26 +8,11 @@ export interface Experience {
   tech: string[];
 }
 
-export interface SkillCategory {
-  name: string;
-  color: string;
-  skills: string[];
-}
-
 export interface Education {
   school: string;
   degree: string;
   location: string;
   note?: string;
-}
-
-export interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  image?: string;
 }
 
 export const profile = {
@@ -124,93 +109,6 @@ export const experience: Experience[] = [
   },
 ];
 
-export const skillCategories: SkillCategory[] = [
-  {
-    name: 'AI/ML & MLOps',
-    color: 'seafoam',
-    skills: [
-      'PyTorch',
-      'Ray',
-      'CUDA',
-      'MLOps',
-      'CI/CD Pipelines',
-      'Agentic AI',
-      'GenAI / LLMs',
-      'Apache Spark',
-      'ETL Orchestration',
-      'Apache Airflow',
-      'Prefect',
-      'Prompt Engineering',
-    ],
-  },
-  {
-    name: 'Cloud & Infrastructure',
-    color: 'blue',
-    skills: [
-      'Kubernetes (EKS)',
-      'Terraform (IaC)',
-      'AWS',
-      'Docker',
-      'Datadog',
-      'CloudWatch',
-      'Load Testing (k6)',
-      'ArgoCD',
-      'GitHub Actions',
-    ],
-  },
-  {
-    name: 'Backend',
-    color: 'orange',
-    skills: [
-      'Python',
-      'Go',
-      'TypeScript',
-      'Node.js',
-      'Java',
-      'Rust',
-      'C++',
-      'GraphQL',
-      'REST API',
-      'Event-Driven (SQS/SNS)',
-      'Kafka',
-      'Microservices',
-    ],
-  },
-  {
-    name: 'Frontend',
-    color: 'yellow',
-    skills: [
-      'React',
-      'TypeScript',
-      'Next.js',
-      'D3.js / SVG',
-      'Data Visualization',
-      'Tailwind CSS',
-      'Framer Motion',
-      'Three.js',
-    ],
-  },
-  {
-    name: 'Databases',
-    color: 'pink',
-    skills: ['PostgreSQL', 'DynamoDB', 'OpenSearch', 'Redis', 'RDS'],
-  },
-  {
-    name: 'Leadership',
-    color: 'red',
-    skills: [
-      'Tech Lead (5-person team)',
-      'Full Product Lifecycle',
-      'Stakeholder Management',
-      'Agile / Scrum',
-      'Architecture Design',
-      'Code Review',
-      'Mentoring',
-      'Cross-Team Collaboration',
-    ],
-  },
-];
-
 export const education: Education[] = [
   {
     school: 'University of Colorado',
@@ -228,29 +126,4 @@ export const education: Education[] = [
     degree: 'Full Stack Immersive',
     location: 'Denver, Colorado',
   },
-];
-
-export const projects: Project[] = [
-  {
-    title: 'My Vacation Home',
-    description:
-      'Information website for a Winter Park, CO vacation rental with transit information and local restaurant recommendations. Built with modern React patterns and smooth animations.',
-    tech: ['TypeScript', 'React', 'Framer Motion', 'Redux', 'Material UI', 'GitHub Pages'],
-    liveUrl: 'https://kylegibson15.github.io/my-vacation-home/',
-    githubUrl: 'https://github.com/kylegibson15/my-vacation-home',
-  },
-  {
-    title: 'Portfolio (This Site)',
-    description:
-      'Cutting-edge portfolio built with React 18, Three.js 3D graphics, Framer Motion animations, and Tailwind CSS. Features interactive timeline, particle effects, and glassmorphism design.',
-    tech: ['React 18', 'Three.js', 'Framer Motion', 'Tailwind CSS', 'Zustand', 'Vite'],
-    githubUrl: 'https://github.com/kylegibson15/mobile-first-resume',
-  },
-];
-
-export const metrics = [
-  { label: 'Years Experience', value: 8, suffix: '+' },
-  { label: 'Simulation Time Reduced', value: 40, suffix: '%' },
-  { label: 'Service Availability', value: 99.999, suffix: '%' },
-  { label: 'Feature Releases / Quarter', value: 10, suffix: '+' },
 ];

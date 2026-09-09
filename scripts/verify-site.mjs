@@ -1,5 +1,4 @@
 import { readFileSync, readdirSync } from 'node:fs';
-import { execSync } from 'node:child_process';
 import { connect, launch, sleep } from './cdp.mjs';
 
 const BASE = process.env.BASE ?? 'http://localhost:4321';
@@ -42,25 +41,52 @@ check(
 
 // 2 & 3. Content integrity, over the built output rather than the source.
 check('never claims flight software', !/flight software/i.test(html));
-for (const repo of ['lerobot', 'mlx-examples', 'AmazingHand']) {
+for (const repo of ['lerobot', 'mlx-examples', 'AmazingHand', 'AmazingHandPico']) {
   check(`does not present ${repo} as authored work`, !html.includes(repo));
 }
 
-// 4. The JavaScript budget. The target is zero.
-const jsFiles = [];
-const walk = (dir) => {
+// 4. Zero JavaScript, asserted as zero.
+//
+// This used to be a 15kB gzipped budget over the emitted .js files, which is
+// not the property the branch rests on: an inline <script> in the HTML weighs
+// nothing against that budget, and a client island added next year would have
+// to grow past 15kB before anything complained. Both halves are now absolute.
+const walkFiles = (dir) => {
+  const found = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const path = `${dir}/${entry.name}`;
-    if (entry.isDirectory()) walk(path);
-    else if (entry.name.endsWith('.js')) jsFiles.push(path);
+    if (entry.isDirectory()) found.push(...walkFiles(path));
+    else found.push(path);
   }
+  return found;
 };
-walk('build');
-const jsBytes = jsFiles.reduce(
-  (total, file) => total + Number(execSync(`gzip -c "${file}" | wc -c`).toString().trim()),
-  0,
+const built = walkFiles('build');
+const jsFiles = built.filter((file) => file.endsWith('.js'));
+check('the build emits no JavaScript files at all', jsFiles.length === 0, jsFiles.join(', ') || 'none');
+
+const htmlFiles = built.filter((file) => file.endsWith('.html'));
+const withScript = htmlFiles.filter((file) => /<script/i.test(readFileSync(file, 'utf8')));
+check(
+  'no built HTML file contains a script tag',
+  htmlFiles.length > 0 && withScript.length === 0,
+  withScript.join(', ') || `${htmlFiles.length} HTML file(s), none with <script`,
 );
-check('ships no more than 15kB of JavaScript', jsBytes <= 15360, `${jsBytes} bytes gzipped across ${jsFiles.length} files`);
+
+// 5. The link unfurls. A summary_large_image card with no og:image renders as
+// a blank rectangle in Slack and LinkedIn, which is where recruiters paste it.
+{
+  const cardType = html.match(/name="twitter:card"\s+content="([^"]+)"/)?.[1];
+  const hasImage = /property="og:image"/.test(html);
+  check(
+    'the social card is one the page can actually fill',
+    Boolean(cardType) && (cardType !== 'summary_large_image' || hasImage),
+    `twitter:card=${cardType ?? 'missing'}, og:image ${hasImage ? 'present' : 'absent'}`,
+  );
+  check(
+    'the page declares a canonical URL and og:url',
+    /rel="canonical"/.test(html) && /property="og:url"/.test(html),
+  );
+}
 
 const { chrome, port } = await launch();
 
@@ -169,24 +195,83 @@ try {
   }
 
   // 9. Everything focusable is reachable and shows a focus ring.
+  //
+  // The second argument to getComputedStyle is a pseudo-ELEMENT selector.
+  // ':focus-visible' is a pseudo-class, so Chrome ignored it and returned the
+  // element's resting style — the check measured the outline of an unfocused
+  // link and would have passed with no focus styling in the stylesheet at all.
+  // Focus is now driven by real Tab keypresses, which is what makes
+  // :focus-visible match, and the ring is read off the element itself.
   {
     const page = await openLight(port, `${BASE}/`);
     await sleep(800);
-    const focus = await page.evaluate(`
+    const total = await page.evaluate(
+      `document.querySelectorAll('a[href], button').length`,
+    );
+    const seen = new Set();
+    let ringed = 0;
+    // Tab past every target once, plus a margin for the diagram scroll panels
+    // and the browser's own chrome stops.
+    for (let i = 0; i < total + 12; i += 1) {
+      for (const type of ['rawKeyDown', 'char', 'keyUp']) {
+        await page.send('Input.dispatchKeyEvent', {
+          type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9,
+          text: type === 'char' ? '\t' : undefined,
+        });
+      }
+      const focused = await page.evaluate(`
+        (() => {
+          const el = document.activeElement;
+          if (!el || el === document.body) return null;
+          const style = getComputedStyle(el);
+          return {
+            key: el.tagName + '#' + (el.id || '') + '|' + (el.textContent || '').trim().slice(0, 40),
+            interactive: el.matches('a[href], button'),
+            focusVisible: el.matches(':focus-visible'),
+            outlined: style.outlineStyle !== 'none' && parseFloat(style.outlineWidth) > 0,
+          };
+        })()`);
+      if (!focused || !focused.interactive || seen.has(focused.key)) continue;
+      seen.add(focused.key);
+      if (focused.focusVisible && focused.outlined) ringed += 1;
+    }
+    check(
+      'every link and button is reachable by Tab and shows a real focus ring',
+      total > 0 && ringed === total,
+      `${ringed}/${total} reached with :focus-visible matching and a drawn outline`,
+    );
+    page.close();
+  }
+
+  // 11. Diagram labels stay legible on a phone. They are set in SVG user
+  // units, so they shrink with the viewBox: at 360px this drawing painted its
+  // labels at 5px. Anything under 11px rendered is unreadable, and for Home
+  // Claw the diagram is the evidence.
+  {
+    const page = await connect(port, 'about:blank');
+    await page.send(FORCE_LIGHT.method, FORCE_LIGHT.params);
+    await page.send('Emulation.setDeviceMetricsOverride', {
+      width: 360, height: 900, deviceScaleFactor: 1, mobile: true,
+    });
+    await page.send('Page.navigate', { url: `${BASE}/` });
+    await sleep(900);
+    const labels = await page.evaluate(`
       (() => {
-        const targets = [...document.querySelectorAll('a[href], button')];
-        let ringed = 0;
-        for (const el of targets) {
-          el.focus();
-          const style = getComputedStyle(el, ':focus-visible');
-          if (document.activeElement === el && style.outlineStyle !== 'none') ringed += 1;
+        let smallest = Infinity;
+        let worst = '';
+        let count = 0;
+        for (const text of document.querySelectorAll('svg.diagram text')) {
+          const height = text.getBoundingClientRect().height;
+          if (!height) continue;
+          count += 1;
+          if (height < smallest) { smallest = height; worst = text.textContent.trim(); }
         }
-        return { total: targets.length, ringed };
+        return { smallest, worst, count };
       })()`);
     check(
-      'every link and button is focusable with a visible ring',
-      focus.total > 0 && focus.ringed === focus.total,
-      `${focus.ringed}/${focus.total}`,
+      'diagram labels render at 11px or larger at 360px',
+      labels.count > 0 && labels.smallest >= 11,
+      `smallest ${labels.smallest.toFixed(1)}px of ${labels.count} labels ("${labels.worst}")`,
     );
     page.close();
   }

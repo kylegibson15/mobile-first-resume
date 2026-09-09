@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CASE_STUDIES, FORBIDDEN_PHRASES, NOT_MY_WORK } from './projects';
+import { CASE_STUDIES, FORBIDDEN_PHRASES, NOT_MY_WORK, QUOTED_KINDS } from './projects';
 
 describe('the six case studies', () => {
   it('has exactly six', () => {
@@ -22,6 +22,24 @@ describe('the six case studies', () => {
       expect(study.stack.length, study.slug).toBeGreaterThan(1);
       expect(study.evidence.body.length, study.slug).toBeGreaterThan(20);
       expect(study.evidence.source.length, study.slug).toBeGreaterThan(0);
+    }
+  });
+
+  it('gives every quoted evidence block a resolvable source file', () => {
+    // `source` is a citation for the reader ("README.md"); it cannot be
+    // opened. `sourcePath` can, and quotes.test.ts opens it. Without this,
+    // a new quotation could be added with no way to check it and the
+    // verbatim guard would silently not cover it.
+    for (const study of CASE_STUDIES) {
+      if (!QUOTED_KINDS.includes(study.evidence.kind)) continue;
+      expect(study.evidence.sourcePath, study.slug).toBeTruthy();
+    }
+  });
+
+  it('gives every quote-list the items it promises', () => {
+    for (const study of CASE_STUDIES) {
+      if (study.evidence.kind !== 'quote-list') continue;
+      expect(study.evidence.items?.length, study.slug).toBeGreaterThan(0);
     }
   });
 

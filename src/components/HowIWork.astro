@@ -1,25 +1,5 @@
 ---
-const PRACTICES = [
-  {
-    title: 'Phases with exit tests',
-    body: 'Every build gets a plan where each phase ends in a concrete, observable result. Nothing advances on the strength of feeling nearly done.',
-    quote:
-      'Each phase has an Exit test — a concrete, observable result that must pass before moving on. Don\'t skip ahead: every phase de-risks the next one.',
-    source: 'quadruped/PROJECT_PLAN.md',
-  },
-  {
-    title: 'The maths before the power',
-    body: 'Power budgets and safety rules get written down before a battery is connected, not after something releases smoke.',
-    quote: 'Never wire the LiPo straight to the servos.',
-    source: 'quadruped/docs/lipo_safety.md',
-  },
-  {
-    title: 'Honest status',
-    body: 'Unfinished work is labelled unfinished, in the repository and on this page. A project that says Phase 0 is worth more than five that claim to be done.',
-    quote: 'Mac Mini M4 Pro — Setting up · Raspberry Pi 4 — Planned · Jetson Orin Nano — Planned',
-    source: 'home-claw/README.md, hardware table',
-  },
-];
+import { PRACTICES } from '../data/practices';
 ---
 
 <section aria-labelledby="how" class="how">
@@ -30,7 +10,14 @@ const PRACTICES = [
         <h3>{practice.title}</h3>
         <p>{practice.body}</p>
         <figure>
-          <blockquote>{practice.quote}</blockquote>
+          <blockquote>
+            {practice.quote && <p>{practice.quote}</p>}
+            {practice.items && (
+              <ul class="quoted-rows">
+                {practice.items.map((item) => <li>{item}</li>)}
+              </ul>
+            )}
+          </blockquote>
           <figcaption>{practice.source}</figcaption>
         </figure>
       </article>
@@ -90,6 +77,18 @@ const PRACTICES = [
     font-size: var(--step--1);
     line-height: 1.6;
     color: var(--ink-muted);
+  }
+
+  blockquote p {
+    max-width: none;
+  }
+
+  /* Table rows quoted as rows, one per line — not run together into prose.
+     No bullets: the source is a table, and a marker would be an addition to
+     what is presented as verbatim text. */
+  .quoted-rows {
+    list-style: none;
+    padding: 0;
   }
 
   figcaption {

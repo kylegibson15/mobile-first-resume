@@ -1,40 +1,64 @@
 ---
 // The LAN boundary is the whole argument: every box that touches family data
 // is inside it, and nothing crosses out.
+//
+// Solid boxes exist; dashed boxes do not. README.md's hardware table marks the
+// Mac Mini "Setting up" and the Pi 4, the Pi 3 and the Jetson "Planned", and
+// the site quotes that same table two sections down as evidence that
+// unfinished work is labelled honestly. A diagram that drew all four as though
+// they were running would contradict its own evidence.
 ---
 
-<svg viewBox="0 0 640 260" role="img" aria-labelledby="hc-title hc-desc" class="diagram">
+<svg viewBox="0 0 640 296" role="img" aria-labelledby="hc-title hc-desc" class="diagram">
   <title id="hc-title">Home Claw architecture</title>
   <desc id="hc-desc">
-    A dashed boundary labelled Home network contains a Mac Mini running local
-    inference, two Raspberry Pi voice stations, and a Jetson bridging to a robot
-    arm. No connection crosses the boundary.
+    A dashed boundary labelled Home network contains a Mac Mini, which is being
+    set up to run local inference, and three planned devices drawn with dashed
+    outlines: a Raspberry Pi 4 voice station, a Raspberry Pi 3 voice station,
+    and a Jetson Orin Nano bridging to a robot arm. No connection crosses the
+    boundary. A legend records that a solid outline means the device is being
+    set up and a dashed outline means it is planned.
   </desc>
 
   <rect x="8" y="8" width="624" height="244" rx="10" fill="none"
         stroke="currentColor" stroke-dasharray="6 6" opacity="0.45" />
   <text x="24" y="32" font-size="13" fill="currentColor" opacity="0.6">HOME NETWORK — nothing leaves</text>
 
+  <!-- Setting up: solid. -->
   <rect x="232" y="62" width="176" height="66" rx="6" fill="none" stroke="currentColor" />
-  <text x="320" y="88" font-size="14" text-anchor="middle" fill="currentColor">Mac Mini M4 Pro</text>
-  <text x="320" y="108" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">local inference · knowledge</text>
+  <text x="320" y="86" font-size="14" text-anchor="middle" fill="currentColor">Mac Mini M4 Pro</text>
+  <text x="320" y="104" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">local inference · knowledge</text>
+  <text x="320" y="120" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">Setting up</text>
 
-  <rect x="40" y="170" width="150" height="58" rx="6" fill="none" stroke="currentColor" />
-  <text x="115" y="194" font-size="13" text-anchor="middle" fill="currentColor">Pi voice station</text>
-  <text x="115" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">STT · TTS</text>
+  <!-- Planned: dashed. -->
+  <rect x="30" y="170" width="160" height="66" rx="6" fill="none" stroke="currentColor" stroke-dasharray="5 4" />
+  <text x="110" y="194" font-size="13" text-anchor="middle" fill="currentColor">Raspberry Pi 4</text>
+  <text x="110" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">voice · STT · TTS</text>
+  <text x="110" y="228" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">Planned</text>
 
-  <rect x="245" y="170" width="150" height="58" rx="6" fill="none" stroke="currentColor" />
-  <text x="320" y="194" font-size="13" text-anchor="middle" fill="currentColor">Pi voice station</text>
-  <text x="320" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">STT · TTS</text>
+  <rect x="240" y="170" width="160" height="66" rx="6" fill="none" stroke="currentColor" stroke-dasharray="5 4" />
+  <text x="320" y="194" font-size="13" text-anchor="middle" fill="currentColor">Raspberry Pi 3</text>
+  <text x="320" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">voice · STT · TTS</text>
+  <text x="320" y="228" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">Planned</text>
 
-  <rect x="450" y="170" width="150" height="58" rx="6" fill="none" stroke="currentColor" />
-  <text x="525" y="194" font-size="13" text-anchor="middle" fill="currentColor">Jetson Orin Nano</text>
-  <text x="525" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">arm bridge</text>
+  <rect x="450" y="170" width="160" height="66" rx="6" fill="none" stroke="currentColor" stroke-dasharray="5 4" />
+  <text x="530" y="194" font-size="13" text-anchor="middle" fill="currentColor">Jetson Orin Nano</text>
+  <text x="530" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">voice · arm bridge</text>
+  <text x="530" y="228" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">Planned</text>
 
-  <g stroke="currentColor" opacity="0.55" fill="none">
-    <path d="M280 128 L115 170" />
+  <!-- The links are dashed too: a link to a device that does not exist yet
+       does not exist yet either. -->
+  <g stroke="currentColor" opacity="0.55" fill="none" stroke-dasharray="5 4">
+    <path d="M280 128 L110 170" />
     <path d="M320 128 L320 170" />
-    <path d="M360 128 L525 170" />
+    <path d="M360 128 L530 170" />
+  </g>
+
+  <g class="legend">
+    <rect x="8" y="266" width="26" height="16" rx="3" fill="none" stroke="currentColor" opacity="0.7" />
+    <text x="42" y="279" font-size="12" fill="currentColor" opacity="0.7">setting up</text>
+    <rect x="140" y="266" width="26" height="16" rx="3" fill="none" stroke="currentColor" stroke-dasharray="5 4" opacity="0.7" />
+    <text x="174" y="279" font-size="12" fill="currentColor" opacity="0.7">planned — not built</text>
   </g>
 </svg>
 
@@ -43,5 +67,15 @@
     width: 100%;
     height: auto;
     color: var(--ink);
+    /*
+     * Labels are set in SVG user units, so they shrink with the viewBox. At
+     * 360px the evidence panel is ~264px wide and this 640-unit drawing
+     * scaled to 0.41 — painting 12-unit labels at 5px. Holding the drawing at
+     * roughly its own size and letting the panel scroll keeps them at 12px or
+     * better everywhere, and stops the diagram ballooning to 24px labels on a
+     * wide desktop.
+     */
+    min-width: 40rem;
+    max-width: 44rem;
   }
 </style>
