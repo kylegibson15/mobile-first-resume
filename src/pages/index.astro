@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { profile } from '../data/resume';
+---
+
+<Base
+  title={`${profile.name} — Software Engineering Lead`}
+  description="Kyle Gibson leads the platform that designs and simulates a lunar lander at Blue Origin, and builds robots at night."
+>
+  <main class="wrap">
+    <h1>{profile.name}</h1>
+  </main>
+</Base>
