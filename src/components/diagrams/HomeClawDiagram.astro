@@ -1,0 +1,47 @@
+---
+// The LAN boundary is the whole argument: every box that touches family data
+// is inside it, and nothing crosses out.
+---
+
+<svg viewBox="0 0 640 260" role="img" aria-labelledby="hc-title hc-desc" class="diagram">
+  <title id="hc-title">Home Claw architecture</title>
+  <desc id="hc-desc">
+    A dashed boundary labelled Home network contains a Mac Mini running local
+    inference, two Raspberry Pi voice stations, and a Jetson bridging to a robot
+    arm. No connection crosses the boundary.
+  </desc>
+
+  <rect x="8" y="8" width="624" height="244" rx="10" fill="none"
+        stroke="currentColor" stroke-dasharray="6 6" opacity="0.45" />
+  <text x="24" y="32" font-size="13" fill="currentColor" opacity="0.6">HOME NETWORK — nothing leaves</text>
+
+  <rect x="232" y="62" width="176" height="66" rx="6" fill="none" stroke="currentColor" />
+  <text x="320" y="88" font-size="14" text-anchor="middle" fill="currentColor">Mac Mini M4 Pro</text>
+  <text x="320" y="108" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">local inference · knowledge</text>
+
+  <rect x="40" y="170" width="150" height="58" rx="6" fill="none" stroke="currentColor" />
+  <text x="115" y="194" font-size="13" text-anchor="middle" fill="currentColor">Pi voice station</text>
+  <text x="115" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">STT · TTS</text>
+
+  <rect x="245" y="170" width="150" height="58" rx="6" fill="none" stroke="currentColor" />
+  <text x="320" y="194" font-size="13" text-anchor="middle" fill="currentColor">Pi voice station</text>
+  <text x="320" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">STT · TTS</text>
+
+  <rect x="450" y="170" width="150" height="58" rx="6" fill="none" stroke="currentColor" />
+  <text x="525" y="194" font-size="13" text-anchor="middle" fill="currentColor">Jetson Orin Nano</text>
+  <text x="525" y="212" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">arm bridge</text>
+
+  <g stroke="currentColor" opacity="0.55" fill="none">
+    <path d="M280 128 L115 170" />
+    <path d="M320 128 L320 170" />
+    <path d="M360 128 L525 170" />
+  </g>
+</svg>
+
+<style>
+  .diagram {
+    width: 100%;
+    height: auto;
+    color: var(--ink);
+  }
+</style>

@@ -32,10 +32,13 @@ const { study } = Astro.props;
   </ul>
 
   <figure class="evidence" data-kind={study.evidence.kind}>
+    {Astro.slots.has('diagram') && (
+      <div class="evidence-figure"><slot name="diagram" /></div>
+    )}
     {study.evidence.kind === 'quote' ? (
       <blockquote>{study.evidence.body}</blockquote>
     ) : (
-      <div class="evidence-body"><slot name="diagram">{study.evidence.body}</slot></div>
+      <p class="evidence-body">{study.evidence.body}</p>
     )}
     <figcaption>{study.evidence.source}</figcaption>
   </figure>
@@ -128,6 +131,10 @@ const { study } = Astro.props;
     padding: 1.5rem;
     background: var(--paper-raised);
     border-left: 3px solid var(--accent);
+  }
+
+  .evidence-figure {
+    margin-bottom: 1.5rem;
   }
 
   blockquote {

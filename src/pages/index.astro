@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import CaseStudy from '../components/CaseStudy.astro';
 import Hero from '../components/Hero.astro';
+import HomeClawDiagram from '../components/diagrams/HomeClawDiagram.astro';
+import SentryDiagram from '../components/diagrams/SentryDiagram.astro';
 import { CASE_STUDIES } from '../data/projects';
 import { profile } from '../data/resume';
 ---
@@ -15,7 +17,12 @@ import { profile } from '../data/resume';
 
     <section aria-labelledby="work">
       <h2 id="work" class="section-head">Selected work</h2>
-      {CASE_STUDIES.map((study) => <CaseStudy study={study} />)}
+      {CASE_STUDIES.map((study) => (
+        <CaseStudy study={study}>
+          {study.slug === 'home-claw' && <HomeClawDiagram slot="diagram" />}
+          {study.slug === 'the-sentry' && <SentryDiagram slot="diagram" />}
+        </CaseStudy>
+      ))}
     </section>
   </main>
 </Base>
