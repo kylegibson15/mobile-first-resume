@@ -1,0 +1,65 @@
+---
+// Brain and muscle, and the deliberately narrow interface between them.
+---
+
+<!--
+  viewBox cropped to the drawing, not padded around it. At "0 0 640 200"
+  the geometry occupied y 36–142, so 34 units of empty above and 58 below
+  scaled up to roughly 100px of blank panel inside the evidence block —
+  visible as two dead bands framing the diagram. No coordinate moved; the
+  frame just stopped including nothing.
+-->
+<svg viewBox="0 24 644 130" role="img" aria-labelledby="sn-title sn-desc" class="diagram">
+  <title id="sn-title">The Sentry's split-microcontroller architecture</title>
+  <desc id="sn-desc">
+    A camera feeds a Raspberry Pi doing image processing. The Pi sends simple
+    commands over serial to a Pico, which drives the servos and LEDs in real time.
+  </desc>
+
+  <rect x="12" y="70" width="118" height="58" rx="6" fill="none" stroke="currentColor" />
+  <text x="71" y="94" font-size="13" text-anchor="middle" fill="currentColor">Camera</text>
+  <text x="71" y="112" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">5MP day/night</text>
+
+  <rect x="180" y="56" width="160" height="86" rx="6" fill="none" stroke="currentColor" />
+  <text x="260" y="84" font-size="14" text-anchor="middle" fill="currentColor">Raspberry Pi</text>
+  <text x="260" y="104" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">the brain</text>
+  <text x="260" y="122" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">soft real-time vision</text>
+
+  <rect x="392" y="56" width="160" height="86" rx="6" fill="none" stroke="currentColor" />
+  <text x="472" y="84" font-size="14" text-anchor="middle" fill="currentColor">Pico / Nano</text>
+  <text x="472" y="104" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">the muscle</text>
+  <text x="472" y="122" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.65">hard real-time servos</text>
+
+  <rect x="580" y="70" width="52" height="58" rx="6" fill="none" stroke="currentColor" />
+  <text x="606" y="104" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.7">servos</text>
+
+  <g stroke="currentColor" fill="none">
+    <path d="M130 99 L180 99" marker-end="url(#arrow)" />
+    <path d="M340 99 L392 99" marker-end="url(#arrow)" />
+    <path d="M552 99 L580 99" marker-end="url(#arrow)" />
+  </g>
+  <text x="366" y="44" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.6">simple commands</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+</svg>
+
+<style>
+  .diagram {
+    width: 100%;
+    height: auto;
+    color: var(--ink);
+    /*
+     * Labels are set in SVG user units, so they shrink with the viewBox. At
+     * 360px the evidence panel is ~264px wide and this 644-unit drawing
+     * scaled to 0.41 — painting 11-unit labels at 5px. Holding the drawing at
+     * roughly its own size and letting the panel scroll keeps them at 12px or
+     * better everywhere, and stops the diagram ballooning on a wide desktop.
+     */
+    min-width: 40rem;
+    max-width: 44rem;
+  }
+</style>

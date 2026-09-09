@@ -1,0 +1,59 @@
+/*
+ * Design tokens. Every component reads these; none hardcodes a colour or a
+ * size. The type scale is a fifth (1.5) at display sizes and a major third
+ * (1.25) in text, which keeps headings decisive without shouting.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Warm paper, near-black ink. */
+  --paper: #faf8f4;
+  --paper-raised: #ffffff;
+  --ink: #16150f;
+  --ink-muted: #57544a;
+  /* Was #8a8578 — 3.47:1 against --paper, below WCAG AA's 4.5:1 for normal
+     text. Darkened to clear 4.5:1 with margin (measured 4.65:1). */
+  --ink-faint: #757065;
+  --rule: #e3ded2;
+  --accent: #b4432a;
+
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --step--1: clamp(0.82rem, 0.79rem + 0.14vw, 0.89rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+  --step-1: clamp(1.25rem, 1.18rem + 0.34vw, 1.45rem);
+  --step-2: clamp(1.56rem, 1.44rem + 0.6vw, 1.9rem);
+  --step-3: clamp(1.95rem, 1.74rem + 1.05vw, 2.6rem);
+  --step-4: clamp(2.44rem, 2.05rem + 1.9vw, 3.9rem);
+
+  --measure: 68ch;
+  --gap-page: clamp(1.25rem, 5vw, 5rem);
+  --gap-section: clamp(3.5rem, 9vw, 7rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12110e;
+    --paper-raised: #1a1815;
+    --ink: #f2efe7;
+    --ink-muted: #b0aa9c;
+    /* Was #7d7768 (4.24:1 on --paper), then #837d6d — which cleared --paper
+       (4.60:1) but not --paper-raised #1a1815, the surface figcaption/
+       evidence text actually sits on (measured 4.32:1, still below 4.5:1).
+       Lightened further to clear both dark surfaces with margin: 5.42:1 on
+       --paper, 5.09:1 on --paper-raised. Still darker than --ink-muted
+       (#b0aa9c), so it stays the quietest of the three tones. */
+    --ink-faint: #8f897a;
+    /* Was #2c2924. Light mode leans on --rule for all of its structure —
+       section dividers, the evidence panel edge, the status chip, the
+       quote strokes in "How I work". At #2c2924 every one of those went
+       invisible on a dark ground, so the dark page kept the palette but
+       lost the composition: a designed set of colours over an undesigned
+       layout. Raised until the same strokes carry the same weight they do
+       in light. */
+    --rule: #3b362e;
+    --accent: #e8734f;
+  }
+}

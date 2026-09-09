@@ -1,0 +1,267 @@
+---
+import type { CaseStudy } from '../data/projects';
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+
+/*
+ * `Astro.slots.has('diagram')` is true for all six studies: index.astro passes
+ * `{study.slug === 'home-claw' && <HomeClawDiagram slot="diagram" />}`, and a
+ * slot expression that evaluates to `false` still counts as provided. That
+ * quietly emitted an empty `.evidence-figure` on every study. Rendering the
+ * slot and measuring it is the only reliable test, and the two studies that do
+ * have a diagram are not the two with a particular evidence kind — The Sentry
+ * has both a diagram and a quotation.
+ */
+const diagramHtml = Astro.slots.has('diagram') ? await Astro.slots.render('diagram') : '';
+const hasDiagram = diagramHtml.trim().length > 0;
+---
+
+<article class="study" id={study.slug}>
+  <header>
+    <h3>{study.name}</h3>
+    {/* Sighted readers get the chip's position and styling for free; a screen
+        reader was hearing a bare "PHASE 0" with nothing to attach it to. */}
+    <span class="status"><span class="sr-only">Status: </span>{study.status}</span>
+  </header>
+
+  <p class="what">{study.what}</p>
+
+  <div class="parts">
+    <section>
+      <h4>The hard part</h4>
+      <p>{study.hardPart}</p>
+    </section>
+    <section>
+      <h4>The decision</h4>
+      <p>{study.decision}</p>
+    </section>
+  </div>
+
+  <ul class="stack" aria-label={`Stack for ${study.name}`}>
+    {study.stack.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <figure class="evidence" data-kind={study.evidence.kind}>
+    {hasDiagram && (
+      <Fragment>
+        {/* The diagram holds its own width and scrolls sideways on a phone
+            rather than shrinking its labels to 5px. tabindex makes the scroll
+            container reachable from the keyboard, which Chrome does not do for
+            scrollable regions on its own. */}
+        <div
+          class="evidence-figure"
+          tabindex="0"
+          role="group"
+          aria-label={`${study.name} architecture diagram, scrolls sideways`}
+          set:html={diagramHtml}
+        />
+        {/* On a phone the diagram is wider than the panel, and the clipped
+            edge on its own does not read as "scrollable" — it reads as
+            broken. The group above already announces it to a screen reader,
+            so this is for eyes only. */}
+        <p class="scroll-hint" aria-hidden="true">Scroll the diagram sideways →</p>
+      </Fragment>
+    )}
+    {study.evidence.kind === 'quote' && <blockquote>{study.evidence.body}</blockquote>}
+    {study.evidence.kind === 'quote-list' && (
+      <blockquote>
+        <p>{study.evidence.body}</p>
+        <ul class="quoted-list">
+          {(study.evidence.items ?? []).map((item) => <li>{item}</li>)}
+        </ul>
+      </blockquote>
+    )}
+    {(study.evidence.kind === 'diagram' || study.evidence.kind === 'figures') && (
+      <p class="evidence-body">{study.evidence.body}</p>
+    )}
+    <figcaption>{study.evidence.source}</figcaption>
+  </figure>
+</article>
+
+<style>
+  .study {
+    padding-block: var(--gap-section);
+    border-top: 1px solid var(--rule);
+  }
+
+  /* The rules separate studies from each other; the section label already
+     separates the first one from the hero. With a rule there too, the
+     label sat flush on a hairline with zero clearance and read as a
+     collision rather than a heading. */
+  .study:first-of-type {
+    border-top: 0;
+    padding-top: 2.5rem;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    /* Larger than the flex row-gap, so that when the chip wraps onto its
+       own line it stays grouped with the title instead of floating
+       equidistant between the title and the summary. */
+    margin-bottom: 1.25rem;
+  }
+
+  h3 {
+    font-size: var(--step-3);
+  }
+
+  /* The honest status is the point of the whole page: PHASE 0 next to a
+     finished-looking write-up is what makes the rest believable. So it has
+     to look chosen. As a hairline outline in --rule it was almost invisible
+     in light and gone entirely in dark; filled, it reads as a deliberate
+     label. Baseline alignment also hung it below the serif title — the
+     chip's own baseline met the title's, which drops the whole pill. */
+  .status {
+    align-self: center;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    background: var(--rule);
+    border-radius: 999px;
+    padding: 0.2em 0.75em;
+    white-space: nowrap;
+  }
+
+  .what {
+    font-size: var(--step-1);
+    font-family: var(--font-display);
+    color: var(--ink);
+    /* Its own measure in its own em. The 68ch --measure is calibrated for
+       Inter; against Newsreader's narrow figures 68ch renders as ~87
+       characters, far past a comfortable display-serif line. */
+    max-width: 30em;
+    margin-bottom: 2rem;
+  }
+
+  .parts {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 48rem) {
+    .parts {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  h4 {
+    font-family: var(--font-text);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.5rem;
+  }
+
+  /*
+   * Separated by space rather than by interpuncts. Each `·` used to be an
+   * ::after on its own item, so it could not break away from the word it
+   * followed — every wrap of this row ended a line with a dangling
+   * separator ("Terraform ·"), which happens at 390px on all six studies.
+   */
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1.4rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+
+  /*
+   * This is supposed to be the most important thing in the case study: the
+   * verbatim artifact that makes the paragraphs above it checkable. So it
+   * gets a defined edge in both schemes — a white card 2% off warm paper
+   * was invisible in light, leaving the accent bar to do all the work.
+   */
+  .evidence {
+    margin: 0;
+    padding: 1.75rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+  }
+
+  .evidence-figure {
+    margin-bottom: 1.5rem;
+    /* The diagrams carry a min-width so their labels stay legible; below that
+       width the panel scrolls instead of the page. */
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  /*
+   * One treatment for the evidence whatever kind it is. These two branches
+   * render in the same structural slot, and only the quote branch was
+   * styled: the `figures` and `diagram` bodies fell through to 18px Inter
+   * and came out the quietest text in the study. Blue Origin's "40% faster
+   * simulations · 5 engineers led" — the strongest claim on the page — was
+   * set smaller than the prose it was there to substantiate.
+   */
+  blockquote,
+  .evidence-body {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    line-height: 1.45;
+    /* ~62 characters of Newsreader. Unconstrained, the quotation ran the
+       longest line on the page at 1280px and wider (69ch ≈ 87 characters),
+       longer than the prose columns above it. */
+    max-width: 28em;
+  }
+
+  blockquote p {
+    max-width: none;
+  }
+
+  /* The diagrams hold a 40rem min-width; the panel is wider than that from
+     roughly 46rem of viewport up, and above there is nothing to scroll. */
+  .scroll-hint {
+    display: none;
+  }
+
+  @media (max-width: 46rem) {
+    .scroll-hint {
+      display: block;
+      margin-top: -0.75rem;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: var(--step--1);
+      color: var(--ink-faint);
+    }
+  }
+
+  /* Four bullets quoted as four bullets. No list marker: a marker would be an
+     addition to text the panel presents as verbatim. */
+  .quoted-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.6em;
+  }
+
+  .quoted-list li + li {
+    margin-top: 0.3em;
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+    text-wrap: pretty;
+  }
+</style>

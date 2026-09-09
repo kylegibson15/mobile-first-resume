@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+// `build.format: 'file'` makes the route path /index.html; the address people
+// paste is the directory, so the canonical and og:url point there.
+const path = Astro.url.pathname.replace(/index\.html$/, '');
+const canonical = new URL(path, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Was a single hardcoded #faf8f4 — a colour that appears nowhere in
+         tokens.css and paints a cream browser chrome around a dark page. These
+         two carry the real --paper values for each scheme. -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f4" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12110e" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <!-- `summary_large_image` with no og:image unfurls as a blank card in
+         Slack and LinkedIn, which is exactly where this link gets pasted.
+         There is no social image to point at, so the card is declared as what
+         it actually is: title, description and favicon. -->
+    <meta name="twitter:card" content="summary" />
+    <link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

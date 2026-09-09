@@ -9,6 +9,9 @@
 # production
 /build
 
+# astro
+.astro
+
 # misc
 .DS_Store
 .env.local
@@ -24,3 +27,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+# typescript incremental build cache
+tsconfig.tsbuildinfo

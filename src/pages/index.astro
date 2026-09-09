@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import CaseStudy from '../components/CaseStudy.astro';
+import Contact from '../components/Contact.astro';
+import Experience from '../components/Experience.astro';
+import Hero from '../components/Hero.astro';
+import HowIWork from '../components/HowIWork.astro';
+import HomeClawDiagram from '../components/diagrams/HomeClawDiagram.astro';
+import SentryDiagram from '../components/diagrams/SentryDiagram.astro';
+import { CASE_STUDIES } from '../data/projects';
+import { profile } from '../data/resume';
+---
+
+<Base
+  title={`${profile.name} — Software Engineering Lead`}
+  description="Kyle Gibson leads the platform that designs and simulates a lunar lander at Blue Origin, and builds robots at night."
+>
+  <main class="wrap">
+    <Hero />
+
+    <section aria-labelledby="work">
+      <h2 id="work" class="section-head">Selected work</h2>
+      {CASE_STUDIES.map((study) => (
+        <CaseStudy study={study}>
+          {study.slug === 'home-claw' && <HomeClawDiagram slot="diagram" />}
+          {study.slug === 'the-sentry' && <SentryDiagram slot="diagram" />}
+        </CaseStudy>
+      ))}
+    </section>
+
+    <HowIWork />
+    <Experience />
+    <Contact />
+  </main>
+</Base>

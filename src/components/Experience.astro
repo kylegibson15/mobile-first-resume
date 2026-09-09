@@ -1,0 +1,89 @@
+---
+import { education, experience } from '../data/resume';
+---
+
+<section aria-labelledby="experience" class="xp">
+  <h2 id="experience" class="section-head">Experience</h2>
+
+  {experience.map((role) => (
+    <article class="role">
+      <div class="meta">
+        <h3>{role.company}</h3>
+        <p class="division">{role.division}</p>
+        <p class="period">{role.period}</p>
+      </div>
+      <div class="detail">
+        <p class="title">{role.title}</p>
+        <ul>
+          {role.bullets.map((bullet) => <li>{bullet}</li>)}
+        </ul>
+      </div>
+    </article>
+  ))}
+
+  <article class="role">
+    <div class="meta"><h3>Education</h3></div>
+    <div class="detail">
+      <ul>
+        {education.map((school) => (
+          <li>{school.degree} — {school.school}{school.note ? ` (${school.note})` : ''}</li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</section>
+
+<style>
+  .xp {
+    padding-block: var(--gap-section);
+    border-top: 1px solid var(--rule);
+  }
+
+  .role {
+    display: grid;
+    gap: 0.75rem 3rem;
+    padding-block: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .role:last-child {
+    border-bottom: 0;
+  }
+
+  @media (min-width: 48rem) {
+    .role {
+      grid-template-columns: 15rem 1fr;
+      /* The company (display serif, --step-1) and the role title (bold
+         Inter, --step-0) have different first-baseline offsets, so
+         top-aligning the two columns left the two most prominent words in
+         each row sitting on visibly different lines. */
+      align-items: baseline;
+    }
+  }
+
+  h3 {
+    font-size: var(--step-1);
+  }
+
+  .division,
+  .period {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  li {
+    max-width: var(--measure);
+  }
+</style>
