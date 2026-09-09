@@ -1,0 +1,45 @@
+---
+import { profile } from '../data/resume';
+---
+
+<section aria-labelledby="contact" class="contact">
+  <h2 id="contact">Let's talk.</h2>
+  <ul>
+    <li><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
+    <li><a href={profile.github} rel="noreferrer">GitHub</a></li>
+    <li><a href={profile.linkedin} rel="noreferrer">LinkedIn</a></li>
+  </ul>
+  <p class="where">{profile.location}</p>
+</section>
+
+<style>
+  .contact {
+    padding-block: var(--gap-section);
+    border-top: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-size: var(--step-3);
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Links must look like links. Underlines are not decoration here. */
+  a {
+    text-decoration: underline;
+  }
+
+  .where {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+</style>

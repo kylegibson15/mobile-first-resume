@@ -1,7 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import CaseStudy from '../components/CaseStudy.astro';
+import Contact from '../components/Contact.astro';
+import Experience from '../components/Experience.astro';
 import Hero from '../components/Hero.astro';
+import HowIWork from '../components/HowIWork.astro';
 import HomeClawDiagram from '../components/diagrams/HomeClawDiagram.astro';
 import SentryDiagram from '../components/diagrams/SentryDiagram.astro';
 import { CASE_STUDIES } from '../data/projects';
@@ -24,6 +27,10 @@ import { profile } from '../data/resume';
         </CaseStudy>
       ))}
     </section>
+
+    <HowIWork />
+    <Experience />
+    <Contact />
   </main>
 </Base>
 

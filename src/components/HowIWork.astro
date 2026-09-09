@@ -1,0 +1,85 @@
+---
+const PRACTICES = [
+  {
+    title: 'Phases with exit tests',
+    body: 'Every build gets a plan where each phase ends in a concrete, observable result. Nothing advances on the strength of feeling nearly done.',
+    quote:
+      'Each phase has an Exit test — a concrete, observable result that must pass before moving on. Don\'t skip ahead: every phase de-risks the next one.',
+    source: 'quadruped/PROJECT_PLAN.md',
+  },
+  {
+    title: 'The maths before the power',
+    body: 'Power budgets and safety rules get written down before a battery is connected, not after something releases smoke.',
+    quote: 'Never wire the LiPo straight to the servos.',
+    source: 'quadruped/docs/lipo_safety.md',
+  },
+  {
+    title: 'Honest status',
+    body: 'Unfinished work is labelled unfinished, in the repository and on this page. A project that says Phase 0 is worth more than five that claim to be done.',
+    quote: 'Mac Mini M4 Pro — Setting up · Raspberry Pi 4 — Planned · Jetson Orin Nano — Planned',
+    source: 'home-claw/README.md, hardware table',
+  },
+];
+---
+
+<section aria-labelledby="how" class="how">
+  <h2 id="how" class="section-head">How I work</h2>
+  <div class="grid">
+    {PRACTICES.map((practice) => (
+      <article>
+        <h3>{practice.title}</h3>
+        <p>{practice.body}</p>
+        <figure>
+          <blockquote>{practice.quote}</blockquote>
+          <figcaption>{practice.source}</figcaption>
+        </figure>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .how {
+    padding-block: var(--gap-section);
+    border-top: 1px solid var(--rule);
+  }
+
+  .grid {
+    display: grid;
+    gap: 3rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 56rem) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+  }
+
+  h3 {
+    font-size: var(--step-1);
+    margin-bottom: 0.75rem;
+  }
+
+  figure {
+    margin: 1.25rem 0 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  blockquote {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+
+  figcaption {
+    margin-top: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+</style>
