@@ -6,7 +6,7 @@
  * hard part, or show an artifact, does not go on the site.
  */
 
-export type Status = 'CURRENT' | 'BETA' | 'IN BUILD' | 'TRIALS' | 'PHASE 0' | 'SEASONAL';
+export type Status = 'CURRENT' | 'RELEASED' | 'RUNNING' | 'BETA' | 'IN BUILD' | 'TRIALS' | 'PHASE 0' | 'SEASONAL';
 
 /**
  * `quote` and `quote-list` render verbatim repository text; `diagram` an
@@ -49,6 +49,12 @@ export interface CaseStudy {
   stack: readonly string[];
   evidence: Evidence;
   repo?: string;
+  /** Where a reader can open the finished thing. Rendered under the stack. */
+  links?: readonly { label: string; href: string; kind?: 'appstore' | 'website' }[];
+  /** The product's own app icon, a path under /public. Decorative: the name sits beside it. */
+  icon?: string;
+  /** Pictures of what the project produced. Rendered as a fanned hand of cards. */
+  gallery?: { caption: string; items: readonly { src: string; alt: string }[] };
 }
 
 /** Claims that must never appear anywhere in the site's content. */
@@ -68,37 +74,42 @@ export const NOT_MY_WORK: readonly string[] = [
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: 'blue-origin',
-    name: 'Blue Origin — Lunar Permanence',
+    name: 'Blue Origin — Lunar Data, AI & Applications',
     status: 'CURRENT',
-    what: 'The platform that designs and simulates a lunar lander, automating performance tracking across every subsystem.',
+    what: 'The platform that designs and simulates a lunar lander for ~300 systems engineers, plus the Claude agents that answer questions straight from its source of truth.',
     hardPart:
-      'High-volume analysis and simulation jobs that depend on each other, over data classified as CUI — so every row needs access control and every change needs a permanent history, without that bookkeeping becoming the bottleneck.',
+      'Engineers were working from scattered spreadsheet copies with no source of truth, and the copies were causing design errors. The replacement holds data classified as CUI, so every row needs access control, every change needs a permanent history, and NASA\'s penetration testers need a sandbox of their own, all without that bookkeeping becoming the bottleneck.',
     decision:
-      'An event-driven architecture on Kubernetes with infrastructure defined in Terraform, so simulation work fans out instead of queueing behind itself. End-to-end simulation time fell by 40%.',
-    stack: ['Python', 'TypeScript', 'React', 'Terraform', 'Kubernetes', 'AWS', 'DynamoDB', 'PostgreSQL', 'SQS/SNS', 'Datadog'],
+      'One governed source of truth in AWS GovCloud, approved by Security and Export Control to manage CUI, on an event-driven architecture on Kubernetes so interdependent simulation jobs fan out instead of queueing behind each other. End-to-end simulation time fell by 40%.',
+    stack: ['Python', 'TypeScript', 'React', 'AWS GovCloud', 'Terraform', 'Kubernetes', 'DynamoDB', 'PostgreSQL', 'SQS/SNS', 'Datadog', 'Bedrock', 'MCP'],
     evidence: {
       kind: 'figures',
       source: 'Lead engineer, five-person team, 2024–present',
-      body: '40% faster simulations · 5 engineers led',
+      body: '~300 systems engineers · approved for CUI in GovCloud · 40% faster simulations · 2 production agents at 100% factual accuracy',
     },
   },
   {
     slug: 'amigowego',
     name: 'AmigoWeGo',
-    status: 'BETA',
+    status: 'RELEASED',
     what: 'Group trip planning that survives contact with a group chat.',
     hardPart:
       'Several people edit one shared plan from a phone and a browser at the same time. Four questions have to stay answerable and consistent across both clients: what is the plan, who is where, what was decided, and who owes what.',
     decision:
       'Contract first. A single OpenAPI document generates both clients, so the Rust backend and the SwiftUI app cannot drift apart — the compiler catches a mismatch that would otherwise surface as a bug on somebody\'s holiday.',
     stack: ['Rust', 'Axum', 'SQLx', 'PostgreSQL 16', 'PostGIS', 'Redis 7', 'React 19', 'SwiftUI', 'Terraform'],
+    icon: '/amigowego-icon.svg',
+    links: [
+      { label: 'App Store', href: 'https://apps.apple.com/us/app/amigowego/id6758466876', kind: 'appstore' },
+      { label: 'Website', href: 'https://amigowego.com/', kind: 'website' },
+    ],
     evidence: {
       // The four questions are the strongest thing in that README, so they are
       // quoted as they are written: a lead-in and four bullets. They were
       // previously flattened into one sentence that appears nowhere in the
       // file, with the fourth bullet's trailing clause welded onto the end.
       kind: 'quote-list',
-      source: 'README.md, Overview',
+      source: 'Product overview',
       sourcePath: 'my-travel-planner/README.md',
       body: 'When a group uses this app, they should always know:',
       items: [
@@ -112,20 +123,19 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: 'home-claw',
     name: 'Home Claw',
-    status: 'IN BUILD',
+    status: 'RUNNING',
     what: 'A family assistant that answers from any room and never leaves the house.',
     hardPart:
       'A useful home assistant needs the family\'s schedules, preferences and medical information. Every product that does this well sends that data to someone else\'s servers.',
-    // Present tense would be a lie: the README's hardware table marks the Mac
-    // Mini "Setting up" and every Pi and the Jetson "Planned". The site quotes
-    // that same table two sections down as proof that unfinished work is
-    // labelled honestly, so the prose has to hold to it.
+    // The README's hardware table marks the Mac Mini and both Pis "Running"
+    // and the Jetson "Planned", so the prose has to hold to it: the Jetson
+    // arm bridge is still not built.
     decision:
-      'Privacy as an architectural constraint rather than a feature. The Mac Mini M4 Pro being set up is intended to be the only machine that runs inference; the Raspberry Pi voice stations and the Jetson arm bridge are planned, not built. No cloud dependency, no subscription, nothing crossing the LAN boundary — which rules out the easy answer and makes model size a hardware problem.',
+      'Privacy as an architectural constraint rather than a feature. The Mac Mini M4 Pro is the only machine that runs inference, and it and both Raspberry Pi voice stations are running; the Jetson arm bridge is planned, not built. No cloud dependency, no subscription, nothing crossing the LAN boundary — which rules out the easy answer and makes model size a hardware problem.',
     stack: ['MLX', 'FastAPI', 'pgvector', 'Raspberry Pi', 'Jetson Orin Nano'],
     evidence: {
       kind: 'diagram',
-      source: 'Architecture and hardware table, README.md — dashed boxes are planned',
+      source: 'Architecture — dashed boxes are planned',
       body: 'The LAN boundary is the design: every component that touches family data is meant to sit inside it.',
     },
   },
@@ -139,9 +149,18 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     decision:
       'A phased proof of concept where each phase has to pass a gate before the next one earns any time: frame in, dog detection, keeper scoring, portrait crop out. The ladder stops early if a rung fails, instead of arriving at a finished pipeline that produces nothing worth looking at.',
     stack: ['YOLO', 'OpenCV', 'Pi Camera 3', 'Python'],
+    gallery: {
+      caption: 'Cards The Observer has made from real keepers — Pokémon-style for Luna, baseball-style for Max.',
+      items: [
+        { src: '/cards/observer-luna-blue.jpg', alt: 'A Pokémon-style card of Luna, a brindle boxer sitting on a couch in window light, on a pale blue patterned frame.' },
+        { src: '/cards/observer-luna-holo.jpg', alt: 'A holographic version of Luna’s card, the same boxer under a rainbow foil sheen and a gold border.' },
+        { src: '/cards/observer-max-front.jpg', alt: 'A baseball-style card of Max, a fawn French bulldog looking off to one side, in a purple frame with Dude’s Dog House & Spa lettering.' },
+        { src: '/cards/observer-max-back.jpg', alt: 'The back of Max’s baseball card: a season-and-career record table of visits, keepers and sharpness.' },
+      ],
+    },
     evidence: {
       kind: 'quote',
-      source: 'README.md',
+      source: 'Project plan',
       sourcePath: 'dog-selfie-cam-poc/README.md',
       body: 'This repo is the proof-of-concept ladder; each phase has a pass/fail gate before the next one earns any time.',
     },
@@ -158,7 +177,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     stack: ['Fusion 360', 'Jetson', 'MuJoCo', 'Raspberry Pi', 'PCA9685'],
     evidence: {
       kind: 'quote',
-      source: 'PROJECT_PLAN.md, Phase 3 exit test',
+      source: 'Project plan, Phase 3 exit test',
       sourcePath: 'quadruped/PROJECT_PLAN.md',
       // The leading ellipsis marks the dropped first half of the exit test
       // (joint commanding and sensor streaming). "BEC/battery", not "BEC and
@@ -182,7 +201,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     stack: ['OpenCV', 'Raspberry Pi', 'Pi Pico', 'Arduino Nano', 'Adafruit PWM driver'],
     evidence: {
       kind: 'quote',
-      source: 'README.md, project plan §1',
+      source: 'Project plan, §1',
       sourcePath: 'halloween-vampire/README.md',
       // "receiving simple commands from the Pi and" was previously deleted
       // without an ellipsis — the very clause the decision above rests on.

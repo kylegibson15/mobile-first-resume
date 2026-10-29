@@ -1,25 +1,19 @@
 ---
+import Icon from './Icon.astro';
 import { PRACTICES } from '../data/practices';
+
+// One glyph per practice, in the order practices.ts lists them.
+const GLYPHS = ['stairs', 'bolt', 'seal'] as const;
 ---
 
 <section aria-labelledby="how" class="how">
   <h2 id="how" class="section-head">How I work</h2>
   <div class="grid">
-    {PRACTICES.map((practice) => (
-      <article>
+    {PRACTICES.map((practice, index) => (
+      <article class="reveal">
+        <span class="glyph"><Icon name={GLYPHS[index] ?? 'seal'} size={22} /></span>
         <h3>{practice.title}</h3>
         <p>{practice.body}</p>
-        <figure>
-          <blockquote>
-            {practice.quote && <p>{practice.quote}</p>}
-            {practice.items && (
-              <ul class="quoted-rows">
-                {practice.items.map((item) => <li>{item}</li>)}
-              </ul>
-            )}
-          </blockquote>
-          <figcaption>{practice.source}</figcaption>
-        </figure>
       </article>
     ))}
   </div>
@@ -41,17 +35,15 @@ import { PRACTICES } from '../data/practices';
     .grid {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto auto auto;
-      /* Row gap must stay zero: the three rows are the inside of each
-         column, and h3/figure already carry their own spacing. A row-gap
+      /* Row gap must stay zero: the three rows (glyph, title, body) are the
+         inside of each column, and each already carries its own spacing. A row-gap
          here opens a hole under every title. */
       column-gap: 2.5rem;
       row-gap: 0;
     }
 
-    /* The three bodies are different lengths, so the quotation blocks
-       started at three different heights — a ragged row of the one element
-       that is supposed to look like a set. Subgrid puts the titles, the
-       bodies and the artifacts each on a shared line. */
+    /* Subgrid keeps the three titles on one line and the three bodies
+       starting on one line, whatever their lengths. */
     .grid > article {
       display: grid;
       grid-row: span 3;
@@ -60,44 +52,43 @@ import { PRACTICES } from '../data/practices';
     }
   }
 
+  article {
+    padding: 1.5rem 1.5rem 1.75rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    transition:
+      transform 0.25s var(--ease),
+      border-color 0.25s var(--ease),
+      box-shadow 0.25s var(--ease);
+  }
+
+  article:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: var(--lift);
+  }
+
+  .glyph {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    article,
+    article:hover {
+      transform: none;
+    }
+  }
+
   h3 {
     font-size: var(--step-1);
     margin-bottom: 0.75rem;
-  }
-
-  figure {
-    margin: 1.25rem 0 0;
-    padding-left: 1rem;
-    border-left: 2px solid var(--rule);
-  }
-
-  blockquote {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    line-height: 1.6;
-    color: var(--ink-muted);
-  }
-
-  blockquote p {
-    max-width: none;
-  }
-
-  /* Table rows quoted as rows, one per line — not run together into prose.
-     No bullets: the source is a table, and a marker would be an addition to
-     what is presented as verbatim text. */
-  .quoted-rows {
-    list-style: none;
-    padding: 0;
-  }
-
-  figcaption {
-    margin-top: 0.6rem;
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    color: var(--ink-faint);
-    /* "home-claw/README.md, hardware table" otherwise leaves "table" alone
-       on a line of its own in the third column. */
-    text-wrap: pretty;
   }
 </style>

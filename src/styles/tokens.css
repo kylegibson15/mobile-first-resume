@@ -16,6 +16,18 @@
   --ink-faint: #757065;
   --rule: #e3ded2;
   --accent: #b4432a;
+  /* Text that sits ON the accent. White clears 5.8:1 on the light accent. */
+  --on-accent: #ffffff;
+  /* A wash of the accent, for panels and hover grounds. */
+  --accent-soft: color-mix(in srgb, var(--accent) 9%, var(--paper));
+  /* The warm second colour, borrowed from AmigoWeGo's icon gradient. */
+  --sun: #f0a13a;
+  /* Status dots. Decorative: the word beside each dot says the same thing. */
+  --live: #2f9463;
+  --wip: #d69022;
+  --idle: #8a8578;
+  --lift: 0 1px 0 rgb(22 21 15 / 0.04), 0 8px 24px -12px rgb(22 21 15 / 0.22);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -55,5 +67,12 @@
        in light. */
     --rule: #3b362e;
     --accent: #e8734f;
+    /* White on #e8734f is only ~3:1. The page's own near-black clears 6:1. */
+    --on-accent: #12110e;
+    --sun: #f5b452;
+    --live: #57c48a;
+    --wip: #eab34d;
+    --idle: #8f897a;
+    --lift: 0 1px 0 rgb(0 0 0 / 0.3), 0 10px 28px -12px rgb(0 0 0 / 0.7);
   }
 }

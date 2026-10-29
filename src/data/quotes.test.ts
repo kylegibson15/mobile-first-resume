@@ -2,7 +2,6 @@ import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { CASE_STUDIES, QUOTED_KINDS } from './projects';
-import { PRACTICES } from './practices';
 
 /**
  * Every quotation on this site is checked against the file it cites.
@@ -82,19 +81,14 @@ const QUOTATIONS: Quotation[] = [
     sourcePath: study.evidence.sourcePath ?? '',
     texts: [study.evidence.body, ...(study.evidence.items ?? [])],
   })),
-  ...PRACTICES.map((practice) => ({
-    label: `how I work — "${practice.title}"`,
-    sourcePath: practice.sourcePath,
-    texts: [...(practice.quote ? [practice.quote] : []), ...(practice.items ?? [])],
-  })),
 ];
 
 describe('every quotation is verbatim in the file it cites', () => {
   it('covers every quotation the site presents as sourced', () => {
-    // Six case studies, of which two are a diagram and a metric row; three
-    // practices. If a case study starts quoting, this number moves and the
-    // list above has to be looked at again.
-    expect(QUOTATIONS).toHaveLength(7);
+    // Six case studies, of which two are a diagram and a metric row. If a
+    // case study starts quoting, this number moves and the list above has to
+    // be looked at again.
+    expect(QUOTATIONS).toHaveLength(4);
   });
 
   it('gives every quoting case study a source file to be checked against', () => {

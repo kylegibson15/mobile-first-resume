@@ -1,0 +1,61 @@
+---
+/*
+ * Small line icons, drawn on a 24 grid and stroked in currentColor so they
+ * follow the text they sit beside. Decorative: every one is paired with a
+ * word, so they are hidden from assistive technology.
+ */
+type Name =
+  | 'mail'
+  | 'globe'
+  | 'phone'
+  | 'arrow'
+  | 'code'
+  | 'briefcase'
+  | 'pin'
+  | 'stairs'
+  | 'bolt'
+  | 'seal';
+
+interface Props {
+  name: Name;
+  size?: number;
+}
+
+const { name, size = 18 } = Astro.props;
+
+const paths: Record<Name, string> = {
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/>',
+  globe:
+    '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+  phone: '<rect x="7" y="2.5" width="10" height="19" rx="2.6"/><path d="M10.6 18.4h2.8"/>',
+  arrow: '<path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/>',
+  code: '<path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.6 5.5-3.2 13"/>',
+  briefcase:
+    '<rect x="3" y="7.5" width="18" height="12" rx="2.4"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"/><path d="M3 13h18"/>',
+  pin: '<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  stairs: '<path d="M3 20h5v-5h5v-5h5V5h3"/>',
+  bolt: '<path d="M13 2.5 4.5 14H11l-1 7.5L19.5 10H13l0-7.5z"/>',
+  seal: '<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8 5.2-5.6"/>',
+};
+---
+
+<svg
+  class="icon"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.7"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+  set:html={paths[name]}
+/>
+
+<style>
+  .icon {
+    flex: none;
+  }
+</style>
