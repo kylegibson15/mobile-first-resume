@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import type { CaseStudy } from '../data/projects';
 
 interface Props {
@@ -22,15 +23,18 @@ const hasDiagram = diagramHtml.trim().length > 0;
 
 <article class="study" id={study.slug}>
   <header>
+    {study.icon && <img class="icon" src={study.icon} alt="" width="44" height="44" />}
     <h3>{study.name}</h3>
     {/* Sighted readers get the chip's position and styling for free; a screen
         reader was hearing a bare "PHASE 0" with nothing to attach it to. */}
-    <span class="status"><span class="sr-only">Status: </span>{study.status}</span>
+    <span class="status" data-status={study.status}>
+      <span class="dot" aria-hidden="true"></span><span class="sr-only">Status: </span>{study.status}
+    </span>
   </header>
 
   <p class="what">{study.what}</p>
 
-  <div class="parts">
+  <div class="parts reveal">
     <section>
       <h4>The hard part</h4>
       <p>{study.hardPart}</p>
@@ -41,11 +45,52 @@ const hasDiagram = diagramHtml.trim().length > 0;
     </section>
   </div>
 
-  <ul class="stack" aria-label={`Stack for ${study.name}`}>
+  <ul class="stack reveal" aria-label={`Stack for ${study.name}`}>
     {study.stack.map((item) => <li>{item}</li>)}
   </ul>
 
-  <figure class="evidence" data-kind={study.evidence.kind}>
+  {study.links && study.links.length > 0 && (
+    <ul class="links reveal" aria-label={`Links for ${study.name}`}>
+      {study.links.map((link, index) => (
+        <li>
+          <a
+            class:list={['btn', index === 0 && 'btn-primary']}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name={link.kind === 'appstore' ? 'phone' : 'globe'} />
+            <span>{link.label}</span>
+            <span class="btn-host">{new URL(link.href).hostname.replace(/^www\./, '')}</span>
+            <span class="btn-arrow"><Icon name="arrow" size={15} /></span>
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {study.gallery && (
+    <figure class="hand reveal">
+      <div class="cards">
+        {study.gallery.items.map((card, index) => (
+          <img
+            class="card"
+            style={`--i:${index}`}
+            src={card.src}
+            alt={card.alt}
+            width="560"
+            height="784"
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
+      </div>
+      <figcaption>{study.gallery.caption}</figcaption>
+    </figure>
+  )}
+
+  <figure class="evidence reveal" data-kind={study.evidence.kind}>
     {hasDiagram && (
       <Fragment>
         {/* The diagram holds its own width and scrolls sideways on a phone
@@ -86,6 +131,18 @@ const hasDiagram = diagramHtml.trim().length > 0;
   .study {
     padding-block: var(--gap-section);
     border-top: 1px solid var(--rule);
+    counter-increment: study;
+  }
+
+  /* Case 01, Case 02, … above each title, drawn in CSS. */
+  .study::before {
+    content: 'Case ' counter(study, decimal-leading-zero);
+    display: block;
+    margin-bottom: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.1em;
+    color: var(--accent);
   }
 
   /* The rules separate studies from each other; the section label already
@@ -112,6 +169,29 @@ const hasDiagram = diagramHtml.trim().length > 0;
     font-size: var(--step-3);
   }
 
+  /* The product's own app icon. Sits on the title's row and shares its
+     centre line; the rounded corners are the icon's own (rx 24 of 100). */
+  .icon {
+    align-self: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: none;
+    border-radius: 0.65rem;
+    box-shadow: 0 4px 14px -4px color-mix(in srgb, #ff6f59 60%, transparent);
+    transition: transform 0.25s var(--ease);
+  }
+
+  .study:hover .icon {
+    transform: rotate(-6deg) scale(1.06);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .study:hover .icon,
+    .stack li:hover {
+      transform: none;
+    }
+  }
+
   /* The honest status is the point of the whole page: PHASE 0 next to a
      finished-looking write-up is what makes the rest believable. So it has
      to look chosen. As a hairline outline in --rule it was almost invisible
@@ -119,15 +199,65 @@ const hasDiagram = diagramHtml.trim().length > 0;
      label. Baseline alignment also hung it below the serif title — the
      chip's own baseline met the title's, which drops the whole pill. */
   .status {
+    --dot: var(--idle);
     align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.08em;
     color: var(--ink-muted);
     background: var(--rule);
     border-radius: 999px;
-    padding: 0.2em 0.75em;
+    padding: 0.2em 0.85em 0.2em 0.7em;
     white-space: nowrap;
+  }
+
+  /* The dot says at a glance what the word says precisely. Green is live and
+     in someone's hands, amber is being worked on, grey is early or seasonal. */
+  .status[data-status='CURRENT'],
+  .status[data-status='RELEASED'],
+  .status[data-status='RUNNING'] {
+    --dot: var(--live);
+  }
+
+  .status[data-status='BETA'],
+  .status[data-status='TRIALS'],
+  .status[data-status='IN BUILD'] {
+    --dot: var(--wip);
+  }
+
+  .dot {
+    position: relative;
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 50%;
+    background: var(--dot);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .status[data-status='CURRENT'] .dot::after,
+    .status[data-status='RELEASED'] .dot::after,
+    .status[data-status='RUNNING'] .dot::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--dot);
+      animation: ping 2.4s var(--ease) infinite;
+    }
+
+    @keyframes ping {
+      from {
+        opacity: 0.55;
+        transform: scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: scale(2.8);
+      }
+    }
   }
 
   .what {
@@ -173,13 +303,105 @@ const hasDiagram = diagramHtml.trim().length > 0;
   .stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem 1.4rem;
+    gap: 0.5rem;
     list-style: none;
     padding: 0;
     margin-bottom: 2rem;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     color: var(--ink-muted);
+  }
+
+  .stack li {
+    padding: 0.18em 0.7em;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--paper-raised);
+    transition:
+      border-color 0.2s var(--ease),
+      color 0.2s var(--ease),
+      transform 0.2s var(--ease);
+  }
+
+  .stack li:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  /*
+   * A hand of cards, dealt slightly fanned. The tilt comes from each card's
+   * index, so a fourth card would slot in without new CSS. Hovering the hand
+   * opens it up; hovering one card lifts and straightens it.
+   */
+  .hand {
+    margin: 0 0 2rem;
+    padding: 1.5rem 0.5rem 0.5rem;
+    text-align: center;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    padding-block: 1.5rem 1rem;
+  }
+
+  .card {
+    --tilt: calc((var(--i) - 1.5) * 5deg);
+    width: clamp(6rem, 21vw, 12rem);
+    height: auto;
+    aspect-ratio: 5 / 7;
+    border-radius: 0.7rem;
+    box-shadow:
+      0 1px 2px rgb(22 21 15 / 0.2),
+      0 18px 34px -14px rgb(22 21 15 / 0.5);
+    transform: rotate(var(--tilt)) translateY(calc(var(--i) * 0.25rem - 0.375rem));
+    transform-origin: 50% 110%;
+    transition:
+      transform 0.35s var(--ease),
+      margin 0.35s var(--ease),
+      box-shadow 0.35s var(--ease);
+    position: relative;
+  }
+
+  .card + .card {
+    margin-left: clamp(-2.6rem, -5vw, -1.2rem);
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .cards:hover .card + .card {
+      margin-left: 0.4rem;
+    }
+
+    .card:hover {
+      transform: rotate(0deg) translateY(-14px) scale(1.05);
+      z-index: 2;
+      box-shadow:
+        0 2px 4px rgb(22 21 15 / 0.2),
+        0 30px 44px -16px rgb(22 21 15 / 0.55);
+    }
+  }
+
+  .hand figcaption {
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+
+  /* Sits directly under the stack, so it borrows the stack's bottom margin
+     rather than adding a second gap. */
+  .stack:has(+ .links) {
+    margin-bottom: 1.1rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
   }
 
   /*

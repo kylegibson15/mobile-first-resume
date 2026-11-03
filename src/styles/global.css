@@ -30,6 +30,18 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+html { overflow-x: clip; }
 body {
   background: var(--paper);
   color: var(--ink);
@@ -39,6 +51,11 @@ body {
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  /* Numbers the section labels and case studies (01, 02, …) in CSS. */
+  counter-reset: section study;
+  /* Decorative glows bleed past the column; this keeps them from ever widening
+     the page. `clip`, unlike `hidden`, does not create a scroll container. */
+  overflow-x: clip;
 }
 
 h1,
@@ -90,12 +107,32 @@ a:hover {
  * the same thing.
  */
 .section-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   font-family: var(--font-text);
   font-size: var(--step--1);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-faint);
+  counter-increment: section;
+}
+
+/* "01" in the accent, and a hairline that carries the label across the page. */
+.section-head::before {
+  content: counter(section, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.section-head::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
 }
 
 .sr-only {
@@ -107,4 +144,150 @@ a:hover {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+
+/*
+ * Reading progress: a thin accent line along the top edge, driven by scroll.
+ * Only where scroll-driven animation exists, and never under reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    html::before {
+      content: '';
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sun), var(--accent));
+      transform-origin: 0 50%;
+      z-index: 20;
+      pointer-events: none;
+      animation: progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+
+  @keyframes progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Sections settle into place as they enter the viewport. Without support
+     for view timelines nothing here applies and everything is simply visible. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* One button vocabulary for every link that is an action rather than prose. */
+.btn {
+  --btn-ink: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  border-radius: 999px;
+  background: var(--paper-raised);
+  color: var(--btn-ink);
+  font-family: var(--font-text);
+  font-size: var(--step--1);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    transform 0.2s var(--ease),
+    background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--lift);
+  text-decoration: none;
+}
+
+.btn .btn-host {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--ink-faint);
+}
+
+.btn .btn-arrow {
+  margin-left: 0.15rem;
+  transition: transform 0.2s var(--ease);
+}
+
+.btn:hover .btn-arrow,
+.btn:focus-visible .btn-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* The one action per group that matters most. */
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-primary .btn-host {
+  color: color-mix(in srgb, var(--on-accent) 78%, transparent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: color-mix(in srgb, var(--accent) 88%, var(--ink));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn .btn-arrow {
+    transition: none;
+  }
+
+  .btn:hover,
+  .btn:focus-visible,
+  .btn:hover .btn-arrow,
+  .btn:focus-visible .btn-arrow {
+    transform: none;
+  }
+}
+
+/*
+ * Any list that carries a class is a layout list (button rows, chips, stacks),
+ * never a bulleted one. Say so on the <li> and its marker too, because some
+ * browsers keep drawing the marker when a flex list resets only the <ul>.
+ * Plain prose lists (no class) keep their bullets.
+ */
+ul[class],
+ul[class] > li {
+  list-style: none;
+}
+
+ul[class] > li::marker {
+  content: '';
 }
