@@ -21,7 +21,7 @@ export const profile = {
   subtitle: 'Products & Platforms for Regulated, Mission-Critical Engineering',
   tagline:
     'Building products and platforms for regulated, mission-critical engineering — from NASA lunar programs to the services every Blue Origin employee depends on.',
-  bio: 'Lead Engineer at Blue Origin, leading the product team behind the lunar programs\' systems-engineering platform: used by ~300 systems engineers, approved to manage CUI in AWS GovCloud, and opened to NASA penetration testers through a sandboxed deployment. Previously built core platform services used by all 10,000+ Blue Origin employees. Ships AI where it can be trusted: production Claude agents on AWS Bedrock, held to 100% factual accuracy. 7+ years of full-stack engineering in aerospace and AI/ML.',
+  bio: 'Leads the Blue Origin team that built the lunar programs\' systems-engineering platform from scratch, including for NASA\'s Human Landing System: ~300 systems engineers, approved to manage CUI in AWS GovCloud. Builds enterprise- and government-grade products, and ships AI where it can be trusted. 7+ years of full-stack and backend engineering.',
   location: 'Denver, Colorado',
   email: 'kylegibson15@gmail.com',
   phone: '(270) 577-3957',
@@ -37,17 +37,16 @@ export const experience: Experience[] = [
     period: '2024 – Present',
     current: true,
     bullets: [
-      'Lead a 5-person team owning product direction, architecture, and delivery for a platform that automates systems-engineering analysis, producing technical performance measures from design parameters derived from requirements, for ~300 systems engineers across all lunar subsystems.',
-      'Built it from what engineers told us: they were working from scattered Excel copies with no source of truth, and the copies were causing errors in design work. Replaced them with one governed source of truth with full change history and interactive React visualizations for high-dimensional simulation data.',
-      'Worked with Security and Export Control to get the system approved to manage CUI in AWS GovCloud under ITAR/EAR and NIST 800-171, with row-level access control, full historical change tracking for configuration management, and encryption across the lifecycle of every event in the system.',
-      'Defined penetration-testing infrastructure with NASA counterparts, giving NASA pentesters a sandboxed deployment of the system on AWS WorkSpaces, and worked with Blue Origin\'s NASA representative, who presents data from the system to NASA.',
+      'Built the platform from scratch after engineers said scattered Excel copies were causing design errors. It turns design parameters derived from requirements into technical performance measures for ~300 systems engineers across all lunar subsystems.',
+      'Lead a 5-person team owning product direction, architecture, and delivery, and turn requirements from Systems Engineering, Program Leadership, and Mission Planning into the roadmap.',
+      'Worked with Security and Export Control to get the system approved to manage CUI in AWS GovCloud under ITAR/EAR and NIST 800-171: row-level access control, full change history, and encryption across every event\'s lifecycle.',
+      'Defined penetration-testing infrastructure with NASA counterparts, giving NASA pentesters a sandboxed deployment on AWS WorkSpaces, and work with Blue Origin\'s NASA representative, who presents data from the system to NASA.',
       // TODO(kyle): add agent usage — questions answered per week, eval-suite size, hours saved. Keep this site and
       // ~/Desktop/Resume/KyleGibson_Resume_Anthropic_PublicSector.docx in sync.
-      'Built several agents and put two into production on Claude (currently Opus 5.5) via AWS Bedrock on Blue Origin\'s internal AI platform: MCP-connected agents that answer questions on technical performance measures and design parameters directly from the source of truth.',
-      'Held the agents to 100% factual accuracy with automated tests that check answers against known facts, and built the APIs the MCP servers call so agents use structured tools instead of model memory.',
-      'Initiated and led the team\'s adoption of agentic workflows and shared repository context, cutting the human effort spent debugging failed simulation and analysis jobs.',
-      'Designed the CI/CD and automation pipeline (Python, Terraform, Kubernetes, Datadog) for high-volume, interdependent analysis and simulation jobs, reducing end-to-end simulation time by 40%.',
-      'Set priorities directly with Systems Engineering, Program Leadership, and Mission Planning.',
+      'Put two agents into production on Claude (currently Opus 5.5) via AWS Bedrock. They answer design questions through MCP and purpose-built APIs, not model memory.',
+      'Held both agents to 100% factual accuracy with automated tests that check answers against known facts from the source of truth.',
+      'Led the team\'s adoption of agentic workflows and shared repository context, cutting the human effort spent debugging failed simulation and analysis jobs.',
+      'Designed the CI/CD and job pipeline (Python, Kubernetes, Terraform, Datadog) for interdependent simulation jobs, cutting end-to-end simulation time by 40%.',
       'Promoted from Software Engineer III to Lead Engineer on the same program.',
     ],
     tech: [
@@ -76,9 +75,8 @@ export const experience: Experience[] = [
     period: '2022 – 2024',
     current: false,
     bullets: [
-      'Built and operated core platform services used by all 10,000+ Blue Origin employees, including user, file, and notification services, in Java and Python at 99.999% availability.',
-      'Built manufacturing services that track parts and every change to them, plus an event-driven search system (AWS SQS/SNS, OpenSearch) that lets engineers find manufacturing data in near real time.',
-      'Enforced role-based access control (RBAC) for sensitive manufacturing data across REST and GraphQL APIs.',
+      'Built and operated core platform services used by all 10,000+ Blue Origin employees, including the user, file, and notification services, in Java and Python at 99.999% availability.',
+      'Built manufacturing services that track parts and every change to them, with event-driven search (AWS SQS/SNS, OpenSearch) and role-based access control across REST and GraphQL APIs.',
       'Automated infrastructure with Terraform and Kubernetes and added Datadog monitoring across the services.',
     ],
     tech: [
@@ -105,6 +103,19 @@ export const experience: Experience[] = [
       'Engineered scalable backend services using Rust and Python for data-intensive applications, including the development of full-stack applications with interactive D3.js/SVG visualizations.',
     ],
     tech: ['Rust', 'Python', 'Apache Airflow', 'Prefect', 'D3.js', 'SVG', 'ETL', 'ML Pipelines'],
+  },
+  {
+    // Concurrent with Blue Origin, so `current` stays false: one "Now" badge, on the day job.
+    title: 'Founder & Engineer',
+    company: 'Giskard Labs LLC',
+    division: 'Independent products',
+    period: '2026 – Present',
+    current: false,
+    bullets: [
+      'Took AmigoWeGo, a group trip-planner, from zero to the App Store as a solo engineer (about 20 users): Rust and PostGIS backend, React and SwiftUI clients generated from one OpenAPI contract.',
+      'Built sqllm, natural-language questions over SQL tables, with a 40-question evaluation comparing local models against Claude on a pass bar set before any run.',
+    ],
+    tech: ['Rust', 'PostGIS', 'React', 'SwiftUI', 'OpenAPI', 'LLM Evaluation'],
   },
 ];
 

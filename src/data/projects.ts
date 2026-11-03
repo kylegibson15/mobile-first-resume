@@ -76,7 +76,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     slug: 'blue-origin',
     name: 'Blue Origin — Lunar Data, AI & Applications',
     status: 'CURRENT',
-    what: 'The platform that designs and simulates a lunar lander for ~300 systems engineers, plus the Claude agents that answer questions straight from its source of truth.',
+    what: 'The platform my team built from scratch, which designs and simulates a lunar lander for ~300 systems engineers, plus the Claude agents that answer questions straight from its source of truth.',
     hardPart:
       'Engineers were working from scattered spreadsheet copies with no source of truth, and the copies were causing design errors. The replacement holds data classified as CUI, so every row needs access control, every change needs a permanent history, and NASA\'s penetration testers need a sandbox of their own, all without that bookkeeping becoming the bottleneck.',
     decision:

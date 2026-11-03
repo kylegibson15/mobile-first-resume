@@ -13,8 +13,8 @@ export const PRACTICES: readonly Practice[] = [
     body: 'Every build gets a plan where each phase ends in a concrete, observable result. Nothing advances on the strength of feeling nearly done.',
   },
   {
-    title: 'The maths before the power',
-    body: 'Power budgets and safety rules get written down before a battery is connected, not after something releases smoke.',
+    title: 'Constraints before code',
+    body: 'The power budget before a battery is connected. The access and export rules before controlled data touches a server.',
   },
   {
     title: 'Honest status',
