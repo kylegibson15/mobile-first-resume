@@ -12,7 +12,7 @@ import { profile } from '../data/resume';
     By day I lead the product team behind the <span class="hl">platform</span> Blue Origin’s engineers use to design lunar landers.
   </p>
   <p class="thesis thesis-night">
-    At night I build <span class="hl hl-2">robots</span> in my garage.
+    <span class="night-line">At night I build <span class="hl hl-2">robots</span> in my garage.</span>
     <svg class="pup" viewBox="0 0 72 44" width="60" height="37" aria-hidden="true" focusable="false">
       <g class="legs" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
         <g class="leg l1"><path d="M20 24 L17 32 L21 40" /></g>
@@ -162,6 +162,17 @@ import { profile } from '../data/resume';
       color-mix(in srgb, var(--sun) 46%, transparent),
       color-mix(in srgb, var(--sun) 46%, transparent)
     );
+  }
+
+  /*
+   * The sentence wraps as one unit, so when it and the dog don't fit on one
+   * line the dog drops below it. As loose inline text, balance split it as
+   * "At night I build robots" / "in my garage." at 360–414px and again at
+   * 520px, just after the step-2 jump.
+   */
+  .night-line {
+    display: inline-block;
+    max-width: 100%;
   }
 
   /* The garage dog. Same ink as the text so it reads as part of the line. */
